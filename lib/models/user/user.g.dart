@@ -1,0 +1,55 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'user.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      available: json['available'] as bool,
+      userType: $enumDecode(_$UserTypeEnumMap, json['user_type']),
+      admin: json['admin'] as bool,
+      firstResponderStatus: $enumDecode(
+          _$FirstResponderStatusEnumMap, json['first_responder_status']),
+      availableAtNight: json['available_at_night'] as bool,
+      transportationMethod: json['transportation_method'] as String,
+      cpf: json['cpf'] as String?,
+      phone: json['phone'] as String?,
+      veteran: json['veteran'] as bool?,
+      obs: json['obs'],
+      active: json['active'] as bool?,
+    );
+
+Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'available': instance.available,
+      'user_type': _$UserTypeEnumMap[instance.userType]!,
+      'admin': instance.admin,
+      'first_responder_status':
+          _$FirstResponderStatusEnumMap[instance.firstResponderStatus]!,
+      'available_at_night': instance.availableAtNight,
+      'transportation_method': instance.transportationMethod,
+      'cpf': instance.cpf,
+      'phone': instance.phone,
+      'veteran': instance.veteran,
+      'obs': instance.obs,
+      'active': instance.active,
+    };
+
+const _$UserTypeEnumMap = {
+  UserType.FIRST_RESPONDER: 'FIRST_RESPONDER',
+  UserType.DISPACHER: 'DISPACHER',
+  UserType.NURSE: 'NURSE',
+  UserType.MEDIC: 'MEDIC',
+  UserType.DRIVER: 'DRIVER',
+};
+
+const _$FirstResponderStatusEnumMap = {
+  FirstResponderStatus.OFFLINE: 'OFFLINE',
+  FirstResponderStatus.ONLINE: 'ONLINE',
+};
