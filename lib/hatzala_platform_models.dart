@@ -9,5 +9,6 @@ export 'package:hatzala_platform_models/models/locations/locations.dart';
 export 'package:hatzala_platform_models/models/protocol/protocol.dart';
 export 'package:hatzala_platform_models/models/user/user.dart';
 export 'package:hatzala_platform_models/models/user_location/user_location.dart';
+export 'package:hatzala_platform_models/models/user_search/user_search.dart';
 export 'package:hatzala_platform_models/models/vehicle_location/vehicle_location.dart';
 export 'package:hatzala_platform_models/models/vehicle_type/vehicle_type.dart';
