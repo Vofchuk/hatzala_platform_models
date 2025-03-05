@@ -1,0 +1,1 @@
+enum FirstResponderStatus { OFFLINE, ONLINE }

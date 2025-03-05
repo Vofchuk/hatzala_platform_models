@@ -1,11 +1,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../enums/first_responder_status.dart';
+import '../enums/transportation_method.dart';
+
 part 'user_location.freezed.dart';
 part 'user_location.g.dart';
-
-enum TransportationMethod { ON_FOOT, BYCICLE, MOTORCYCLE, CAR }
-
-enum FirstResponderStatus { OFFLINE, ONLINE }
 
 @freezed
 class UserLocation with _$UserLocation {

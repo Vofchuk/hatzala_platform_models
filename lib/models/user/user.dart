@@ -2,6 +2,9 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../enums/first_responder_status.dart';
+import '../enums/user_type.dart';
+
 part 'user.freezed.dart';
 part 'user.g.dart';
 
@@ -27,7 +30,3 @@ class User with _$User {
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 }
-
-enum FirstResponderStatus { OFFLINE, ONLINE }
-
-enum UserType { FIRST_RESPONDER, DISPACHER, NURSE, MEDIC, DRIVER }
