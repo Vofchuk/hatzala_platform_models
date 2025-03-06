@@ -2,6 +2,8 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../complain_type/complain_type.dart';
+
 part 'incident.freezed.dart';
 part 'incident.g.dart';
 
@@ -11,7 +13,7 @@ part 'incident.g.dart';
 // )
 class Incident with _$Incident {
   const factory Incident({
-    @JsonKey(name: 'incident_id', includeToJson: false) int? incidentId,
+    @JsonKey(name: 'incident_id') required int incidentId,
     @JsonKey(name: 'occurrence_date') DateTime? occurrenceDate,
     @JsonKey(name: 'complaint_id') int? complaintId,
     String? observations,
@@ -36,6 +38,7 @@ class Incident with _$Incident {
     @JsonKey(name: 'multiple_victims') bool? multipleVictims,
     @JsonKey(name: 'patient_unknown') bool? patientUnknown,
     @JsonKey(name: 'patient_name') String? patientName,
+    @JsonKey(name: 'complain_types') ComplainType? complainType,
   }) = _Incident;
   const Incident._();
 

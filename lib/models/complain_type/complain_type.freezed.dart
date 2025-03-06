@@ -29,7 +29,7 @@ mixin _$ComplainType {
   @JsonKey(name: 'protocol_id')
   int get protocolId => throw _privateConstructorUsedError;
   @JsonKey(name: 'protocol')
-  Protocol get protocol => throw _privateConstructorUsedError;
+  Protocol? get protocol => throw _privateConstructorUsedError;
 
   /// Serializes this ComplainType to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -52,9 +52,9 @@ abstract class $ComplainTypeCopyWith<$Res> {
       @JsonKey(name: 'created_at') DateTime createdAt,
       @JsonKey(name: 'name') String name,
       @JsonKey(name: 'protocol_id') int protocolId,
-      @JsonKey(name: 'protocol') Protocol protocol});
+      @JsonKey(name: 'protocol') Protocol? protocol});
 
-  $ProtocolCopyWith<$Res> get protocol;
+  $ProtocolCopyWith<$Res>? get protocol;
 }
 
 /// @nodoc
@@ -76,7 +76,7 @@ class _$ComplainTypeCopyWithImpl<$Res, $Val extends ComplainType>
     Object? createdAt = null,
     Object? name = null,
     Object? protocolId = null,
-    Object? protocol = null,
+    Object? protocol = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -95,10 +95,10 @@ class _$ComplainTypeCopyWithImpl<$Res, $Val extends ComplainType>
           ? _value.protocolId
           : protocolId // ignore: cast_nullable_to_non_nullable
               as int,
-      protocol: null == protocol
+      protocol: freezed == protocol
           ? _value.protocol
           : protocol // ignore: cast_nullable_to_non_nullable
-              as Protocol,
+              as Protocol?,
     ) as $Val);
   }
 
@@ -106,8 +106,12 @@ class _$ComplainTypeCopyWithImpl<$Res, $Val extends ComplainType>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $ProtocolCopyWith<$Res> get protocol {
-    return $ProtocolCopyWith<$Res>(_value.protocol, (value) {
+  $ProtocolCopyWith<$Res>? get protocol {
+    if (_value.protocol == null) {
+      return null;
+    }
+
+    return $ProtocolCopyWith<$Res>(_value.protocol!, (value) {
       return _then(_value.copyWith(protocol: value) as $Val);
     });
   }
@@ -126,10 +130,10 @@ abstract class _$$ComplainTypeImplCopyWith<$Res>
       @JsonKey(name: 'created_at') DateTime createdAt,
       @JsonKey(name: 'name') String name,
       @JsonKey(name: 'protocol_id') int protocolId,
-      @JsonKey(name: 'protocol') Protocol protocol});
+      @JsonKey(name: 'protocol') Protocol? protocol});
 
   @override
-  $ProtocolCopyWith<$Res> get protocol;
+  $ProtocolCopyWith<$Res>? get protocol;
 }
 
 /// @nodoc
@@ -149,7 +153,7 @@ class __$$ComplainTypeImplCopyWithImpl<$Res>
     Object? createdAt = null,
     Object? name = null,
     Object? protocolId = null,
-    Object? protocol = null,
+    Object? protocol = freezed,
   }) {
     return _then(_$ComplainTypeImpl(
       id: null == id
@@ -168,10 +172,10 @@ class __$$ComplainTypeImplCopyWithImpl<$Res>
           ? _value.protocolId
           : protocolId // ignore: cast_nullable_to_non_nullable
               as int,
-      protocol: null == protocol
+      protocol: freezed == protocol
           ? _value.protocol
           : protocol // ignore: cast_nullable_to_non_nullable
-              as Protocol,
+              as Protocol?,
     ));
   }
 }
@@ -203,7 +207,7 @@ class _$ComplainTypeImpl implements _ComplainType {
   final int protocolId;
   @override
   @JsonKey(name: 'protocol')
-  final Protocol protocol;
+  final Protocol? protocol;
 
   @override
   String toString() {
@@ -252,7 +256,7 @@ abstract class _ComplainType implements ComplainType {
           @JsonKey(name: 'created_at') required final DateTime createdAt,
           @JsonKey(name: 'name') required final String name,
           @JsonKey(name: 'protocol_id') required final int protocolId,
-          @JsonKey(name: 'protocol') required final Protocol protocol}) =
+          @JsonKey(name: 'protocol') required final Protocol? protocol}) =
       _$ComplainTypeImpl;
 
   factory _ComplainType.fromJson(Map<String, dynamic> json) =
@@ -272,7 +276,7 @@ abstract class _ComplainType implements ComplainType {
   int get protocolId;
   @override
   @JsonKey(name: 'protocol')
-  Protocol get protocol;
+  Protocol? get protocol;
 
   /// Create a copy of ComplainType
   /// with the given fields replaced by the non-null parameter values.

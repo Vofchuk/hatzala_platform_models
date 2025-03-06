@@ -33,11 +33,13 @@ mixin _$IncidentUserSearch {
   @JsonKey(name: 'lng')
   double get lng => throw _privateConstructorUsedError;
   @JsonKey(name: 'status')
-  String get status => throw _privateConstructorUsedError;
+  SearchUserStatus get status => throw _privateConstructorUsedError;
   @JsonKey(name: 'incidents')
   Incident get incidents => throw _privateConstructorUsedError;
   @JsonKey(name: 'requested_at')
   DateTime? get requestedAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'on_incident_status')
+  OnIncidentStatus? get onIncidentStatus => throw _privateConstructorUsedError;
   @JsonKey(name: 'accepted_at')
   DateTime? get acceptedAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'rejected_at')
@@ -66,9 +68,10 @@ abstract class $IncidentUserSearchCopyWith<$Res> {
       @JsonKey(name: 'created_at') DateTime createdAt,
       @JsonKey(name: 'lat') double lat,
       @JsonKey(name: 'lng') double lng,
-      @JsonKey(name: 'status') String status,
+      @JsonKey(name: 'status') SearchUserStatus status,
       @JsonKey(name: 'incidents') Incident incidents,
       @JsonKey(name: 'requested_at') DateTime? requestedAt,
+      @JsonKey(name: 'on_incident_status') OnIncidentStatus? onIncidentStatus,
       @JsonKey(name: 'accepted_at') DateTime? acceptedAt,
       @JsonKey(name: 'rejected_at') DateTime? rejectedAt});
 
@@ -99,6 +102,7 @@ class _$IncidentUserSearchCopyWithImpl<$Res, $Val extends IncidentUserSearch>
     Object? status = null,
     Object? incidents = null,
     Object? requestedAt = freezed,
+    Object? onIncidentStatus = freezed,
     Object? acceptedAt = freezed,
     Object? rejectedAt = freezed,
   }) {
@@ -130,7 +134,7 @@ class _$IncidentUserSearchCopyWithImpl<$Res, $Val extends IncidentUserSearch>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String,
+              as SearchUserStatus,
       incidents: null == incidents
           ? _value.incidents
           : incidents // ignore: cast_nullable_to_non_nullable
@@ -139,6 +143,10 @@ class _$IncidentUserSearchCopyWithImpl<$Res, $Val extends IncidentUserSearch>
           ? _value.requestedAt
           : requestedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      onIncidentStatus: freezed == onIncidentStatus
+          ? _value.onIncidentStatus
+          : onIncidentStatus // ignore: cast_nullable_to_non_nullable
+              as OnIncidentStatus?,
       acceptedAt: freezed == acceptedAt
           ? _value.acceptedAt
           : acceptedAt // ignore: cast_nullable_to_non_nullable
@@ -176,9 +184,10 @@ abstract class _$$IncidentUserSearchImplCopyWith<$Res>
       @JsonKey(name: 'created_at') DateTime createdAt,
       @JsonKey(name: 'lat') double lat,
       @JsonKey(name: 'lng') double lng,
-      @JsonKey(name: 'status') String status,
+      @JsonKey(name: 'status') SearchUserStatus status,
       @JsonKey(name: 'incidents') Incident incidents,
       @JsonKey(name: 'requested_at') DateTime? requestedAt,
+      @JsonKey(name: 'on_incident_status') OnIncidentStatus? onIncidentStatus,
       @JsonKey(name: 'accepted_at') DateTime? acceptedAt,
       @JsonKey(name: 'rejected_at') DateTime? rejectedAt});
 
@@ -208,6 +217,7 @@ class __$$IncidentUserSearchImplCopyWithImpl<$Res>
     Object? status = null,
     Object? incidents = null,
     Object? requestedAt = freezed,
+    Object? onIncidentStatus = freezed,
     Object? acceptedAt = freezed,
     Object? rejectedAt = freezed,
   }) {
@@ -239,7 +249,7 @@ class __$$IncidentUserSearchImplCopyWithImpl<$Res>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String,
+              as SearchUserStatus,
       incidents: null == incidents
           ? _value.incidents
           : incidents // ignore: cast_nullable_to_non_nullable
@@ -248,6 +258,10 @@ class __$$IncidentUserSearchImplCopyWithImpl<$Res>
           ? _value.requestedAt
           : requestedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      onIncidentStatus: freezed == onIncidentStatus
+          ? _value.onIncidentStatus
+          : onIncidentStatus // ignore: cast_nullable_to_non_nullable
+              as OnIncidentStatus?,
       acceptedAt: freezed == acceptedAt
           ? _value.acceptedAt
           : acceptedAt // ignore: cast_nullable_to_non_nullable
@@ -273,6 +287,7 @@ class _$IncidentUserSearchImpl implements _IncidentUserSearch {
       @JsonKey(name: 'status') required this.status,
       @JsonKey(name: 'incidents') required this.incidents,
       @JsonKey(name: 'requested_at') this.requestedAt,
+      @JsonKey(name: 'on_incident_status') this.onIncidentStatus,
       @JsonKey(name: 'accepted_at') this.acceptedAt,
       @JsonKey(name: 'rejected_at') this.rejectedAt});
 
@@ -299,13 +314,16 @@ class _$IncidentUserSearchImpl implements _IncidentUserSearch {
   final double lng;
   @override
   @JsonKey(name: 'status')
-  final String status;
+  final SearchUserStatus status;
   @override
   @JsonKey(name: 'incidents')
   final Incident incidents;
   @override
   @JsonKey(name: 'requested_at')
   final DateTime? requestedAt;
+  @override
+  @JsonKey(name: 'on_incident_status')
+  final OnIncidentStatus? onIncidentStatus;
   @override
   @JsonKey(name: 'accepted_at')
   final DateTime? acceptedAt;
@@ -315,7 +333,7 @@ class _$IncidentUserSearchImpl implements _IncidentUserSearch {
 
   @override
   String toString() {
-    return 'IncidentUserSearch(incidentId: $incidentId, userId: $userId, distanceMeters: $distanceMeters, createdAt: $createdAt, lat: $lat, lng: $lng, status: $status, incidents: $incidents, requestedAt: $requestedAt, acceptedAt: $acceptedAt, rejectedAt: $rejectedAt)';
+    return 'IncidentUserSearch(incidentId: $incidentId, userId: $userId, distanceMeters: $distanceMeters, createdAt: $createdAt, lat: $lat, lng: $lng, status: $status, incidents: $incidents, requestedAt: $requestedAt, onIncidentStatus: $onIncidentStatus, acceptedAt: $acceptedAt, rejectedAt: $rejectedAt)';
   }
 
   @override
@@ -337,6 +355,8 @@ class _$IncidentUserSearchImpl implements _IncidentUserSearch {
                 other.incidents == incidents) &&
             (identical(other.requestedAt, requestedAt) ||
                 other.requestedAt == requestedAt) &&
+            (identical(other.onIncidentStatus, onIncidentStatus) ||
+                other.onIncidentStatus == onIncidentStatus) &&
             (identical(other.acceptedAt, acceptedAt) ||
                 other.acceptedAt == acceptedAt) &&
             (identical(other.rejectedAt, rejectedAt) ||
@@ -356,6 +376,7 @@ class _$IncidentUserSearchImpl implements _IncidentUserSearch {
       status,
       incidents,
       requestedAt,
+      onIncidentStatus,
       acceptedAt,
       rejectedAt);
 
@@ -384,9 +405,11 @@ abstract class _IncidentUserSearch implements IncidentUserSearch {
       @JsonKey(name: 'created_at') required final DateTime createdAt,
       @JsonKey(name: 'lat') required final double lat,
       @JsonKey(name: 'lng') required final double lng,
-      @JsonKey(name: 'status') required final String status,
+      @JsonKey(name: 'status') required final SearchUserStatus status,
       @JsonKey(name: 'incidents') required final Incident incidents,
       @JsonKey(name: 'requested_at') final DateTime? requestedAt,
+      @JsonKey(name: 'on_incident_status')
+      final OnIncidentStatus? onIncidentStatus,
       @JsonKey(name: 'accepted_at') final DateTime? acceptedAt,
       @JsonKey(name: 'rejected_at')
       final DateTime? rejectedAt}) = _$IncidentUserSearchImpl;
@@ -414,13 +437,16 @@ abstract class _IncidentUserSearch implements IncidentUserSearch {
   double get lng;
   @override
   @JsonKey(name: 'status')
-  String get status;
+  SearchUserStatus get status;
   @override
   @JsonKey(name: 'incidents')
   Incident get incidents;
   @override
   @JsonKey(name: 'requested_at')
   DateTime? get requestedAt;
+  @override
+  @JsonKey(name: 'on_incident_status')
+  OnIncidentStatus? get onIncidentStatus;
   @override
   @JsonKey(name: 'accepted_at')
   DateTime? get acceptedAt;

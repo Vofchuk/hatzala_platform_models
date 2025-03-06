@@ -12,7 +12,9 @@ _$ComplainTypeImpl _$$ComplainTypeImplFromJson(Map<String, dynamic> json) =>
       createdAt: DateTime.parse(json['created_at'] as String),
       name: json['name'] as String,
       protocolId: (json['protocol_id'] as num).toInt(),
-      protocol: Protocol.fromJson(json['protocol'] as Map<String, dynamic>),
+      protocol: json['protocol'] == null
+          ? null
+          : Protocol.fromJson(json['protocol'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$ComplainTypeImplToJson(_$ComplainTypeImpl instance) =>

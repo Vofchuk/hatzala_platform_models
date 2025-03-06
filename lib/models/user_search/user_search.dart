@@ -16,10 +16,14 @@ class UserSearch with _$UserSearch {
     @JsonKey(name: 'lat') required double lat,
     @JsonKey(name: 'lng') required double lng,
     @JsonKey(name: 'status') required SearchUserStatus status,
+    @JsonKey(name: 'on_incident_status') OnIncidentStatus? onIncidentStatus,
     @JsonKey(name: 'requested_at') required DateTime? requestedAt,
     @JsonKey(name: 'accepted_at') required DateTime? acceptedAt,
     @JsonKey(name: 'rejected_at') required DateTime? rejectedAt,
-    required Users users,
+    @JsonKey(name: 'aborted_at') required DateTime? abortedAt,
+    @JsonKey(name: 'accepted_with_no_assignment_at')
+    required DateTime? acceptedWithNoAssignmentAt,
+    Users? users,
   }) = _UserSearch;
 
   factory UserSearch.fromJson(Map<String, dynamic> json) =>
@@ -41,6 +45,10 @@ class UserSearch with _$UserSearch {
         return false;
       case SearchUserStatus.EXPIRED:
         return false;
+      case SearchUserStatus.ADMIN_VIEW:
+        return false;
+      case SearchUserStatus.ACCEPTED_WITH_NO_ASSIGNMENT:
+        return false;
     }
   }
 }
@@ -50,8 +58,8 @@ class Users with _$Users {
   const factory Users({
     @JsonKey(name: 'name') required String? name,
     @JsonKey(name: 'phone') required String? phone,
-    @JsonKey(name: 'user_equipments')
-    required List<UserEquipment> userEquipments,
+    @JsonKey(name: 'pushy_tokens') List<PushyToken>? pushyTokens,
+    @JsonKey(name: 'user_equipments') List<UserEquipment>? userEquipments,
   }) = _Users;
 
   factory Users.fromJson(Map<String, dynamic> json) => _$UsersFromJson(json);

@@ -1,6 +1,7 @@
 // ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:hatzala_platform_models/models/pushy_tokens/pushy_tokens.dart';
 
 import '../enums/first_responder_status.dart';
 import '../enums/user_type.dart';
@@ -26,6 +27,7 @@ class User with _$User {
     bool? veteran,
     dynamic obs,
     bool? active,
+    @JsonKey(name: 'pushy_tokens') List<PushyToken>? pushyTokens,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);

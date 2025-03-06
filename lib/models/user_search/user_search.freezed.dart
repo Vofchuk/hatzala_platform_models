@@ -34,13 +34,20 @@ mixin _$UserSearch {
   double get lng => throw _privateConstructorUsedError;
   @JsonKey(name: 'status')
   SearchUserStatus get status => throw _privateConstructorUsedError;
+  @JsonKey(name: 'on_incident_status')
+  OnIncidentStatus? get onIncidentStatus => throw _privateConstructorUsedError;
   @JsonKey(name: 'requested_at')
   DateTime? get requestedAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'accepted_at')
   DateTime? get acceptedAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'rejected_at')
   DateTime? get rejectedAt => throw _privateConstructorUsedError;
-  Users get users => throw _privateConstructorUsedError;
+  @JsonKey(name: 'aborted_at')
+  DateTime? get abortedAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'accepted_with_no_assignment_at')
+  DateTime? get acceptedWithNoAssignmentAt =>
+      throw _privateConstructorUsedError;
+  Users? get users => throw _privateConstructorUsedError;
 
   /// Serializes this UserSearch to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -66,12 +73,16 @@ abstract class $UserSearchCopyWith<$Res> {
       @JsonKey(name: 'lat') double lat,
       @JsonKey(name: 'lng') double lng,
       @JsonKey(name: 'status') SearchUserStatus status,
+      @JsonKey(name: 'on_incident_status') OnIncidentStatus? onIncidentStatus,
       @JsonKey(name: 'requested_at') DateTime? requestedAt,
       @JsonKey(name: 'accepted_at') DateTime? acceptedAt,
       @JsonKey(name: 'rejected_at') DateTime? rejectedAt,
-      Users users});
+      @JsonKey(name: 'aborted_at') DateTime? abortedAt,
+      @JsonKey(name: 'accepted_with_no_assignment_at')
+      DateTime? acceptedWithNoAssignmentAt,
+      Users? users});
 
-  $UsersCopyWith<$Res> get users;
+  $UsersCopyWith<$Res>? get users;
 }
 
 /// @nodoc
@@ -96,10 +107,13 @@ class _$UserSearchCopyWithImpl<$Res, $Val extends UserSearch>
     Object? lat = null,
     Object? lng = null,
     Object? status = null,
+    Object? onIncidentStatus = freezed,
     Object? requestedAt = freezed,
     Object? acceptedAt = freezed,
     Object? rejectedAt = freezed,
-    Object? users = null,
+    Object? abortedAt = freezed,
+    Object? acceptedWithNoAssignmentAt = freezed,
+    Object? users = freezed,
   }) {
     return _then(_value.copyWith(
       incidentId: null == incidentId
@@ -130,6 +144,10 @@ class _$UserSearchCopyWithImpl<$Res, $Val extends UserSearch>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as SearchUserStatus,
+      onIncidentStatus: freezed == onIncidentStatus
+          ? _value.onIncidentStatus
+          : onIncidentStatus // ignore: cast_nullable_to_non_nullable
+              as OnIncidentStatus?,
       requestedAt: freezed == requestedAt
           ? _value.requestedAt
           : requestedAt // ignore: cast_nullable_to_non_nullable
@@ -142,10 +160,18 @@ class _$UserSearchCopyWithImpl<$Res, $Val extends UserSearch>
           ? _value.rejectedAt
           : rejectedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      users: null == users
+      abortedAt: freezed == abortedAt
+          ? _value.abortedAt
+          : abortedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      acceptedWithNoAssignmentAt: freezed == acceptedWithNoAssignmentAt
+          ? _value.acceptedWithNoAssignmentAt
+          : acceptedWithNoAssignmentAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      users: freezed == users
           ? _value.users
           : users // ignore: cast_nullable_to_non_nullable
-              as Users,
+              as Users?,
     ) as $Val);
   }
 
@@ -153,8 +179,12 @@ class _$UserSearchCopyWithImpl<$Res, $Val extends UserSearch>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $UsersCopyWith<$Res> get users {
-    return $UsersCopyWith<$Res>(_value.users, (value) {
+  $UsersCopyWith<$Res>? get users {
+    if (_value.users == null) {
+      return null;
+    }
+
+    return $UsersCopyWith<$Res>(_value.users!, (value) {
       return _then(_value.copyWith(users: value) as $Val);
     });
   }
@@ -176,13 +206,17 @@ abstract class _$$UserSearchImplCopyWith<$Res>
       @JsonKey(name: 'lat') double lat,
       @JsonKey(name: 'lng') double lng,
       @JsonKey(name: 'status') SearchUserStatus status,
+      @JsonKey(name: 'on_incident_status') OnIncidentStatus? onIncidentStatus,
       @JsonKey(name: 'requested_at') DateTime? requestedAt,
       @JsonKey(name: 'accepted_at') DateTime? acceptedAt,
       @JsonKey(name: 'rejected_at') DateTime? rejectedAt,
-      Users users});
+      @JsonKey(name: 'aborted_at') DateTime? abortedAt,
+      @JsonKey(name: 'accepted_with_no_assignment_at')
+      DateTime? acceptedWithNoAssignmentAt,
+      Users? users});
 
   @override
-  $UsersCopyWith<$Res> get users;
+  $UsersCopyWith<$Res>? get users;
 }
 
 /// @nodoc
@@ -205,10 +239,13 @@ class __$$UserSearchImplCopyWithImpl<$Res>
     Object? lat = null,
     Object? lng = null,
     Object? status = null,
+    Object? onIncidentStatus = freezed,
     Object? requestedAt = freezed,
     Object? acceptedAt = freezed,
     Object? rejectedAt = freezed,
-    Object? users = null,
+    Object? abortedAt = freezed,
+    Object? acceptedWithNoAssignmentAt = freezed,
+    Object? users = freezed,
   }) {
     return _then(_$UserSearchImpl(
       incidentId: null == incidentId
@@ -239,6 +276,10 @@ class __$$UserSearchImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as SearchUserStatus,
+      onIncidentStatus: freezed == onIncidentStatus
+          ? _value.onIncidentStatus
+          : onIncidentStatus // ignore: cast_nullable_to_non_nullable
+              as OnIncidentStatus?,
       requestedAt: freezed == requestedAt
           ? _value.requestedAt
           : requestedAt // ignore: cast_nullable_to_non_nullable
@@ -251,10 +292,18 @@ class __$$UserSearchImplCopyWithImpl<$Res>
           ? _value.rejectedAt
           : rejectedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      users: null == users
+      abortedAt: freezed == abortedAt
+          ? _value.abortedAt
+          : abortedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      acceptedWithNoAssignmentAt: freezed == acceptedWithNoAssignmentAt
+          ? _value.acceptedWithNoAssignmentAt
+          : acceptedWithNoAssignmentAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      users: freezed == users
           ? _value.users
           : users // ignore: cast_nullable_to_non_nullable
-              as Users,
+              as Users?,
     ));
   }
 }
@@ -270,10 +319,14 @@ class _$UserSearchImpl extends _UserSearch {
       @JsonKey(name: 'lat') required this.lat,
       @JsonKey(name: 'lng') required this.lng,
       @JsonKey(name: 'status') required this.status,
+      @JsonKey(name: 'on_incident_status') this.onIncidentStatus,
       @JsonKey(name: 'requested_at') required this.requestedAt,
       @JsonKey(name: 'accepted_at') required this.acceptedAt,
       @JsonKey(name: 'rejected_at') required this.rejectedAt,
-      required this.users})
+      @JsonKey(name: 'aborted_at') required this.abortedAt,
+      @JsonKey(name: 'accepted_with_no_assignment_at')
+      required this.acceptedWithNoAssignmentAt,
+      this.users})
       : super._();
 
   factory _$UserSearchImpl.fromJson(Map<String, dynamic> json) =>
@@ -301,6 +354,9 @@ class _$UserSearchImpl extends _UserSearch {
   @JsonKey(name: 'status')
   final SearchUserStatus status;
   @override
+  @JsonKey(name: 'on_incident_status')
+  final OnIncidentStatus? onIncidentStatus;
+  @override
   @JsonKey(name: 'requested_at')
   final DateTime? requestedAt;
   @override
@@ -310,11 +366,17 @@ class _$UserSearchImpl extends _UserSearch {
   @JsonKey(name: 'rejected_at')
   final DateTime? rejectedAt;
   @override
-  final Users users;
+  @JsonKey(name: 'aborted_at')
+  final DateTime? abortedAt;
+  @override
+  @JsonKey(name: 'accepted_with_no_assignment_at')
+  final DateTime? acceptedWithNoAssignmentAt;
+  @override
+  final Users? users;
 
   @override
   String toString() {
-    return 'UserSearch(incidentId: $incidentId, userId: $userId, distanceMeters: $distanceMeters, createdAt: $createdAt, lat: $lat, lng: $lng, status: $status, requestedAt: $requestedAt, acceptedAt: $acceptedAt, rejectedAt: $rejectedAt, users: $users)';
+    return 'UserSearch(incidentId: $incidentId, userId: $userId, distanceMeters: $distanceMeters, createdAt: $createdAt, lat: $lat, lng: $lng, status: $status, onIncidentStatus: $onIncidentStatus, requestedAt: $requestedAt, acceptedAt: $acceptedAt, rejectedAt: $rejectedAt, abortedAt: $abortedAt, acceptedWithNoAssignmentAt: $acceptedWithNoAssignmentAt, users: $users)';
   }
 
   @override
@@ -332,12 +394,20 @@ class _$UserSearchImpl extends _UserSearch {
             (identical(other.lat, lat) || other.lat == lat) &&
             (identical(other.lng, lng) || other.lng == lng) &&
             (identical(other.status, status) || other.status == status) &&
+            (identical(other.onIncidentStatus, onIncidentStatus) ||
+                other.onIncidentStatus == onIncidentStatus) &&
             (identical(other.requestedAt, requestedAt) ||
                 other.requestedAt == requestedAt) &&
             (identical(other.acceptedAt, acceptedAt) ||
                 other.acceptedAt == acceptedAt) &&
             (identical(other.rejectedAt, rejectedAt) ||
                 other.rejectedAt == rejectedAt) &&
+            (identical(other.abortedAt, abortedAt) ||
+                other.abortedAt == abortedAt) &&
+            (identical(other.acceptedWithNoAssignmentAt,
+                    acceptedWithNoAssignmentAt) ||
+                other.acceptedWithNoAssignmentAt ==
+                    acceptedWithNoAssignmentAt) &&
             (identical(other.users, users) || other.users == users));
   }
 
@@ -352,9 +422,12 @@ class _$UserSearchImpl extends _UserSearch {
       lat,
       lng,
       status,
+      onIncidentStatus,
       requestedAt,
       acceptedAt,
       rejectedAt,
+      abortedAt,
+      acceptedWithNoAssignmentAt,
       users);
 
   /// Create a copy of UserSearch
@@ -382,10 +455,15 @@ abstract class _UserSearch extends UserSearch {
       @JsonKey(name: 'lat') required final double lat,
       @JsonKey(name: 'lng') required final double lng,
       @JsonKey(name: 'status') required final SearchUserStatus status,
+      @JsonKey(name: 'on_incident_status')
+      final OnIncidentStatus? onIncidentStatus,
       @JsonKey(name: 'requested_at') required final DateTime? requestedAt,
       @JsonKey(name: 'accepted_at') required final DateTime? acceptedAt,
       @JsonKey(name: 'rejected_at') required final DateTime? rejectedAt,
-      required final Users users}) = _$UserSearchImpl;
+      @JsonKey(name: 'aborted_at') required final DateTime? abortedAt,
+      @JsonKey(name: 'accepted_with_no_assignment_at')
+      required final DateTime? acceptedWithNoAssignmentAt,
+      final Users? users}) = _$UserSearchImpl;
   const _UserSearch._() : super._();
 
   factory _UserSearch.fromJson(Map<String, dynamic> json) =
@@ -413,6 +491,9 @@ abstract class _UserSearch extends UserSearch {
   @JsonKey(name: 'status')
   SearchUserStatus get status;
   @override
+  @JsonKey(name: 'on_incident_status')
+  OnIncidentStatus? get onIncidentStatus;
+  @override
   @JsonKey(name: 'requested_at')
   DateTime? get requestedAt;
   @override
@@ -422,7 +503,13 @@ abstract class _UserSearch extends UserSearch {
   @JsonKey(name: 'rejected_at')
   DateTime? get rejectedAt;
   @override
-  Users get users;
+  @JsonKey(name: 'aborted_at')
+  DateTime? get abortedAt;
+  @override
+  @JsonKey(name: 'accepted_with_no_assignment_at')
+  DateTime? get acceptedWithNoAssignmentAt;
+  @override
+  Users? get users;
 
   /// Create a copy of UserSearch
   /// with the given fields replaced by the non-null parameter values.
@@ -442,8 +529,10 @@ mixin _$Users {
   String? get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'phone')
   String? get phone => throw _privateConstructorUsedError;
+  @JsonKey(name: 'pushy_tokens')
+  List<PushyToken>? get pushyTokens => throw _privateConstructorUsedError;
   @JsonKey(name: 'user_equipments')
-  List<UserEquipment> get userEquipments => throw _privateConstructorUsedError;
+  List<UserEquipment>? get userEquipments => throw _privateConstructorUsedError;
 
   /// Serializes this Users to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -462,7 +551,8 @@ abstract class $UsersCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'name') String? name,
       @JsonKey(name: 'phone') String? phone,
-      @JsonKey(name: 'user_equipments') List<UserEquipment> userEquipments});
+      @JsonKey(name: 'pushy_tokens') List<PushyToken>? pushyTokens,
+      @JsonKey(name: 'user_equipments') List<UserEquipment>? userEquipments});
 }
 
 /// @nodoc
@@ -482,7 +572,8 @@ class _$UsersCopyWithImpl<$Res, $Val extends Users>
   $Res call({
     Object? name = freezed,
     Object? phone = freezed,
-    Object? userEquipments = null,
+    Object? pushyTokens = freezed,
+    Object? userEquipments = freezed,
   }) {
     return _then(_value.copyWith(
       name: freezed == name
@@ -493,10 +584,14 @@ class _$UsersCopyWithImpl<$Res, $Val extends Users>
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String?,
-      userEquipments: null == userEquipments
+      pushyTokens: freezed == pushyTokens
+          ? _value.pushyTokens
+          : pushyTokens // ignore: cast_nullable_to_non_nullable
+              as List<PushyToken>?,
+      userEquipments: freezed == userEquipments
           ? _value.userEquipments
           : userEquipments // ignore: cast_nullable_to_non_nullable
-              as List<UserEquipment>,
+              as List<UserEquipment>?,
     ) as $Val);
   }
 }
@@ -511,7 +606,8 @@ abstract class _$$UsersImplCopyWith<$Res> implements $UsersCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'name') String? name,
       @JsonKey(name: 'phone') String? phone,
-      @JsonKey(name: 'user_equipments') List<UserEquipment> userEquipments});
+      @JsonKey(name: 'pushy_tokens') List<PushyToken>? pushyTokens,
+      @JsonKey(name: 'user_equipments') List<UserEquipment>? userEquipments});
 }
 
 /// @nodoc
@@ -529,7 +625,8 @@ class __$$UsersImplCopyWithImpl<$Res>
   $Res call({
     Object? name = freezed,
     Object? phone = freezed,
-    Object? userEquipments = null,
+    Object? pushyTokens = freezed,
+    Object? userEquipments = freezed,
   }) {
     return _then(_$UsersImpl(
       name: freezed == name
@@ -540,10 +637,14 @@ class __$$UsersImplCopyWithImpl<$Res>
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String?,
-      userEquipments: null == userEquipments
+      pushyTokens: freezed == pushyTokens
+          ? _value._pushyTokens
+          : pushyTokens // ignore: cast_nullable_to_non_nullable
+              as List<PushyToken>?,
+      userEquipments: freezed == userEquipments
           ? _value._userEquipments
           : userEquipments // ignore: cast_nullable_to_non_nullable
-              as List<UserEquipment>,
+              as List<UserEquipment>?,
     ));
   }
 }
@@ -554,9 +655,11 @@ class _$UsersImpl implements _Users {
   const _$UsersImpl(
       {@JsonKey(name: 'name') required this.name,
       @JsonKey(name: 'phone') required this.phone,
+      @JsonKey(name: 'pushy_tokens') final List<PushyToken>? pushyTokens,
       @JsonKey(name: 'user_equipments')
-      required final List<UserEquipment> userEquipments})
-      : _userEquipments = userEquipments;
+      final List<UserEquipment>? userEquipments})
+      : _pushyTokens = pushyTokens,
+        _userEquipments = userEquipments;
 
   factory _$UsersImpl.fromJson(Map<String, dynamic> json) =>
       _$$UsersImplFromJson(json);
@@ -567,18 +670,31 @@ class _$UsersImpl implements _Users {
   @override
   @JsonKey(name: 'phone')
   final String? phone;
-  final List<UserEquipment> _userEquipments;
+  final List<PushyToken>? _pushyTokens;
+  @override
+  @JsonKey(name: 'pushy_tokens')
+  List<PushyToken>? get pushyTokens {
+    final value = _pushyTokens;
+    if (value == null) return null;
+    if (_pushyTokens is EqualUnmodifiableListView) return _pushyTokens;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<UserEquipment>? _userEquipments;
   @override
   @JsonKey(name: 'user_equipments')
-  List<UserEquipment> get userEquipments {
+  List<UserEquipment>? get userEquipments {
+    final value = _userEquipments;
+    if (value == null) return null;
     if (_userEquipments is EqualUnmodifiableListView) return _userEquipments;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_userEquipments);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
   String toString() {
-    return 'Users(name: $name, phone: $phone, userEquipments: $userEquipments)';
+    return 'Users(name: $name, phone: $phone, pushyTokens: $pushyTokens, userEquipments: $userEquipments)';
   }
 
   @override
@@ -589,12 +705,18 @@ class _$UsersImpl implements _Users {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.phone, phone) || other.phone == phone) &&
             const DeepCollectionEquality()
+                .equals(other._pushyTokens, _pushyTokens) &&
+            const DeepCollectionEquality()
                 .equals(other._userEquipments, _userEquipments));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, name, phone,
+  int get hashCode => Object.hash(
+      runtimeType,
+      name,
+      phone,
+      const DeepCollectionEquality().hash(_pushyTokens),
       const DeepCollectionEquality().hash(_userEquipments));
 
   /// Create a copy of Users
@@ -617,8 +739,9 @@ abstract class _Users implements Users {
   const factory _Users(
       {@JsonKey(name: 'name') required final String? name,
       @JsonKey(name: 'phone') required final String? phone,
+      @JsonKey(name: 'pushy_tokens') final List<PushyToken>? pushyTokens,
       @JsonKey(name: 'user_equipments')
-      required final List<UserEquipment> userEquipments}) = _$UsersImpl;
+      final List<UserEquipment>? userEquipments}) = _$UsersImpl;
 
   factory _Users.fromJson(Map<String, dynamic> json) = _$UsersImpl.fromJson;
 
@@ -629,8 +752,11 @@ abstract class _Users implements Users {
   @JsonKey(name: 'phone')
   String? get phone;
   @override
+  @JsonKey(name: 'pushy_tokens')
+  List<PushyToken>? get pushyTokens;
+  @override
   @JsonKey(name: 'user_equipments')
-  List<UserEquipment> get userEquipments;
+  List<UserEquipment>? get userEquipments;
 
   /// Create a copy of Users
   /// with the given fields replaced by the non-null parameter values.

@@ -38,6 +38,8 @@ mixin _$User {
   bool? get veteran => throw _privateConstructorUsedError;
   dynamic get obs => throw _privateConstructorUsedError;
   bool? get active => throw _privateConstructorUsedError;
+  @JsonKey(name: 'pushy_tokens')
+  List<PushyToken>? get pushyTokens => throw _privateConstructorUsedError;
 
   /// Serializes this User to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -67,7 +69,8 @@ abstract class $UserCopyWith<$Res> {
       String? phone,
       bool? veteran,
       dynamic obs,
-      bool? active});
+      bool? active,
+      @JsonKey(name: 'pushy_tokens') List<PushyToken>? pushyTokens});
 }
 
 /// @nodoc
@@ -98,6 +101,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? veteran = freezed,
     Object? obs = freezed,
     Object? active = freezed,
+    Object? pushyTokens = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -152,6 +156,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.active
           : active // ignore: cast_nullable_to_non_nullable
               as bool?,
+      pushyTokens: freezed == pushyTokens
+          ? _value.pushyTokens
+          : pushyTokens // ignore: cast_nullable_to_non_nullable
+              as List<PushyToken>?,
     ) as $Val);
   }
 }
@@ -177,7 +185,8 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       String? phone,
       bool? veteran,
       dynamic obs,
-      bool? active});
+      bool? active,
+      @JsonKey(name: 'pushy_tokens') List<PushyToken>? pushyTokens});
 }
 
 /// @nodoc
@@ -205,6 +214,7 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? veteran = freezed,
     Object? obs = freezed,
     Object? active = freezed,
+    Object? pushyTokens = freezed,
   }) {
     return _then(_$UserImpl(
       id: null == id
@@ -259,6 +269,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.active
           : active // ignore: cast_nullable_to_non_nullable
               as bool?,
+      pushyTokens: freezed == pushyTokens
+          ? _value._pushyTokens
+          : pushyTokens // ignore: cast_nullable_to_non_nullable
+              as List<PushyToken>?,
     ));
   }
 }
@@ -281,7 +295,9 @@ class _$UserImpl implements _User {
       this.phone,
       this.veteran,
       this.obs,
-      this.active});
+      this.active,
+      @JsonKey(name: 'pushy_tokens') final List<PushyToken>? pushyTokens})
+      : _pushyTokens = pushyTokens;
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserImplFromJson(json);
@@ -316,10 +332,20 @@ class _$UserImpl implements _User {
   final dynamic obs;
   @override
   final bool? active;
+  final List<PushyToken>? _pushyTokens;
+  @override
+  @JsonKey(name: 'pushy_tokens')
+  List<PushyToken>? get pushyTokens {
+    final value = _pushyTokens;
+    if (value == null) return null;
+    if (_pushyTokens is EqualUnmodifiableListView) return _pushyTokens;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, available: $available, userType: $userType, admin: $admin, firstResponderStatus: $firstResponderStatus, availableAtNight: $availableAtNight, transportationMethod: $transportationMethod, cpf: $cpf, phone: $phone, veteran: $veteran, obs: $obs, active: $active)';
+    return 'User(id: $id, name: $name, available: $available, userType: $userType, admin: $admin, firstResponderStatus: $firstResponderStatus, availableAtNight: $availableAtNight, transportationMethod: $transportationMethod, cpf: $cpf, phone: $phone, veteran: $veteran, obs: $obs, active: $active, pushyTokens: $pushyTokens)';
   }
 
   @override
@@ -344,7 +370,9 @@ class _$UserImpl implements _User {
             (identical(other.phone, phone) || other.phone == phone) &&
             (identical(other.veteran, veteran) || other.veteran == veteran) &&
             const DeepCollectionEquality().equals(other.obs, obs) &&
-            (identical(other.active, active) || other.active == active));
+            (identical(other.active, active) || other.active == active) &&
+            const DeepCollectionEquality()
+                .equals(other._pushyTokens, _pushyTokens));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -363,7 +391,8 @@ class _$UserImpl implements _User {
       phone,
       veteran,
       const DeepCollectionEquality().hash(obs),
-      active);
+      active,
+      const DeepCollectionEquality().hash(_pushyTokens));
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
@@ -397,7 +426,9 @@ abstract class _User implements User {
       final String? phone,
       final bool? veteran,
       final dynamic obs,
-      final bool? active}) = _$UserImpl;
+      final bool? active,
+      @JsonKey(name: 'pushy_tokens')
+      final List<PushyToken>? pushyTokens}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
@@ -431,6 +462,9 @@ abstract class _User implements User {
   dynamic get obs;
   @override
   bool? get active;
+  @override
+  @JsonKey(name: 'pushy_tokens')
+  List<PushyToken>? get pushyTokens;
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.

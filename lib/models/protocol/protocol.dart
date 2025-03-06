@@ -1,7 +1,6 @@
 // ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:hatzala_platform_models/models/complain_type/complain_type.dart';
 import 'package:hatzala_platform_models/models/incident_protocol_equipment/incident_protocol_equipment.dart';
 import 'package:hatzala_platform_models/models/incident_protocol_vehicles/incident_protocol_vehicles.dart';
 

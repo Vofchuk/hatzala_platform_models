@@ -13,7 +13,7 @@ class ComplainType with _$ComplainType {
     @JsonKey(name: 'created_at') required DateTime createdAt,
     @JsonKey(name: 'name') required String name,
     @JsonKey(name: 'protocol_id') required int protocolId,
-    @JsonKey(name: 'protocol') required Protocol protocol,
+    @JsonKey(name: 'protocol') required Protocol? protocol,
   }) = _ComplainType;
 
   factory ComplainType.fromJson(Map<String, dynamic> json) =>

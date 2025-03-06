@@ -15,6 +15,8 @@ _$UserSearchImpl _$$UserSearchImplFromJson(Map<String, dynamic> json) =>
       lat: (json['lat'] as num).toDouble(),
       lng: (json['lng'] as num).toDouble(),
       status: $enumDecode(_$SearchUserStatusEnumMap, json['status']),
+      onIncidentStatus: $enumDecodeNullable(
+          _$OnIncidentStatusEnumMap, json['on_incident_status']),
       requestedAt: json['requested_at'] == null
           ? null
           : DateTime.parse(json['requested_at'] as String),
@@ -24,7 +26,15 @@ _$UserSearchImpl _$$UserSearchImplFromJson(Map<String, dynamic> json) =>
       rejectedAt: json['rejected_at'] == null
           ? null
           : DateTime.parse(json['rejected_at'] as String),
-      users: Users.fromJson(json['users'] as Map<String, dynamic>),
+      abortedAt: json['aborted_at'] == null
+          ? null
+          : DateTime.parse(json['aborted_at'] as String),
+      acceptedWithNoAssignmentAt: json['accepted_with_no_assignment_at'] == null
+          ? null
+          : DateTime.parse(json['accepted_with_no_assignment_at'] as String),
+      users: json['users'] == null
+          ? null
+          : Users.fromJson(json['users'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$UserSearchImplToJson(_$UserSearchImpl instance) =>
@@ -36,9 +46,14 @@ Map<String, dynamic> _$$UserSearchImplToJson(_$UserSearchImpl instance) =>
       'lat': instance.lat,
       'lng': instance.lng,
       'status': _$SearchUserStatusEnumMap[instance.status]!,
+      'on_incident_status':
+          _$OnIncidentStatusEnumMap[instance.onIncidentStatus],
       'requested_at': instance.requestedAt?.toIso8601String(),
       'accepted_at': instance.acceptedAt?.toIso8601String(),
       'rejected_at': instance.rejectedAt?.toIso8601String(),
+      'aborted_at': instance.abortedAt?.toIso8601String(),
+      'accepted_with_no_assignment_at':
+          instance.acceptedWithNoAssignmentAt?.toIso8601String(),
       'users': instance.users,
     };
 
@@ -48,14 +63,25 @@ const _$SearchUserStatusEnumMap = {
   SearchUserStatus.ACCEPTED: 'ACCEPTED',
   SearchUserStatus.ABORTED: 'ABORTED',
   SearchUserStatus.REJECTED: 'REJECTED',
+  SearchUserStatus.ADMIN_VIEW: 'ADMIN_VIEW',
   SearchUserStatus.EXPIRED: 'EXPIRED',
+  SearchUserStatus.ACCEPTED_WITH_NO_ASSIGNMENT: 'ACCEPTED_WITH_NO_ASSIGNMENT',
+};
+
+const _$OnIncidentStatusEnumMap = {
+  OnIncidentStatus.GOING: 'GOING',
+  OnIncidentStatus.ARRIVED: 'ARRIVED',
+  OnIncidentStatus.FINISHED: 'FINISHED',
 };
 
 _$UsersImpl _$$UsersImplFromJson(Map<String, dynamic> json) => _$UsersImpl(
       name: json['name'] as String?,
       phone: json['phone'] as String?,
-      userEquipments: (json['user_equipments'] as List<dynamic>)
-          .map((e) => UserEquipment.fromJson(e as Map<String, dynamic>))
+      pushyTokens: (json['pushy_tokens'] as List<dynamic>?)
+          ?.map((e) => PushyToken.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      userEquipments: (json['user_equipments'] as List<dynamic>?)
+          ?.map((e) => UserEquipment.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -63,6 +89,7 @@ Map<String, dynamic> _$$UsersImplToJson(_$UsersImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'phone': instance.phone,
+      'pushy_tokens': instance.pushyTokens,
       'user_equipments': instance.userEquipments,
     };
 

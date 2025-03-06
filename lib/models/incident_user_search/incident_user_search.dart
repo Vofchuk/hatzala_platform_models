@@ -1,4 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:hatzala_platform_models/models/enums/incident_search_user_status.dart';
+import 'package:hatzala_platform_models/models/enums/on_incident_status.dart';
 import 'package:hatzala_platform_models/models/incident/incident.dart';
 
 part 'incident_user_search.freezed.dart';
@@ -13,9 +15,10 @@ class IncidentUserSearch with _$IncidentUserSearch {
     @JsonKey(name: 'created_at') required DateTime createdAt,
     @JsonKey(name: 'lat') required double lat,
     @JsonKey(name: 'lng') required double lng,
-    @JsonKey(name: 'status') required String status,
+    @JsonKey(name: 'status') required SearchUserStatus status,
     @JsonKey(name: 'incidents') required Incident incidents,
     @JsonKey(name: 'requested_at') DateTime? requestedAt,
+    @JsonKey(name: 'on_incident_status') OnIncidentStatus? onIncidentStatus,
     @JsonKey(name: 'accepted_at') DateTime? acceptedAt,
     @JsonKey(name: 'rejected_at') DateTime? rejectedAt,
   }) = _IncidentUserSearch;
@@ -33,7 +36,8 @@ class IncidentUserSearch with _$IncidentUserSearch {
       createdAt: DateTime.now(),
       lat: incident.lat ?? 0,
       lng: incident.lng ?? 0,
-      status: 'ADMIN_VIEW', // Special status to indicate this is an admin view
+      status: SearchUserStatus
+          .ADMIN_VIEW, // Special status to indicate this is an admin view
       requestedAt: DateTime.now(),
       incidents: incident,
     );

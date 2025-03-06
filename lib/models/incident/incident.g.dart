@@ -8,7 +8,7 @@ part of 'incident.dart';
 
 _$IncidentImpl _$$IncidentImplFromJson(Map<String, dynamic> json) =>
     _$IncidentImpl(
-      incidentId: (json['incident_id'] as num?)?.toInt(),
+      incidentId: (json['incident_id'] as num).toInt(),
       occurrenceDate: json['occurrence_date'] == null
           ? null
           : DateTime.parse(json['occurrence_date'] as String),
@@ -35,10 +35,15 @@ _$IncidentImpl _$$IncidentImplFromJson(Map<String, dynamic> json) =>
       multipleVictims: json['multiple_victims'] as bool?,
       patientUnknown: json['patient_unknown'] as bool?,
       patientName: json['patient_name'] as String?,
+      complainType: json['complain_types'] == null
+          ? null
+          : ComplainType.fromJson(
+              json['complain_types'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$IncidentImplToJson(_$IncidentImpl instance) =>
     <String, dynamic>{
+      'incident_id': instance.incidentId,
       'occurrence_date': instance.occurrenceDate?.toIso8601String(),
       'complaint_id': instance.complaintId,
       'observations': instance.observations,
@@ -63,4 +68,5 @@ Map<String, dynamic> _$$IncidentImplToJson(_$IncidentImpl instance) =>
       'multiple_victims': instance.multipleVictims,
       'patient_unknown': instance.patientUnknown,
       'patient_name': instance.patientName,
+      'complain_types': instance.complainType,
     };

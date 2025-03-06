@@ -21,6 +21,9 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       veteran: json['veteran'] as bool?,
       obs: json['obs'],
       active: json['active'] as bool?,
+      pushyTokens: (json['pushy_tokens'] as List<dynamic>?)
+          ?.map((e) => PushyToken.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
@@ -39,6 +42,7 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
       'veteran': instance.veteran,
       'obs': instance.obs,
       'active': instance.active,
+      'pushy_tokens': instance.pushyTokens,
     };
 
 const _$UserTypeEnumMap = {

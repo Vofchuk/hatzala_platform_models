@@ -20,8 +20,8 @@ Incident _$IncidentFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Incident {
-  @JsonKey(name: 'incident_id', includeToJson: false)
-  int? get incidentId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'incident_id')
+  int get incidentId => throw _privateConstructorUsedError;
   @JsonKey(name: 'occurrence_date')
   DateTime? get occurrenceDate => throw _privateConstructorUsedError;
   @JsonKey(name: 'complaint_id')
@@ -60,6 +60,8 @@ mixin _$Incident {
   bool? get patientUnknown => throw _privateConstructorUsedError;
   @JsonKey(name: 'patient_name')
   String? get patientName => throw _privateConstructorUsedError;
+  @JsonKey(name: 'complain_types')
+  ComplainType? get complainType => throw _privateConstructorUsedError;
 
   /// Serializes this Incident to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -77,7 +79,7 @@ abstract class $IncidentCopyWith<$Res> {
       _$IncidentCopyWithImpl<$Res, Incident>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'incident_id', includeToJson: false) int? incidentId,
+      {@JsonKey(name: 'incident_id') int incidentId,
       @JsonKey(name: 'occurrence_date') DateTime? occurrenceDate,
       @JsonKey(name: 'complaint_id') int? complaintId,
       String? observations,
@@ -101,7 +103,10 @@ abstract class $IncidentCopyWith<$Res> {
       @JsonKey(name: 'caller_observation') String? callerObservation,
       @JsonKey(name: 'multiple_victims') bool? multipleVictims,
       @JsonKey(name: 'patient_unknown') bool? patientUnknown,
-      @JsonKey(name: 'patient_name') String? patientName});
+      @JsonKey(name: 'patient_name') String? patientName,
+      @JsonKey(name: 'complain_types') ComplainType? complainType});
+
+  $ComplainTypeCopyWith<$Res>? get complainType;
 }
 
 /// @nodoc
@@ -119,7 +124,7 @@ class _$IncidentCopyWithImpl<$Res, $Val extends Incident>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? incidentId = freezed,
+    Object? incidentId = null,
     Object? occurrenceDate = freezed,
     Object? complaintId = freezed,
     Object? observations = freezed,
@@ -144,12 +149,13 @@ class _$IncidentCopyWithImpl<$Res, $Val extends Incident>
     Object? multipleVictims = freezed,
     Object? patientUnknown = freezed,
     Object? patientName = freezed,
+    Object? complainType = freezed,
   }) {
     return _then(_value.copyWith(
-      incidentId: freezed == incidentId
+      incidentId: null == incidentId
           ? _value.incidentId
           : incidentId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       occurrenceDate: freezed == occurrenceDate
           ? _value.occurrenceDate
           : occurrenceDate // ignore: cast_nullable_to_non_nullable
@@ -246,7 +252,25 @@ class _$IncidentCopyWithImpl<$Res, $Val extends Incident>
           ? _value.patientName
           : patientName // ignore: cast_nullable_to_non_nullable
               as String?,
+      complainType: freezed == complainType
+          ? _value.complainType
+          : complainType // ignore: cast_nullable_to_non_nullable
+              as ComplainType?,
     ) as $Val);
+  }
+
+  /// Create a copy of Incident
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ComplainTypeCopyWith<$Res>? get complainType {
+    if (_value.complainType == null) {
+      return null;
+    }
+
+    return $ComplainTypeCopyWith<$Res>(_value.complainType!, (value) {
+      return _then(_value.copyWith(complainType: value) as $Val);
+    });
   }
 }
 
@@ -259,7 +283,7 @@ abstract class _$$IncidentImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'incident_id', includeToJson: false) int? incidentId,
+      {@JsonKey(name: 'incident_id') int incidentId,
       @JsonKey(name: 'occurrence_date') DateTime? occurrenceDate,
       @JsonKey(name: 'complaint_id') int? complaintId,
       String? observations,
@@ -283,7 +307,11 @@ abstract class _$$IncidentImplCopyWith<$Res>
       @JsonKey(name: 'caller_observation') String? callerObservation,
       @JsonKey(name: 'multiple_victims') bool? multipleVictims,
       @JsonKey(name: 'patient_unknown') bool? patientUnknown,
-      @JsonKey(name: 'patient_name') String? patientName});
+      @JsonKey(name: 'patient_name') String? patientName,
+      @JsonKey(name: 'complain_types') ComplainType? complainType});
+
+  @override
+  $ComplainTypeCopyWith<$Res>? get complainType;
 }
 
 /// @nodoc
@@ -299,7 +327,7 @@ class __$$IncidentImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? incidentId = freezed,
+    Object? incidentId = null,
     Object? occurrenceDate = freezed,
     Object? complaintId = freezed,
     Object? observations = freezed,
@@ -324,12 +352,13 @@ class __$$IncidentImplCopyWithImpl<$Res>
     Object? multipleVictims = freezed,
     Object? patientUnknown = freezed,
     Object? patientName = freezed,
+    Object? complainType = freezed,
   }) {
     return _then(_$IncidentImpl(
-      incidentId: freezed == incidentId
+      incidentId: null == incidentId
           ? _value.incidentId
           : incidentId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       occurrenceDate: freezed == occurrenceDate
           ? _value.occurrenceDate
           : occurrenceDate // ignore: cast_nullable_to_non_nullable
@@ -426,6 +455,10 @@ class __$$IncidentImplCopyWithImpl<$Res>
           ? _value.patientName
           : patientName // ignore: cast_nullable_to_non_nullable
               as String?,
+      complainType: freezed == complainType
+          ? _value.complainType
+          : complainType // ignore: cast_nullable_to_non_nullable
+              as ComplainType?,
     ));
   }
 }
@@ -434,7 +467,7 @@ class __$$IncidentImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$IncidentImpl extends _Incident {
   const _$IncidentImpl(
-      {@JsonKey(name: 'incident_id', includeToJson: false) this.incidentId,
+      {@JsonKey(name: 'incident_id') required this.incidentId,
       @JsonKey(name: 'occurrence_date') this.occurrenceDate,
       @JsonKey(name: 'complaint_id') this.complaintId,
       this.observations,
@@ -458,15 +491,16 @@ class _$IncidentImpl extends _Incident {
       @JsonKey(name: 'caller_observation') this.callerObservation,
       @JsonKey(name: 'multiple_victims') this.multipleVictims,
       @JsonKey(name: 'patient_unknown') this.patientUnknown,
-      @JsonKey(name: 'patient_name') this.patientName})
+      @JsonKey(name: 'patient_name') this.patientName,
+      @JsonKey(name: 'complain_types') this.complainType})
       : super._();
 
   factory _$IncidentImpl.fromJson(Map<String, dynamic> json) =>
       _$$IncidentImplFromJson(json);
 
   @override
-  @JsonKey(name: 'incident_id', includeToJson: false)
-  final int? incidentId;
+  @JsonKey(name: 'incident_id')
+  final int incidentId;
   @override
   @JsonKey(name: 'occurrence_date')
   final DateTime? occurrenceDate;
@@ -529,10 +563,13 @@ class _$IncidentImpl extends _Incident {
   @override
   @JsonKey(name: 'patient_name')
   final String? patientName;
+  @override
+  @JsonKey(name: 'complain_types')
+  final ComplainType? complainType;
 
   @override
   String toString() {
-    return 'Incident(incidentId: $incidentId, occurrenceDate: $occurrenceDate, complaintId: $complaintId, observations: $observations, attendanceLocation: $attendanceLocation, callOrigin: $callOrigin, zipCode: $zipCode, state: $state, city: $city, address: $address, number: $number, complement: $complement, neighborhood: $neighborhood, reference: $reference, lat: $lat, lng: $lng, patientLocation: $patientLocation, callerPhone: $callerPhone, callerName: $callerName, isCallerPatient: $isCallerPatient, complementaryPhone: $complementaryPhone, callerObservation: $callerObservation, multipleVictims: $multipleVictims, patientUnknown: $patientUnknown, patientName: $patientName)';
+    return 'Incident(incidentId: $incidentId, occurrenceDate: $occurrenceDate, complaintId: $complaintId, observations: $observations, attendanceLocation: $attendanceLocation, callOrigin: $callOrigin, zipCode: $zipCode, state: $state, city: $city, address: $address, number: $number, complement: $complement, neighborhood: $neighborhood, reference: $reference, lat: $lat, lng: $lng, patientLocation: $patientLocation, callerPhone: $callerPhone, callerName: $callerName, isCallerPatient: $isCallerPatient, complementaryPhone: $complementaryPhone, callerObservation: $callerObservation, multipleVictims: $multipleVictims, patientUnknown: $patientUnknown, patientName: $patientName, complainType: $complainType)';
   }
 
   @override
@@ -582,7 +619,9 @@ class _$IncidentImpl extends _Incident {
             (identical(other.patientUnknown, patientUnknown) ||
                 other.patientUnknown == patientUnknown) &&
             (identical(other.patientName, patientName) ||
-                other.patientName == patientName));
+                other.patientName == patientName) &&
+            (identical(other.complainType, complainType) ||
+                other.complainType == complainType));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -613,7 +652,8 @@ class _$IncidentImpl extends _Incident {
         callerObservation,
         multipleVictims,
         patientUnknown,
-        patientName
+        patientName,
+        complainType
       ]);
 
   /// Create a copy of Incident
@@ -634,8 +674,7 @@ class _$IncidentImpl extends _Incident {
 
 abstract class _Incident extends Incident {
   const factory _Incident(
-      {@JsonKey(name: 'incident_id', includeToJson: false)
-      final int? incidentId,
+      {@JsonKey(name: 'incident_id') required final int incidentId,
       @JsonKey(name: 'occurrence_date') final DateTime? occurrenceDate,
       @JsonKey(name: 'complaint_id') final int? complaintId,
       final String? observations,
@@ -659,16 +698,17 @@ abstract class _Incident extends Incident {
       @JsonKey(name: 'caller_observation') final String? callerObservation,
       @JsonKey(name: 'multiple_victims') final bool? multipleVictims,
       @JsonKey(name: 'patient_unknown') final bool? patientUnknown,
-      @JsonKey(name: 'patient_name')
-      final String? patientName}) = _$IncidentImpl;
+      @JsonKey(name: 'patient_name') final String? patientName,
+      @JsonKey(name: 'complain_types')
+      final ComplainType? complainType}) = _$IncidentImpl;
   const _Incident._() : super._();
 
   factory _Incident.fromJson(Map<String, dynamic> json) =
       _$IncidentImpl.fromJson;
 
   @override
-  @JsonKey(name: 'incident_id', includeToJson: false)
-  int? get incidentId;
+  @JsonKey(name: 'incident_id')
+  int get incidentId;
   @override
   @JsonKey(name: 'occurrence_date')
   DateTime? get occurrenceDate;
@@ -731,6 +771,9 @@ abstract class _Incident extends Incident {
   @override
   @JsonKey(name: 'patient_name')
   String? get patientName;
+  @override
+  @JsonKey(name: 'complain_types')
+  ComplainType? get complainType;
 
   /// Create a copy of Incident
   /// with the given fields replaced by the non-null parameter values.

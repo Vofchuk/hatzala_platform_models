@@ -15,11 +15,13 @@ _$IncidentUserSearchImpl _$$IncidentUserSearchImplFromJson(
       createdAt: DateTime.parse(json['created_at'] as String),
       lat: (json['lat'] as num).toDouble(),
       lng: (json['lng'] as num).toDouble(),
-      status: json['status'] as String,
+      status: $enumDecode(_$SearchUserStatusEnumMap, json['status']),
       incidents: Incident.fromJson(json['incidents'] as Map<String, dynamic>),
       requestedAt: json['requested_at'] == null
           ? null
           : DateTime.parse(json['requested_at'] as String),
+      onIncidentStatus: $enumDecodeNullable(
+          _$OnIncidentStatusEnumMap, json['on_incident_status']),
       acceptedAt: json['accepted_at'] == null
           ? null
           : DateTime.parse(json['accepted_at'] as String),
@@ -37,9 +39,28 @@ Map<String, dynamic> _$$IncidentUserSearchImplToJson(
       'created_at': instance.createdAt.toIso8601String(),
       'lat': instance.lat,
       'lng': instance.lng,
-      'status': instance.status,
+      'status': _$SearchUserStatusEnumMap[instance.status]!,
       'incidents': instance.incidents,
       'requested_at': instance.requestedAt?.toIso8601String(),
+      'on_incident_status':
+          _$OnIncidentStatusEnumMap[instance.onIncidentStatus],
       'accepted_at': instance.acceptedAt?.toIso8601String(),
       'rejected_at': instance.rejectedAt?.toIso8601String(),
     };
+
+const _$SearchUserStatusEnumMap = {
+  SearchUserStatus.IN_LINE: 'IN_LINE',
+  SearchUserStatus.REQUESTED: 'REQUESTED',
+  SearchUserStatus.ACCEPTED: 'ACCEPTED',
+  SearchUserStatus.ABORTED: 'ABORTED',
+  SearchUserStatus.REJECTED: 'REJECTED',
+  SearchUserStatus.ADMIN_VIEW: 'ADMIN_VIEW',
+  SearchUserStatus.EXPIRED: 'EXPIRED',
+  SearchUserStatus.ACCEPTED_WITH_NO_ASSIGNMENT: 'ACCEPTED_WITH_NO_ASSIGNMENT',
+};
+
+const _$OnIncidentStatusEnumMap = {
+  OnIncidentStatus.GOING: 'GOING',
+  OnIncidentStatus.ARRIVED: 'ARRIVED',
+  OnIncidentStatus.FINISHED: 'FINISHED',
+};
