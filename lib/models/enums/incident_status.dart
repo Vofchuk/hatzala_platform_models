@@ -1,0 +1,1 @@
+enum IncidentStatus { ACTIVE, CLOSED }

@@ -1,6 +1,7 @@
 // ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:hatzala_platform_models/models/enums/incident_status.dart';
 
 import '../complain_type/complain_type.dart';
 
@@ -39,6 +40,7 @@ class Incident with _$Incident {
     @JsonKey(name: 'patient_unknown') bool? patientUnknown,
     @JsonKey(name: 'patient_name') String? patientName,
     @JsonKey(name: 'complain_types') ComplainType? complainType,
+    @JsonKey(name: 'status') IncidentStatus? status,
     @JsonKey(name: 'street_view_image') String? streetViewImage,
   }) = _Incident;
   const Incident._();

@@ -20,7 +20,7 @@ UserLocation _$UserLocationFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserLocation {
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'first_responder_status')
   FirstResponderStatus get firstResponderStatus =>
       throw _privateConstructorUsedError;
@@ -49,7 +49,7 @@ abstract class $UserLocationCopyWith<$Res> {
       _$UserLocationCopyWithImpl<$Res, UserLocation>;
   @useResult
   $Res call(
-      {String name,
+      {String? name,
       @JsonKey(name: 'first_responder_status')
       FirstResponderStatus firstResponderStatus,
       @JsonKey(name: 'transportation_method')
@@ -74,7 +74,7 @@ class _$UserLocationCopyWithImpl<$Res, $Val extends UserLocation>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
+    Object? name = freezed,
     Object? firstResponderStatus = null,
     Object? transportationMethod = null,
     Object? lat = null,
@@ -82,10 +82,10 @@ class _$UserLocationCopyWithImpl<$Res, $Val extends UserLocation>
     Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       firstResponderStatus: null == firstResponderStatus
           ? _value.firstResponderStatus
           : firstResponderStatus // ignore: cast_nullable_to_non_nullable
@@ -119,7 +119,7 @@ abstract class _$$UserLocationImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String name,
+      {String? name,
       @JsonKey(name: 'first_responder_status')
       FirstResponderStatus firstResponderStatus,
       @JsonKey(name: 'transportation_method')
@@ -142,7 +142,7 @@ class __$$UserLocationImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
+    Object? name = freezed,
     Object? firstResponderStatus = null,
     Object? transportationMethod = null,
     Object? lat = null,
@@ -150,10 +150,10 @@ class __$$UserLocationImplCopyWithImpl<$Res>
     Object? updatedAt = null,
   }) {
     return _then(_$UserLocationImpl(
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       firstResponderStatus: null == firstResponderStatus
           ? _value.firstResponderStatus
           : firstResponderStatus // ignore: cast_nullable_to_non_nullable
@@ -195,7 +195,7 @@ class _$UserLocationImpl implements _UserLocation {
       _$$UserLocationImplFromJson(json);
 
   @override
-  final String name;
+  final String? name;
   @override
   @JsonKey(name: 'first_responder_status')
   final FirstResponderStatus firstResponderStatus;
@@ -254,7 +254,7 @@ class _$UserLocationImpl implements _UserLocation {
 
 abstract class _UserLocation implements UserLocation {
   const factory _UserLocation(
-          {required final String name,
+          {required final String? name,
           @JsonKey(name: 'first_responder_status')
           required final FirstResponderStatus firstResponderStatus,
           @JsonKey(name: 'transportation_method')
@@ -268,7 +268,7 @@ abstract class _UserLocation implements UserLocation {
       _$UserLocationImpl.fromJson;
 
   @override
-  String get name;
+  String? get name;
   @override
   @JsonKey(name: 'first_responder_status')
   FirstResponderStatus get firstResponderStatus;

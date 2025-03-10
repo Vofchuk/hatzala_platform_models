@@ -62,6 +62,8 @@ mixin _$Incident {
   String? get patientName => throw _privateConstructorUsedError;
   @JsonKey(name: 'complain_types')
   ComplainType? get complainType => throw _privateConstructorUsedError;
+  @JsonKey(name: 'status')
+  IncidentStatus? get status => throw _privateConstructorUsedError;
   @JsonKey(name: 'street_view_image')
   String? get streetViewImage => throw _privateConstructorUsedError;
 
@@ -107,6 +109,7 @@ abstract class $IncidentCopyWith<$Res> {
       @JsonKey(name: 'patient_unknown') bool? patientUnknown,
       @JsonKey(name: 'patient_name') String? patientName,
       @JsonKey(name: 'complain_types') ComplainType? complainType,
+      @JsonKey(name: 'status') IncidentStatus? status,
       @JsonKey(name: 'street_view_image') String? streetViewImage});
 
   $ComplainTypeCopyWith<$Res>? get complainType;
@@ -153,6 +156,7 @@ class _$IncidentCopyWithImpl<$Res, $Val extends Incident>
     Object? patientUnknown = freezed,
     Object? patientName = freezed,
     Object? complainType = freezed,
+    Object? status = freezed,
     Object? streetViewImage = freezed,
   }) {
     return _then(_value.copyWith(
@@ -260,6 +264,10 @@ class _$IncidentCopyWithImpl<$Res, $Val extends Incident>
           ? _value.complainType
           : complainType // ignore: cast_nullable_to_non_nullable
               as ComplainType?,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as IncidentStatus?,
       streetViewImage: freezed == streetViewImage
           ? _value.streetViewImage
           : streetViewImage // ignore: cast_nullable_to_non_nullable
@@ -317,6 +325,7 @@ abstract class _$$IncidentImplCopyWith<$Res>
       @JsonKey(name: 'patient_unknown') bool? patientUnknown,
       @JsonKey(name: 'patient_name') String? patientName,
       @JsonKey(name: 'complain_types') ComplainType? complainType,
+      @JsonKey(name: 'status') IncidentStatus? status,
       @JsonKey(name: 'street_view_image') String? streetViewImage});
 
   @override
@@ -362,6 +371,7 @@ class __$$IncidentImplCopyWithImpl<$Res>
     Object? patientUnknown = freezed,
     Object? patientName = freezed,
     Object? complainType = freezed,
+    Object? status = freezed,
     Object? streetViewImage = freezed,
   }) {
     return _then(_$IncidentImpl(
@@ -469,6 +479,10 @@ class __$$IncidentImplCopyWithImpl<$Res>
           ? _value.complainType
           : complainType // ignore: cast_nullable_to_non_nullable
               as ComplainType?,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as IncidentStatus?,
       streetViewImage: freezed == streetViewImage
           ? _value.streetViewImage
           : streetViewImage // ignore: cast_nullable_to_non_nullable
@@ -507,6 +521,7 @@ class _$IncidentImpl extends _Incident {
       @JsonKey(name: 'patient_unknown') this.patientUnknown,
       @JsonKey(name: 'patient_name') this.patientName,
       @JsonKey(name: 'complain_types') this.complainType,
+      @JsonKey(name: 'status') this.status,
       @JsonKey(name: 'street_view_image') this.streetViewImage})
       : super._();
 
@@ -582,12 +597,15 @@ class _$IncidentImpl extends _Incident {
   @JsonKey(name: 'complain_types')
   final ComplainType? complainType;
   @override
+  @JsonKey(name: 'status')
+  final IncidentStatus? status;
+  @override
   @JsonKey(name: 'street_view_image')
   final String? streetViewImage;
 
   @override
   String toString() {
-    return 'Incident(incidentId: $incidentId, occurrenceDate: $occurrenceDate, complaintId: $complaintId, observations: $observations, attendanceLocation: $attendanceLocation, callOrigin: $callOrigin, zipCode: $zipCode, state: $state, city: $city, address: $address, number: $number, complement: $complement, neighborhood: $neighborhood, reference: $reference, lat: $lat, lng: $lng, patientLocation: $patientLocation, callerPhone: $callerPhone, callerName: $callerName, isCallerPatient: $isCallerPatient, complementaryPhone: $complementaryPhone, callerObservation: $callerObservation, multipleVictims: $multipleVictims, patientUnknown: $patientUnknown, patientName: $patientName, complainType: $complainType, streetViewImage: $streetViewImage)';
+    return 'Incident(incidentId: $incidentId, occurrenceDate: $occurrenceDate, complaintId: $complaintId, observations: $observations, attendanceLocation: $attendanceLocation, callOrigin: $callOrigin, zipCode: $zipCode, state: $state, city: $city, address: $address, number: $number, complement: $complement, neighborhood: $neighborhood, reference: $reference, lat: $lat, lng: $lng, patientLocation: $patientLocation, callerPhone: $callerPhone, callerName: $callerName, isCallerPatient: $isCallerPatient, complementaryPhone: $complementaryPhone, callerObservation: $callerObservation, multipleVictims: $multipleVictims, patientUnknown: $patientUnknown, patientName: $patientName, complainType: $complainType, status: $status, streetViewImage: $streetViewImage)';
   }
 
   @override
@@ -640,6 +658,7 @@ class _$IncidentImpl extends _Incident {
                 other.patientName == patientName) &&
             (identical(other.complainType, complainType) ||
                 other.complainType == complainType) &&
+            (identical(other.status, status) || other.status == status) &&
             (identical(other.streetViewImage, streetViewImage) ||
                 other.streetViewImage == streetViewImage));
   }
@@ -674,6 +693,7 @@ class _$IncidentImpl extends _Incident {
         patientUnknown,
         patientName,
         complainType,
+        status,
         streetViewImage
       ]);
 
@@ -721,6 +741,7 @@ abstract class _Incident extends Incident {
       @JsonKey(name: 'patient_unknown') final bool? patientUnknown,
       @JsonKey(name: 'patient_name') final String? patientName,
       @JsonKey(name: 'complain_types') final ComplainType? complainType,
+      @JsonKey(name: 'status') final IncidentStatus? status,
       @JsonKey(name: 'street_view_image')
       final String? streetViewImage}) = _$IncidentImpl;
   const _Incident._() : super._();
@@ -796,6 +817,9 @@ abstract class _Incident extends Incident {
   @override
   @JsonKey(name: 'complain_types')
   ComplainType? get complainType;
+  @override
+  @JsonKey(name: 'status')
+  IncidentStatus? get status;
   @override
   @JsonKey(name: 'street_view_image')
   String? get streetViewImage;

@@ -8,7 +8,7 @@ part of 'user_location.dart';
 
 _$UserLocationImpl _$$UserLocationImplFromJson(Map<String, dynamic> json) =>
     _$UserLocationImpl(
-      name: json['name'] as String,
+      name: json['name'] as String?,
       firstResponderStatus: $enumDecode(
           _$FirstResponderStatusEnumMap, json['first_responder_status']),
       transportationMethod: $enumDecode(

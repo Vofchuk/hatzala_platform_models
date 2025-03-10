@@ -9,7 +9,7 @@ part 'user_location.g.dart';
 @freezed
 class UserLocation with _$UserLocation {
   const factory UserLocation({
-    required String name,
+    required String? name,
     @JsonKey(name: 'first_responder_status')
     required FirstResponderStatus firstResponderStatus,
     @JsonKey(name: 'transportation_method')
