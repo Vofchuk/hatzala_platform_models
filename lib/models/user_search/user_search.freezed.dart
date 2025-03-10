@@ -44,9 +44,13 @@ mixin _$UserSearch {
   DateTime? get rejectedAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'aborted_at')
   DateTime? get abortedAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'travel_mode')
+  TransportationMethod? get travelMode => throw _privateConstructorUsedError;
   @JsonKey(name: 'accepted_with_no_assignment_at')
   DateTime? get acceptedWithNoAssignmentAt =>
       throw _privateConstructorUsedError;
+  @JsonKey(name: 'eta')
+  num? get eta => throw _privateConstructorUsedError;
   Users? get users => throw _privateConstructorUsedError;
 
   /// Serializes this UserSearch to a JSON map.
@@ -78,8 +82,10 @@ abstract class $UserSearchCopyWith<$Res> {
       @JsonKey(name: 'accepted_at') DateTime? acceptedAt,
       @JsonKey(name: 'rejected_at') DateTime? rejectedAt,
       @JsonKey(name: 'aborted_at') DateTime? abortedAt,
+      @JsonKey(name: 'travel_mode') TransportationMethod? travelMode,
       @JsonKey(name: 'accepted_with_no_assignment_at')
       DateTime? acceptedWithNoAssignmentAt,
+      @JsonKey(name: 'eta') num? eta,
       Users? users});
 
   $UsersCopyWith<$Res>? get users;
@@ -112,7 +118,9 @@ class _$UserSearchCopyWithImpl<$Res, $Val extends UserSearch>
     Object? acceptedAt = freezed,
     Object? rejectedAt = freezed,
     Object? abortedAt = freezed,
+    Object? travelMode = freezed,
     Object? acceptedWithNoAssignmentAt = freezed,
+    Object? eta = freezed,
     Object? users = freezed,
   }) {
     return _then(_value.copyWith(
@@ -164,10 +172,18 @@ class _$UserSearchCopyWithImpl<$Res, $Val extends UserSearch>
           ? _value.abortedAt
           : abortedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      travelMode: freezed == travelMode
+          ? _value.travelMode
+          : travelMode // ignore: cast_nullable_to_non_nullable
+              as TransportationMethod?,
       acceptedWithNoAssignmentAt: freezed == acceptedWithNoAssignmentAt
           ? _value.acceptedWithNoAssignmentAt
           : acceptedWithNoAssignmentAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      eta: freezed == eta
+          ? _value.eta
+          : eta // ignore: cast_nullable_to_non_nullable
+              as num?,
       users: freezed == users
           ? _value.users
           : users // ignore: cast_nullable_to_non_nullable
@@ -211,8 +227,10 @@ abstract class _$$UserSearchImplCopyWith<$Res>
       @JsonKey(name: 'accepted_at') DateTime? acceptedAt,
       @JsonKey(name: 'rejected_at') DateTime? rejectedAt,
       @JsonKey(name: 'aborted_at') DateTime? abortedAt,
+      @JsonKey(name: 'travel_mode') TransportationMethod? travelMode,
       @JsonKey(name: 'accepted_with_no_assignment_at')
       DateTime? acceptedWithNoAssignmentAt,
+      @JsonKey(name: 'eta') num? eta,
       Users? users});
 
   @override
@@ -244,7 +262,9 @@ class __$$UserSearchImplCopyWithImpl<$Res>
     Object? acceptedAt = freezed,
     Object? rejectedAt = freezed,
     Object? abortedAt = freezed,
+    Object? travelMode = freezed,
     Object? acceptedWithNoAssignmentAt = freezed,
+    Object? eta = freezed,
     Object? users = freezed,
   }) {
     return _then(_$UserSearchImpl(
@@ -296,10 +316,18 @@ class __$$UserSearchImplCopyWithImpl<$Res>
           ? _value.abortedAt
           : abortedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      travelMode: freezed == travelMode
+          ? _value.travelMode
+          : travelMode // ignore: cast_nullable_to_non_nullable
+              as TransportationMethod?,
       acceptedWithNoAssignmentAt: freezed == acceptedWithNoAssignmentAt
           ? _value.acceptedWithNoAssignmentAt
           : acceptedWithNoAssignmentAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      eta: freezed == eta
+          ? _value.eta
+          : eta // ignore: cast_nullable_to_non_nullable
+              as num?,
       users: freezed == users
           ? _value.users
           : users // ignore: cast_nullable_to_non_nullable
@@ -324,8 +352,10 @@ class _$UserSearchImpl extends _UserSearch {
       @JsonKey(name: 'accepted_at') required this.acceptedAt,
       @JsonKey(name: 'rejected_at') required this.rejectedAt,
       @JsonKey(name: 'aborted_at') required this.abortedAt,
+      @JsonKey(name: 'travel_mode') required this.travelMode,
       @JsonKey(name: 'accepted_with_no_assignment_at')
-      required this.acceptedWithNoAssignmentAt,
+      this.acceptedWithNoAssignmentAt,
+      @JsonKey(name: 'eta') this.eta,
       this.users})
       : super._();
 
@@ -369,14 +399,20 @@ class _$UserSearchImpl extends _UserSearch {
   @JsonKey(name: 'aborted_at')
   final DateTime? abortedAt;
   @override
+  @JsonKey(name: 'travel_mode')
+  final TransportationMethod? travelMode;
+  @override
   @JsonKey(name: 'accepted_with_no_assignment_at')
   final DateTime? acceptedWithNoAssignmentAt;
+  @override
+  @JsonKey(name: 'eta')
+  final num? eta;
   @override
   final Users? users;
 
   @override
   String toString() {
-    return 'UserSearch(incidentId: $incidentId, userId: $userId, distanceMeters: $distanceMeters, createdAt: $createdAt, lat: $lat, lng: $lng, status: $status, onIncidentStatus: $onIncidentStatus, requestedAt: $requestedAt, acceptedAt: $acceptedAt, rejectedAt: $rejectedAt, abortedAt: $abortedAt, acceptedWithNoAssignmentAt: $acceptedWithNoAssignmentAt, users: $users)';
+    return 'UserSearch(incidentId: $incidentId, userId: $userId, distanceMeters: $distanceMeters, createdAt: $createdAt, lat: $lat, lng: $lng, status: $status, onIncidentStatus: $onIncidentStatus, requestedAt: $requestedAt, acceptedAt: $acceptedAt, rejectedAt: $rejectedAt, abortedAt: $abortedAt, travelMode: $travelMode, acceptedWithNoAssignmentAt: $acceptedWithNoAssignmentAt, eta: $eta, users: $users)';
   }
 
   @override
@@ -404,10 +440,13 @@ class _$UserSearchImpl extends _UserSearch {
                 other.rejectedAt == rejectedAt) &&
             (identical(other.abortedAt, abortedAt) ||
                 other.abortedAt == abortedAt) &&
+            (identical(other.travelMode, travelMode) ||
+                other.travelMode == travelMode) &&
             (identical(other.acceptedWithNoAssignmentAt,
                     acceptedWithNoAssignmentAt) ||
                 other.acceptedWithNoAssignmentAt ==
                     acceptedWithNoAssignmentAt) &&
+            (identical(other.eta, eta) || other.eta == eta) &&
             (identical(other.users, users) || other.users == users));
   }
 
@@ -427,7 +466,9 @@ class _$UserSearchImpl extends _UserSearch {
       acceptedAt,
       rejectedAt,
       abortedAt,
+      travelMode,
       acceptedWithNoAssignmentAt,
+      eta,
       users);
 
   /// Create a copy of UserSearch
@@ -461,8 +502,11 @@ abstract class _UserSearch extends UserSearch {
       @JsonKey(name: 'accepted_at') required final DateTime? acceptedAt,
       @JsonKey(name: 'rejected_at') required final DateTime? rejectedAt,
       @JsonKey(name: 'aborted_at') required final DateTime? abortedAt,
+      @JsonKey(name: 'travel_mode')
+      required final TransportationMethod? travelMode,
       @JsonKey(name: 'accepted_with_no_assignment_at')
-      required final DateTime? acceptedWithNoAssignmentAt,
+      final DateTime? acceptedWithNoAssignmentAt,
+      @JsonKey(name: 'eta') final num? eta,
       final Users? users}) = _$UserSearchImpl;
   const _UserSearch._() : super._();
 
@@ -506,8 +550,14 @@ abstract class _UserSearch extends UserSearch {
   @JsonKey(name: 'aborted_at')
   DateTime? get abortedAt;
   @override
+  @JsonKey(name: 'travel_mode')
+  TransportationMethod? get travelMode;
+  @override
   @JsonKey(name: 'accepted_with_no_assignment_at')
   DateTime? get acceptedWithNoAssignmentAt;
+  @override
+  @JsonKey(name: 'eta')
+  num? get eta;
   @override
   Users? get users;
 

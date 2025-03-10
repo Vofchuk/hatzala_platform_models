@@ -44,6 +44,15 @@ mixin _$IncidentUserSearch {
   DateTime? get acceptedAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'rejected_at')
   DateTime? get rejectedAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'aborted_at')
+  DateTime? get abortedAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'travel_mode')
+  TransportationMethod? get travelMode => throw _privateConstructorUsedError;
+  @JsonKey(name: 'eta')
+  num? get eta => throw _privateConstructorUsedError;
+  @JsonKey(name: 'accepted_with_no_assignment_at')
+  DateTime? get acceptedWithNoAssignmentAt =>
+      throw _privateConstructorUsedError;
 
   /// Serializes this IncidentUserSearch to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -73,7 +82,12 @@ abstract class $IncidentUserSearchCopyWith<$Res> {
       @JsonKey(name: 'requested_at') DateTime? requestedAt,
       @JsonKey(name: 'on_incident_status') OnIncidentStatus? onIncidentStatus,
       @JsonKey(name: 'accepted_at') DateTime? acceptedAt,
-      @JsonKey(name: 'rejected_at') DateTime? rejectedAt});
+      @JsonKey(name: 'rejected_at') DateTime? rejectedAt,
+      @JsonKey(name: 'aborted_at') DateTime? abortedAt,
+      @JsonKey(name: 'travel_mode') TransportationMethod? travelMode,
+      @JsonKey(name: 'eta') num? eta,
+      @JsonKey(name: 'accepted_with_no_assignment_at')
+      DateTime? acceptedWithNoAssignmentAt});
 
   $IncidentCopyWith<$Res> get incidents;
 }
@@ -105,6 +119,10 @@ class _$IncidentUserSearchCopyWithImpl<$Res, $Val extends IncidentUserSearch>
     Object? onIncidentStatus = freezed,
     Object? acceptedAt = freezed,
     Object? rejectedAt = freezed,
+    Object? abortedAt = freezed,
+    Object? travelMode = freezed,
+    Object? eta = freezed,
+    Object? acceptedWithNoAssignmentAt = freezed,
   }) {
     return _then(_value.copyWith(
       incidentId: null == incidentId
@@ -155,6 +173,22 @@ class _$IncidentUserSearchCopyWithImpl<$Res, $Val extends IncidentUserSearch>
           ? _value.rejectedAt
           : rejectedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      abortedAt: freezed == abortedAt
+          ? _value.abortedAt
+          : abortedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      travelMode: freezed == travelMode
+          ? _value.travelMode
+          : travelMode // ignore: cast_nullable_to_non_nullable
+              as TransportationMethod?,
+      eta: freezed == eta
+          ? _value.eta
+          : eta // ignore: cast_nullable_to_non_nullable
+              as num?,
+      acceptedWithNoAssignmentAt: freezed == acceptedWithNoAssignmentAt
+          ? _value.acceptedWithNoAssignmentAt
+          : acceptedWithNoAssignmentAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ) as $Val);
   }
 
@@ -189,7 +223,12 @@ abstract class _$$IncidentUserSearchImplCopyWith<$Res>
       @JsonKey(name: 'requested_at') DateTime? requestedAt,
       @JsonKey(name: 'on_incident_status') OnIncidentStatus? onIncidentStatus,
       @JsonKey(name: 'accepted_at') DateTime? acceptedAt,
-      @JsonKey(name: 'rejected_at') DateTime? rejectedAt});
+      @JsonKey(name: 'rejected_at') DateTime? rejectedAt,
+      @JsonKey(name: 'aborted_at') DateTime? abortedAt,
+      @JsonKey(name: 'travel_mode') TransportationMethod? travelMode,
+      @JsonKey(name: 'eta') num? eta,
+      @JsonKey(name: 'accepted_with_no_assignment_at')
+      DateTime? acceptedWithNoAssignmentAt});
 
   @override
   $IncidentCopyWith<$Res> get incidents;
@@ -220,6 +259,10 @@ class __$$IncidentUserSearchImplCopyWithImpl<$Res>
     Object? onIncidentStatus = freezed,
     Object? acceptedAt = freezed,
     Object? rejectedAt = freezed,
+    Object? abortedAt = freezed,
+    Object? travelMode = freezed,
+    Object? eta = freezed,
+    Object? acceptedWithNoAssignmentAt = freezed,
   }) {
     return _then(_$IncidentUserSearchImpl(
       incidentId: null == incidentId
@@ -270,13 +313,29 @@ class __$$IncidentUserSearchImplCopyWithImpl<$Res>
           ? _value.rejectedAt
           : rejectedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      abortedAt: freezed == abortedAt
+          ? _value.abortedAt
+          : abortedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      travelMode: freezed == travelMode
+          ? _value.travelMode
+          : travelMode // ignore: cast_nullable_to_non_nullable
+              as TransportationMethod?,
+      eta: freezed == eta
+          ? _value.eta
+          : eta // ignore: cast_nullable_to_non_nullable
+              as num?,
+      acceptedWithNoAssignmentAt: freezed == acceptedWithNoAssignmentAt
+          ? _value.acceptedWithNoAssignmentAt
+          : acceptedWithNoAssignmentAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$IncidentUserSearchImpl implements _IncidentUserSearch {
+class _$IncidentUserSearchImpl extends _IncidentUserSearch {
   const _$IncidentUserSearchImpl(
       {@JsonKey(name: 'incident_id') required this.incidentId,
       @JsonKey(name: 'user_id') required this.userId,
@@ -289,7 +348,13 @@ class _$IncidentUserSearchImpl implements _IncidentUserSearch {
       @JsonKey(name: 'requested_at') this.requestedAt,
       @JsonKey(name: 'on_incident_status') this.onIncidentStatus,
       @JsonKey(name: 'accepted_at') this.acceptedAt,
-      @JsonKey(name: 'rejected_at') this.rejectedAt});
+      @JsonKey(name: 'rejected_at') this.rejectedAt,
+      @JsonKey(name: 'aborted_at') this.abortedAt,
+      @JsonKey(name: 'travel_mode') this.travelMode,
+      @JsonKey(name: 'eta') this.eta,
+      @JsonKey(name: 'accepted_with_no_assignment_at')
+      this.acceptedWithNoAssignmentAt})
+      : super._();
 
   factory _$IncidentUserSearchImpl.fromJson(Map<String, dynamic> json) =>
       _$$IncidentUserSearchImplFromJson(json);
@@ -330,10 +395,22 @@ class _$IncidentUserSearchImpl implements _IncidentUserSearch {
   @override
   @JsonKey(name: 'rejected_at')
   final DateTime? rejectedAt;
+  @override
+  @JsonKey(name: 'aborted_at')
+  final DateTime? abortedAt;
+  @override
+  @JsonKey(name: 'travel_mode')
+  final TransportationMethod? travelMode;
+  @override
+  @JsonKey(name: 'eta')
+  final num? eta;
+  @override
+  @JsonKey(name: 'accepted_with_no_assignment_at')
+  final DateTime? acceptedWithNoAssignmentAt;
 
   @override
   String toString() {
-    return 'IncidentUserSearch(incidentId: $incidentId, userId: $userId, distanceMeters: $distanceMeters, createdAt: $createdAt, lat: $lat, lng: $lng, status: $status, incidents: $incidents, requestedAt: $requestedAt, onIncidentStatus: $onIncidentStatus, acceptedAt: $acceptedAt, rejectedAt: $rejectedAt)';
+    return 'IncidentUserSearch(incidentId: $incidentId, userId: $userId, distanceMeters: $distanceMeters, createdAt: $createdAt, lat: $lat, lng: $lng, status: $status, incidents: $incidents, requestedAt: $requestedAt, onIncidentStatus: $onIncidentStatus, acceptedAt: $acceptedAt, rejectedAt: $rejectedAt, abortedAt: $abortedAt, travelMode: $travelMode, eta: $eta, acceptedWithNoAssignmentAt: $acceptedWithNoAssignmentAt)';
   }
 
   @override
@@ -360,7 +437,16 @@ class _$IncidentUserSearchImpl implements _IncidentUserSearch {
             (identical(other.acceptedAt, acceptedAt) ||
                 other.acceptedAt == acceptedAt) &&
             (identical(other.rejectedAt, rejectedAt) ||
-                other.rejectedAt == rejectedAt));
+                other.rejectedAt == rejectedAt) &&
+            (identical(other.abortedAt, abortedAt) ||
+                other.abortedAt == abortedAt) &&
+            (identical(other.travelMode, travelMode) ||
+                other.travelMode == travelMode) &&
+            (identical(other.eta, eta) || other.eta == eta) &&
+            (identical(other.acceptedWithNoAssignmentAt,
+                    acceptedWithNoAssignmentAt) ||
+                other.acceptedWithNoAssignmentAt ==
+                    acceptedWithNoAssignmentAt));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -378,7 +464,11 @@ class _$IncidentUserSearchImpl implements _IncidentUserSearch {
       requestedAt,
       onIncidentStatus,
       acceptedAt,
-      rejectedAt);
+      rejectedAt,
+      abortedAt,
+      travelMode,
+      eta,
+      acceptedWithNoAssignmentAt);
 
   /// Create a copy of IncidentUserSearch
   /// with the given fields replaced by the non-null parameter values.
@@ -397,7 +487,7 @@ class _$IncidentUserSearchImpl implements _IncidentUserSearch {
   }
 }
 
-abstract class _IncidentUserSearch implements IncidentUserSearch {
+abstract class _IncidentUserSearch extends IncidentUserSearch {
   const factory _IncidentUserSearch(
       {@JsonKey(name: 'incident_id') required final int incidentId,
       @JsonKey(name: 'user_id') required final String userId,
@@ -411,8 +501,13 @@ abstract class _IncidentUserSearch implements IncidentUserSearch {
       @JsonKey(name: 'on_incident_status')
       final OnIncidentStatus? onIncidentStatus,
       @JsonKey(name: 'accepted_at') final DateTime? acceptedAt,
-      @JsonKey(name: 'rejected_at')
-      final DateTime? rejectedAt}) = _$IncidentUserSearchImpl;
+      @JsonKey(name: 'rejected_at') final DateTime? rejectedAt,
+      @JsonKey(name: 'aborted_at') final DateTime? abortedAt,
+      @JsonKey(name: 'travel_mode') final TransportationMethod? travelMode,
+      @JsonKey(name: 'eta') final num? eta,
+      @JsonKey(name: 'accepted_with_no_assignment_at')
+      final DateTime? acceptedWithNoAssignmentAt}) = _$IncidentUserSearchImpl;
+  const _IncidentUserSearch._() : super._();
 
   factory _IncidentUserSearch.fromJson(Map<String, dynamic> json) =
       _$IncidentUserSearchImpl.fromJson;
@@ -453,6 +548,18 @@ abstract class _IncidentUserSearch implements IncidentUserSearch {
   @override
   @JsonKey(name: 'rejected_at')
   DateTime? get rejectedAt;
+  @override
+  @JsonKey(name: 'aborted_at')
+  DateTime? get abortedAt;
+  @override
+  @JsonKey(name: 'travel_mode')
+  TransportationMethod? get travelMode;
+  @override
+  @JsonKey(name: 'eta')
+  num? get eta;
+  @override
+  @JsonKey(name: 'accepted_with_no_assignment_at')
+  DateTime? get acceptedWithNoAssignmentAt;
 
   /// Create a copy of IncidentUserSearch
   /// with the given fields replaced by the non-null parameter values.

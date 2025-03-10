@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hatzala_platform_models/models/enums/incident_search_user_status.dart';
 import 'package:hatzala_platform_models/models/enums/on_incident_status.dart';
+import 'package:hatzala_platform_models/models/enums/transportation_method.dart';
 import 'package:hatzala_platform_models/models/incident/incident.dart';
 
 part 'incident_user_search.freezed.dart';
@@ -8,6 +9,8 @@ part 'incident_user_search.g.dart';
 
 @freezed
 class IncidentUserSearch with _$IncidentUserSearch {
+  const IncidentUserSearch._();
+
   const factory IncidentUserSearch({
     @JsonKey(name: 'incident_id') required int incidentId,
     @JsonKey(name: 'user_id') required String userId,
@@ -21,10 +24,22 @@ class IncidentUserSearch with _$IncidentUserSearch {
     @JsonKey(name: 'on_incident_status') OnIncidentStatus? onIncidentStatus,
     @JsonKey(name: 'accepted_at') DateTime? acceptedAt,
     @JsonKey(name: 'rejected_at') DateTime? rejectedAt,
+    @JsonKey(name: 'aborted_at') DateTime? abortedAt,
+    @JsonKey(name: 'travel_mode') TransportationMethod? travelMode,
+    @JsonKey(name: 'eta') num? eta,
+    @JsonKey(name: 'accepted_with_no_assignment_at')
+    DateTime? acceptedWithNoAssignmentAt,
   }) = _IncidentUserSearch;
 
   factory IncidentUserSearch.fromJson(Map<String, dynamic> json) =>
       _$IncidentUserSearchFromJson(json);
+
+  Duration? get etaDuration => _durationFromSeconds(eta);
+
+  static Duration? _durationFromSeconds(num? seconds) {
+    if (seconds == null) return null;
+    return Duration(seconds: seconds.toInt());
+  }
 
   /// Creates an IncidentUserSearch with empty user data but with the incident data
   /// This is useful for admin views where we want to show the incident but not associate it with any user

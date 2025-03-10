@@ -8,6 +8,7 @@ part 'user_search.g.dart';
 
 @freezed
 class UserSearch with _$UserSearch {
+  const UserSearch._();
   const factory UserSearch({
     @JsonKey(name: 'incident_id') required int incidentId,
     @JsonKey(name: 'user_id') required String userId,
@@ -21,15 +22,22 @@ class UserSearch with _$UserSearch {
     @JsonKey(name: 'accepted_at') required DateTime? acceptedAt,
     @JsonKey(name: 'rejected_at') required DateTime? rejectedAt,
     @JsonKey(name: 'aborted_at') required DateTime? abortedAt,
+    @JsonKey(name: 'travel_mode') required TransportationMethod? travelMode,
     @JsonKey(name: 'accepted_with_no_assignment_at')
-    required DateTime? acceptedWithNoAssignmentAt,
+    DateTime? acceptedWithNoAssignmentAt,
+    @JsonKey(name: 'eta') num? eta,
     Users? users,
   }) = _UserSearch;
 
   factory UserSearch.fromJson(Map<String, dynamic> json) =>
       _$UserSearchFromJson(json);
 
-  const UserSearch._();
+  Duration? get etaDuration => _durationFromSeconds(eta);
+
+  static Duration? _durationFromSeconds(num? seconds) {
+    if (seconds == null) return null;
+    return Duration(seconds: seconds.toInt());
+  }
 
   bool get isOnCall {
     switch (status) {

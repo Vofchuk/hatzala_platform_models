@@ -36,8 +36,8 @@ const _$FirstResponderStatusEnumMap = {
 };
 
 const _$TransportationMethodEnumMap = {
-  TransportationMethod.ON_FOOT: 'ON_FOOT',
-  TransportationMethod.BYCICLE: 'BYCICLE',
-  TransportationMethod.MOTORCYCLE: 'MOTORCYCLE',
-  TransportationMethod.CAR: 'CAR',
+  TransportationMethod.WALK: 'WALK',
+  TransportationMethod.BICYCLE: 'BICYCLE',
+  TransportationMethod.TWO_WHEELER: 'TWO_WHEELER',
+  TransportationMethod.DRIVE: 'DRIVE',
 };

@@ -29,9 +29,12 @@ _$UserSearchImpl _$$UserSearchImplFromJson(Map<String, dynamic> json) =>
       abortedAt: json['aborted_at'] == null
           ? null
           : DateTime.parse(json['aborted_at'] as String),
+      travelMode: $enumDecodeNullable(
+          _$TransportationMethodEnumMap, json['travel_mode']),
       acceptedWithNoAssignmentAt: json['accepted_with_no_assignment_at'] == null
           ? null
           : DateTime.parse(json['accepted_with_no_assignment_at'] as String),
+      eta: json['eta'] as num?,
       users: json['users'] == null
           ? null
           : Users.fromJson(json['users'] as Map<String, dynamic>),
@@ -52,8 +55,10 @@ Map<String, dynamic> _$$UserSearchImplToJson(_$UserSearchImpl instance) =>
       'accepted_at': instance.acceptedAt?.toIso8601String(),
       'rejected_at': instance.rejectedAt?.toIso8601String(),
       'aborted_at': instance.abortedAt?.toIso8601String(),
+      'travel_mode': _$TransportationMethodEnumMap[instance.travelMode],
       'accepted_with_no_assignment_at':
           instance.acceptedWithNoAssignmentAt?.toIso8601String(),
+      'eta': instance.eta,
       'users': instance.users,
     };
 
@@ -72,6 +77,13 @@ const _$OnIncidentStatusEnumMap = {
   OnIncidentStatus.GOING: 'GOING',
   OnIncidentStatus.ARRIVED: 'ARRIVED',
   OnIncidentStatus.FINISHED: 'FINISHED',
+};
+
+const _$TransportationMethodEnumMap = {
+  TransportationMethod.WALK: 'WALK',
+  TransportationMethod.BICYCLE: 'BICYCLE',
+  TransportationMethod.TWO_WHEELER: 'TWO_WHEELER',
+  TransportationMethod.DRIVE: 'DRIVE',
 };
 
 _$UsersImpl _$$UsersImplFromJson(Map<String, dynamic> json) => _$UsersImpl(

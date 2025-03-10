@@ -39,6 +39,7 @@ _$IncidentImpl _$$IncidentImplFromJson(Map<String, dynamic> json) =>
           ? null
           : ComplainType.fromJson(
               json['complain_types'] as Map<String, dynamic>),
+      streetViewImage: json['street_view_image'] as String?,
     );
 
 Map<String, dynamic> _$$IncidentImplToJson(_$IncidentImpl instance) =>
@@ -69,4 +70,5 @@ Map<String, dynamic> _$$IncidentImplToJson(_$IncidentImpl instance) =>
       'patient_unknown': instance.patientUnknown,
       'patient_name': instance.patientName,
       'complain_types': instance.complainType,
+      'street_view_image': instance.streetViewImage,
     };

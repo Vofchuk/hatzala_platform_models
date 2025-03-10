@@ -1,1 +1,6 @@
-enum TransportationMethod { ON_FOOT, BYCICLE, MOTORCYCLE, CAR }
+enum TransportationMethod {
+  WALK,
+  BICYCLE,
+  TWO_WHEELER,
+  DRIVE,
+}
