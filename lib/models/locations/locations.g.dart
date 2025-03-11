@@ -9,7 +9,7 @@ part of 'locations.dart';
 _$LocationsImpl _$$LocationsImplFromJson(Map<String, dynamic> json) =>
     _$LocationsImpl(
       userLocations: (json['userLocations'] as List<dynamic>)
-          .map((e) => UserLocation.fromJson(e as Map<String, dynamic>))
+          .map((e) => IncidentUserLocation.fromJson(e as Map<String, dynamic>))
           .toList(),
       vehicleLocations: (json['vehicleLocations'] as List<dynamic>)
           .map((e) => VehicleLocation.fromJson(e as Map<String, dynamic>))

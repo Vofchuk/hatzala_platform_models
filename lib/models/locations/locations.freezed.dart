@@ -20,7 +20,8 @@ Locations _$LocationsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Locations {
-  List<UserLocation> get userLocations => throw _privateConstructorUsedError;
+  List<IncidentUserLocation> get userLocations =>
+      throw _privateConstructorUsedError;
   List<VehicleLocation> get vehicleLocations =>
       throw _privateConstructorUsedError;
 
@@ -40,7 +41,7 @@ abstract class $LocationsCopyWith<$Res> {
       _$LocationsCopyWithImpl<$Res, Locations>;
   @useResult
   $Res call(
-      {List<UserLocation> userLocations,
+      {List<IncidentUserLocation> userLocations,
       List<VehicleLocation> vehicleLocations});
 }
 
@@ -66,7 +67,7 @@ class _$LocationsCopyWithImpl<$Res, $Val extends Locations>
       userLocations: null == userLocations
           ? _value.userLocations
           : userLocations // ignore: cast_nullable_to_non_nullable
-              as List<UserLocation>,
+              as List<IncidentUserLocation>,
       vehicleLocations: null == vehicleLocations
           ? _value.vehicleLocations
           : vehicleLocations // ignore: cast_nullable_to_non_nullable
@@ -84,7 +85,7 @@ abstract class _$$LocationsImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<UserLocation> userLocations,
+      {List<IncidentUserLocation> userLocations,
       List<VehicleLocation> vehicleLocations});
 }
 
@@ -108,7 +109,7 @@ class __$$LocationsImplCopyWithImpl<$Res>
       userLocations: null == userLocations
           ? _value._userLocations
           : userLocations // ignore: cast_nullable_to_non_nullable
-              as List<UserLocation>,
+              as List<IncidentUserLocation>,
       vehicleLocations: null == vehicleLocations
           ? _value._vehicleLocations
           : vehicleLocations // ignore: cast_nullable_to_non_nullable
@@ -121,7 +122,7 @@ class __$$LocationsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$LocationsImpl implements _Locations {
   const _$LocationsImpl(
-      {required final List<UserLocation> userLocations,
+      {required final List<IncidentUserLocation> userLocations,
       required final List<VehicleLocation> vehicleLocations})
       : _userLocations = userLocations,
         _vehicleLocations = vehicleLocations;
@@ -129,9 +130,9 @@ class _$LocationsImpl implements _Locations {
   factory _$LocationsImpl.fromJson(Map<String, dynamic> json) =>
       _$$LocationsImplFromJson(json);
 
-  final List<UserLocation> _userLocations;
+  final List<IncidentUserLocation> _userLocations;
   @override
-  List<UserLocation> get userLocations {
+  List<IncidentUserLocation> get userLocations {
     if (_userLocations is EqualUnmodifiableListView) return _userLocations;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_userLocations);
@@ -187,14 +188,14 @@ class _$LocationsImpl implements _Locations {
 
 abstract class _Locations implements Locations {
   const factory _Locations(
-      {required final List<UserLocation> userLocations,
+      {required final List<IncidentUserLocation> userLocations,
       required final List<VehicleLocation> vehicleLocations}) = _$LocationsImpl;
 
   factory _Locations.fromJson(Map<String, dynamic> json) =
       _$LocationsImpl.fromJson;
 
   @override
-  List<UserLocation> get userLocations;
+  List<IncidentUserLocation> get userLocations;
   @override
   List<VehicleLocation> get vehicleLocations;
 

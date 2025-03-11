@@ -20,17 +20,14 @@ UserLocation _$UserLocationFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserLocation {
-  String? get name => throw _privateConstructorUsedError;
-  @JsonKey(name: 'first_responder_status')
-  FirstResponderStatus get firstResponderStatus =>
-      throw _privateConstructorUsedError;
-  @JsonKey(name: 'transportation_method')
-  TransportationMethod get transportationMethod =>
-      throw _privateConstructorUsedError;
-  double get lat => throw _privateConstructorUsedError;
-  double get lng => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'updated_at')
   DateTime get updatedAt => throw _privateConstructorUsedError;
+  double get lat => throw _privateConstructorUsedError;
+  double get lng => throw _privateConstructorUsedError;
+  @JsonKey(name: 'transportation_method')
+  TransportationMethod? get transportationMethod =>
+      throw _privateConstructorUsedError;
 
   /// Serializes this UserLocation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -49,14 +46,12 @@ abstract class $UserLocationCopyWith<$Res> {
       _$UserLocationCopyWithImpl<$Res, UserLocation>;
   @useResult
   $Res call(
-      {String? name,
-      @JsonKey(name: 'first_responder_status')
-      FirstResponderStatus firstResponderStatus,
-      @JsonKey(name: 'transportation_method')
-      TransportationMethod transportationMethod,
+      {String id,
+      @JsonKey(name: 'updated_at') DateTime updatedAt,
       double lat,
       double lng,
-      @JsonKey(name: 'updated_at') DateTime updatedAt});
+      @JsonKey(name: 'transportation_method')
+      TransportationMethod? transportationMethod});
 }
 
 /// @nodoc
@@ -74,26 +69,21 @@ class _$UserLocationCopyWithImpl<$Res, $Val extends UserLocation>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? firstResponderStatus = null,
-    Object? transportationMethod = null,
+    Object? id = null,
+    Object? updatedAt = null,
     Object? lat = null,
     Object? lng = null,
-    Object? updatedAt = null,
+    Object? transportationMethod = freezed,
   }) {
     return _then(_value.copyWith(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      firstResponderStatus: null == firstResponderStatus
-          ? _value.firstResponderStatus
-          : firstResponderStatus // ignore: cast_nullable_to_non_nullable
-              as FirstResponderStatus,
-      transportationMethod: null == transportationMethod
-          ? _value.transportationMethod
-          : transportationMethod // ignore: cast_nullable_to_non_nullable
-              as TransportationMethod,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       lat: null == lat
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
@@ -102,10 +92,10 @@ class _$UserLocationCopyWithImpl<$Res, $Val extends UserLocation>
           ? _value.lng
           : lng // ignore: cast_nullable_to_non_nullable
               as double,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+      transportationMethod: freezed == transportationMethod
+          ? _value.transportationMethod
+          : transportationMethod // ignore: cast_nullable_to_non_nullable
+              as TransportationMethod?,
     ) as $Val);
   }
 }
@@ -119,14 +109,12 @@ abstract class _$$UserLocationImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? name,
-      @JsonKey(name: 'first_responder_status')
-      FirstResponderStatus firstResponderStatus,
-      @JsonKey(name: 'transportation_method')
-      TransportationMethod transportationMethod,
+      {String id,
+      @JsonKey(name: 'updated_at') DateTime updatedAt,
       double lat,
       double lng,
-      @JsonKey(name: 'updated_at') DateTime updatedAt});
+      @JsonKey(name: 'transportation_method')
+      TransportationMethod? transportationMethod});
 }
 
 /// @nodoc
@@ -142,26 +130,21 @@ class __$$UserLocationImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? firstResponderStatus = null,
-    Object? transportationMethod = null,
+    Object? id = null,
+    Object? updatedAt = null,
     Object? lat = null,
     Object? lng = null,
-    Object? updatedAt = null,
+    Object? transportationMethod = freezed,
   }) {
     return _then(_$UserLocationImpl(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      firstResponderStatus: null == firstResponderStatus
-          ? _value.firstResponderStatus
-          : firstResponderStatus // ignore: cast_nullable_to_non_nullable
-              as FirstResponderStatus,
-      transportationMethod: null == transportationMethod
-          ? _value.transportationMethod
-          : transportationMethod // ignore: cast_nullable_to_non_nullable
-              as TransportationMethod,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       lat: null == lat
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
@@ -170,49 +153,44 @@ class __$$UserLocationImplCopyWithImpl<$Res>
           ? _value.lng
           : lng // ignore: cast_nullable_to_non_nullable
               as double,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+      transportationMethod: freezed == transportationMethod
+          ? _value.transportationMethod
+          : transportationMethod // ignore: cast_nullable_to_non_nullable
+              as TransportationMethod?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$UserLocationImpl implements _UserLocation {
+class _$UserLocationImpl extends _UserLocation {
   const _$UserLocationImpl(
-      {required this.name,
-      @JsonKey(name: 'first_responder_status')
-      required this.firstResponderStatus,
-      @JsonKey(name: 'transportation_method')
-      required this.transportationMethod,
+      {required this.id,
+      @JsonKey(name: 'updated_at') required this.updatedAt,
       required this.lat,
       required this.lng,
-      @JsonKey(name: 'updated_at') required this.updatedAt});
+      @JsonKey(name: 'transportation_method') this.transportationMethod})
+      : super._();
 
   factory _$UserLocationImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserLocationImplFromJson(json);
 
   @override
-  final String? name;
+  final String id;
   @override
-  @JsonKey(name: 'first_responder_status')
-  final FirstResponderStatus firstResponderStatus;
-  @override
-  @JsonKey(name: 'transportation_method')
-  final TransportationMethod transportationMethod;
+  @JsonKey(name: 'updated_at')
+  final DateTime updatedAt;
   @override
   final double lat;
   @override
   final double lng;
   @override
-  @JsonKey(name: 'updated_at')
-  final DateTime updatedAt;
+  @JsonKey(name: 'transportation_method')
+  final TransportationMethod? transportationMethod;
 
   @override
   String toString() {
-    return 'UserLocation(name: $name, firstResponderStatus: $firstResponderStatus, transportationMethod: $transportationMethod, lat: $lat, lng: $lng, updatedAt: $updatedAt)';
+    return 'UserLocation(id: $id, updatedAt: $updatedAt, lat: $lat, lng: $lng, transportationMethod: $transportationMethod)';
   }
 
   @override
@@ -220,21 +198,19 @@ class _$UserLocationImpl implements _UserLocation {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserLocationImpl &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.firstResponderStatus, firstResponderStatus) ||
-                other.firstResponderStatus == firstResponderStatus) &&
-            (identical(other.transportationMethod, transportationMethod) ||
-                other.transportationMethod == transportationMethod) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
             (identical(other.lat, lat) || other.lat == lat) &&
             (identical(other.lng, lng) || other.lng == lng) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
+            (identical(other.transportationMethod, transportationMethod) ||
+                other.transportationMethod == transportationMethod));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, name, firstResponderStatus,
-      transportationMethod, lat, lng, updatedAt);
+  int get hashCode =>
+      Object.hash(runtimeType, id, updatedAt, lat, lng, transportationMethod);
 
   /// Create a copy of UserLocation
   /// with the given fields replaced by the non-null parameter values.
@@ -252,36 +228,31 @@ class _$UserLocationImpl implements _UserLocation {
   }
 }
 
-abstract class _UserLocation implements UserLocation {
+abstract class _UserLocation extends UserLocation {
   const factory _UserLocation(
-          {required final String? name,
-          @JsonKey(name: 'first_responder_status')
-          required final FirstResponderStatus firstResponderStatus,
-          @JsonKey(name: 'transportation_method')
-          required final TransportationMethod transportationMethod,
-          required final double lat,
-          required final double lng,
-          @JsonKey(name: 'updated_at') required final DateTime updatedAt}) =
-      _$UserLocationImpl;
+      {required final String id,
+      @JsonKey(name: 'updated_at') required final DateTime updatedAt,
+      required final double lat,
+      required final double lng,
+      @JsonKey(name: 'transportation_method')
+      final TransportationMethod? transportationMethod}) = _$UserLocationImpl;
+  const _UserLocation._() : super._();
 
   factory _UserLocation.fromJson(Map<String, dynamic> json) =
       _$UserLocationImpl.fromJson;
 
   @override
-  String? get name;
+  String get id;
   @override
-  @JsonKey(name: 'first_responder_status')
-  FirstResponderStatus get firstResponderStatus;
-  @override
-  @JsonKey(name: 'transportation_method')
-  TransportationMethod get transportationMethod;
+  @JsonKey(name: 'updated_at')
+  DateTime get updatedAt;
   @override
   double get lat;
   @override
   double get lng;
   @override
-  @JsonKey(name: 'updated_at')
-  DateTime get updatedAt;
+  @JsonKey(name: 'transportation_method')
+  TransportationMethod? get transportationMethod;
 
   /// Create a copy of UserLocation
   /// with the given fields replaced by the non-null parameter values.
