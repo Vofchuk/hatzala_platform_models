@@ -12,7 +12,7 @@ _$LocationsImpl _$$LocationsImplFromJson(Map<String, dynamic> json) =>
           .map((e) => IncidentUserLocation.fromJson(e as Map<String, dynamic>))
           .toList(),
       vehicleLocations: (json['vehicleLocations'] as List<dynamic>)
-          .map((e) => VehicleLocation.fromJson(e as Map<String, dynamic>))
+          .map((e) => VehicleLocationData.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

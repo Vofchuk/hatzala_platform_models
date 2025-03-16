@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'geo_location.dart';
+part of 'user_geo_location.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,30 +14,30 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-GeoLocation _$GeoLocationFromJson(Map<String, dynamic> json) {
-  return _GeoLocation.fromJson(json);
+UserGeoLocation _$UserGeoLocationFromJson(Map<String, dynamic> json) {
+  return _UserGeoLocation.fromJson(json);
 }
 
 /// @nodoc
-mixin _$GeoLocation {
+mixin _$UserGeoLocation {
   Location get location => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
 
-  /// Serializes this GeoLocation to a JSON map.
+  /// Serializes this UserGeoLocation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of GeoLocation
+  /// Create a copy of UserGeoLocation
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $GeoLocationCopyWith<GeoLocation> get copyWith =>
+  $UserGeoLocationCopyWith<UserGeoLocation> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GeoLocationCopyWith<$Res> {
-  factory $GeoLocationCopyWith(
-          GeoLocation value, $Res Function(GeoLocation) then) =
-      _$GeoLocationCopyWithImpl<$Res, GeoLocation>;
+abstract class $UserGeoLocationCopyWith<$Res> {
+  factory $UserGeoLocationCopyWith(
+          UserGeoLocation value, $Res Function(UserGeoLocation) then) =
+      _$UserGeoLocationCopyWithImpl<$Res, UserGeoLocation>;
   @useResult
   $Res call({Location location, String userId});
 
@@ -45,16 +45,16 @@ abstract class $GeoLocationCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$GeoLocationCopyWithImpl<$Res, $Val extends GeoLocation>
-    implements $GeoLocationCopyWith<$Res> {
-  _$GeoLocationCopyWithImpl(this._value, this._then);
+class _$UserGeoLocationCopyWithImpl<$Res, $Val extends UserGeoLocation>
+    implements $UserGeoLocationCopyWith<$Res> {
+  _$UserGeoLocationCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of GeoLocation
+  /// Create a copy of UserGeoLocation
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -74,7 +74,7 @@ class _$GeoLocationCopyWithImpl<$Res, $Val extends GeoLocation>
     ) as $Val);
   }
 
-  /// Create a copy of GeoLocation
+  /// Create a copy of UserGeoLocation
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -86,11 +86,11 @@ class _$GeoLocationCopyWithImpl<$Res, $Val extends GeoLocation>
 }
 
 /// @nodoc
-abstract class _$$GeoLocationImplCopyWith<$Res>
-    implements $GeoLocationCopyWith<$Res> {
-  factory _$$GeoLocationImplCopyWith(
-          _$GeoLocationImpl value, $Res Function(_$GeoLocationImpl) then) =
-      __$$GeoLocationImplCopyWithImpl<$Res>;
+abstract class _$$UserGeoLocationImplCopyWith<$Res>
+    implements $UserGeoLocationCopyWith<$Res> {
+  factory _$$UserGeoLocationImplCopyWith(_$UserGeoLocationImpl value,
+          $Res Function(_$UserGeoLocationImpl) then) =
+      __$$UserGeoLocationImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Location location, String userId});
@@ -100,14 +100,14 @@ abstract class _$$GeoLocationImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GeoLocationImplCopyWithImpl<$Res>
-    extends _$GeoLocationCopyWithImpl<$Res, _$GeoLocationImpl>
-    implements _$$GeoLocationImplCopyWith<$Res> {
-  __$$GeoLocationImplCopyWithImpl(
-      _$GeoLocationImpl _value, $Res Function(_$GeoLocationImpl) _then)
+class __$$UserGeoLocationImplCopyWithImpl<$Res>
+    extends _$UserGeoLocationCopyWithImpl<$Res, _$UserGeoLocationImpl>
+    implements _$$UserGeoLocationImplCopyWith<$Res> {
+  __$$UserGeoLocationImplCopyWithImpl(
+      _$UserGeoLocationImpl _value, $Res Function(_$UserGeoLocationImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of GeoLocation
+  /// Create a copy of UserGeoLocation
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -115,7 +115,7 @@ class __$$GeoLocationImplCopyWithImpl<$Res>
     Object? location = null,
     Object? userId = null,
   }) {
-    return _then(_$GeoLocationImpl(
+    return _then(_$UserGeoLocationImpl(
       location: null == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
@@ -130,11 +130,11 @@ class __$$GeoLocationImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GeoLocationImpl implements _GeoLocation {
-  const _$GeoLocationImpl({required this.location, required this.userId});
+class _$UserGeoLocationImpl implements _UserGeoLocation {
+  const _$UserGeoLocationImpl({required this.location, required this.userId});
 
-  factory _$GeoLocationImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GeoLocationImplFromJson(json);
+  factory _$UserGeoLocationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserGeoLocationImplFromJson(json);
 
   @override
   final Location location;
@@ -143,14 +143,14 @@ class _$GeoLocationImpl implements _GeoLocation {
 
   @override
   String toString() {
-    return 'GeoLocation(location: $location, userId: $userId)';
+    return 'UserGeoLocation(location: $location, userId: $userId)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GeoLocationImpl &&
+            other is _$UserGeoLocationImpl &&
             (identical(other.location, location) ||
                 other.location == location) &&
             (identical(other.userId, userId) || other.userId == userId));
@@ -160,40 +160,41 @@ class _$GeoLocationImpl implements _GeoLocation {
   @override
   int get hashCode => Object.hash(runtimeType, location, userId);
 
-  /// Create a copy of GeoLocation
+  /// Create a copy of UserGeoLocation
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$GeoLocationImplCopyWith<_$GeoLocationImpl> get copyWith =>
-      __$$GeoLocationImplCopyWithImpl<_$GeoLocationImpl>(this, _$identity);
+  _$$UserGeoLocationImplCopyWith<_$UserGeoLocationImpl> get copyWith =>
+      __$$UserGeoLocationImplCopyWithImpl<_$UserGeoLocationImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$GeoLocationImplToJson(
+    return _$$UserGeoLocationImplToJson(
       this,
     );
   }
 }
 
-abstract class _GeoLocation implements GeoLocation {
-  const factory _GeoLocation(
+abstract class _UserGeoLocation implements UserGeoLocation {
+  const factory _UserGeoLocation(
       {required final Location location,
-      required final String userId}) = _$GeoLocationImpl;
+      required final String userId}) = _$UserGeoLocationImpl;
 
-  factory _GeoLocation.fromJson(Map<String, dynamic> json) =
-      _$GeoLocationImpl.fromJson;
+  factory _UserGeoLocation.fromJson(Map<String, dynamic> json) =
+      _$UserGeoLocationImpl.fromJson;
 
   @override
   Location get location;
   @override
   String get userId;
 
-  /// Create a copy of GeoLocation
+  /// Create a copy of UserGeoLocation
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GeoLocationImplCopyWith<_$GeoLocationImpl> get copyWith =>
+  _$$UserGeoLocationImplCopyWith<_$UserGeoLocationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

@@ -14,7 +14,7 @@ class User with _$User {
   const factory User({
     required String id,
     required String name,
-    required bool available,
+    // required bool available,
     @JsonKey(name: 'user_type') required UserType userType,
     required bool admin,
     @JsonKey(name: 'first_responder_status')
@@ -29,6 +29,14 @@ class User with _$User {
     bool? active,
     @JsonKey(name: 'pushy_tokens') List<PushyToken>? pushyTokens,
   }) = _User;
+
+  const User._();
+
+  bool get isFirstResponder => userType == UserType.FIRST_RESPONDER;
+  bool get isVehicleCrew =>
+      userType == UserType.DRIVER ||
+      userType == UserType.NURSE ||
+      userType == UserType.MEDIC;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 }

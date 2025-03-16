@@ -1,18 +1,18 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hatzala_platform_models/hatzala_platform_models.dart';
 
-part 'geo_location.freezed.dart';
-part 'geo_location.g.dart';
+part 'user_geo_location.freezed.dart';
+part 'user_geo_location.g.dart';
 
 @freezed
-class GeoLocation with _$GeoLocation {
-  const factory GeoLocation({
+class UserGeoLocation with _$UserGeoLocation {
+  const factory UserGeoLocation({
     required Location location,
     required String userId,
-  }) = _GeoLocation;
+  }) = _UserGeoLocation;
 
-  factory GeoLocation.fromJson(Map<String, dynamic> json) =>
-      _$GeoLocationFromJson(json);
+  factory UserGeoLocation.fromJson(Map<String, dynamic> json) =>
+      _$UserGeoLocationFromJson(json);
 }
 
 @freezed

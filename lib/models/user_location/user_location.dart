@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../enums/transportation_method.dart';
-import '../geo_location/geo_location.dart';
+import '../user_geo_location/user_geo_location.dart';
 
 part 'user_location.freezed.dart';
 part 'user_location.g.dart';
@@ -19,7 +19,8 @@ class UserLocation with _$UserLocation {
 
   const UserLocation._();
 
-  factory UserLocation.fromGeoLocation(GeoLocation geoLocation) => UserLocation(
+  factory UserLocation.fromGeoLocation(UserGeoLocation geoLocation) =>
+      UserLocation(
         id: geoLocation.userId,
         updatedAt: geoLocation.location.timestamp,
         lat: geoLocation.location.coords.latitude,

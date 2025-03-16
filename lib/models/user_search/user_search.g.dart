@@ -26,9 +26,21 @@ _$UserSearchImpl _$$UserSearchImplFromJson(Map<String, dynamic> json) =>
       rejectedAt: json['rejected_at'] == null
           ? null
           : DateTime.parse(json['rejected_at'] as String),
+      expiredAt: json['expired_at'] == null
+          ? null
+          : DateTime.parse(json['expired_at'] as String),
       abortedAt: json['aborted_at'] == null
           ? null
           : DateTime.parse(json['aborted_at'] as String),
+      goingAt: json['going_at'] == null
+          ? null
+          : DateTime.parse(json['going_at'] as String),
+      arrivedAt: json['arrived_at'] == null
+          ? null
+          : DateTime.parse(json['arrived_at'] as String),
+      finishedAt: json['finished_at'] == null
+          ? null
+          : DateTime.parse(json['finished_at'] as String),
       travelMode: $enumDecodeNullable(
           _$TransportationMethodEnumMap, json['travel_mode']),
       acceptedWithNoAssignmentAt: json['accepted_with_no_assignment_at'] == null
@@ -54,7 +66,11 @@ Map<String, dynamic> _$$UserSearchImplToJson(_$UserSearchImpl instance) =>
       'requested_at': instance.requestedAt?.toIso8601String(),
       'accepted_at': instance.acceptedAt?.toIso8601String(),
       'rejected_at': instance.rejectedAt?.toIso8601String(),
+      'expired_at': instance.expiredAt?.toIso8601String(),
       'aborted_at': instance.abortedAt?.toIso8601String(),
+      'going_at': instance.goingAt?.toIso8601String(),
+      'arrived_at': instance.arrivedAt?.toIso8601String(),
+      'finished_at': instance.finishedAt?.toIso8601String(),
       'travel_mode': _$TransportationMethodEnumMap[instance.travelMode],
       'accepted_with_no_assignment_at':
           instance.acceptedWithNoAssignmentAt?.toIso8601String(),

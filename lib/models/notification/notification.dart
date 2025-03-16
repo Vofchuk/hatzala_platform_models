@@ -59,4 +59,5 @@ class HatzalaNotification with _$HatzalaNotification {
 
 enum NotificationType {
   NEW_INCIDENT_USER_REQUESTED,
+  VEHICLE_DISPATCHED,
 }

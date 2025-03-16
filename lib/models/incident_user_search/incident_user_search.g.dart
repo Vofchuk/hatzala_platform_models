@@ -22,6 +22,18 @@ _$IncidentUserSearchImpl _$$IncidentUserSearchImplFromJson(
           : DateTime.parse(json['requested_at'] as String),
       onIncidentStatus: $enumDecodeNullable(
           _$OnIncidentStatusEnumMap, json['on_incident_status']),
+      goingAt: json['going_at'] == null
+          ? null
+          : DateTime.parse(json['going_at'] as String),
+      arrivedAt: json['arrived_at'] == null
+          ? null
+          : DateTime.parse(json['arrived_at'] as String),
+      expiredAt: json['expired_at'] == null
+          ? null
+          : DateTime.parse(json['expired_at'] as String),
+      finishedAt: json['finished_at'] == null
+          ? null
+          : DateTime.parse(json['finished_at'] as String),
       acceptedAt: json['accepted_at'] == null
           ? null
           : DateTime.parse(json['accepted_at'] as String),
@@ -53,6 +65,10 @@ Map<String, dynamic> _$$IncidentUserSearchImplToJson(
       'requested_at': instance.requestedAt?.toIso8601String(),
       'on_incident_status':
           _$OnIncidentStatusEnumMap[instance.onIncidentStatus],
+      'going_at': instance.goingAt?.toIso8601String(),
+      'arrived_at': instance.arrivedAt?.toIso8601String(),
+      'expired_at': instance.expiredAt?.toIso8601String(),
+      'finished_at': instance.finishedAt?.toIso8601String(),
       'accepted_at': instance.acceptedAt?.toIso8601String(),
       'rejected_at': instance.rejectedAt?.toIso8601String(),
       'aborted_at': instance.abortedAt?.toIso8601String(),

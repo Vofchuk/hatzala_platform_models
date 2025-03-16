@@ -21,8 +21,8 @@ User _$UserFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$User {
   String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  bool get available => throw _privateConstructorUsedError;
+  String get name =>
+      throw _privateConstructorUsedError; // required bool available,
   @JsonKey(name: 'user_type')
   UserType get userType => throw _privateConstructorUsedError;
   bool get admin => throw _privateConstructorUsedError;
@@ -58,7 +58,6 @@ abstract class $UserCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      bool available,
       @JsonKey(name: 'user_type') UserType userType,
       bool admin,
       @JsonKey(name: 'first_responder_status')
@@ -90,7 +89,6 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? available = null,
     Object? userType = null,
     Object? admin = null,
     Object? firstResponderStatus = null,
@@ -112,10 +110,6 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      available: null == available
-          ? _value.available
-          : available // ignore: cast_nullable_to_non_nullable
-              as bool,
       userType: null == userType
           ? _value.userType
           : userType // ignore: cast_nullable_to_non_nullable
@@ -174,7 +168,6 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      bool available,
       @JsonKey(name: 'user_type') UserType userType,
       bool admin,
       @JsonKey(name: 'first_responder_status')
@@ -203,7 +196,6 @@ class __$$UserImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? available = null,
     Object? userType = null,
     Object? admin = null,
     Object? firstResponderStatus = null,
@@ -225,10 +217,6 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      available: null == available
-          ? _value.available
-          : available // ignore: cast_nullable_to_non_nullable
-              as bool,
       userType: null == userType
           ? _value.userType
           : userType // ignore: cast_nullable_to_non_nullable
@@ -279,11 +267,10 @@ class __$$UserImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$UserImpl implements _User {
+class _$UserImpl extends _User {
   const _$UserImpl(
       {required this.id,
       required this.name,
-      required this.available,
       @JsonKey(name: 'user_type') required this.userType,
       required this.admin,
       @JsonKey(name: 'first_responder_status')
@@ -297,7 +284,8 @@ class _$UserImpl implements _User {
       this.obs,
       this.active,
       @JsonKey(name: 'pushy_tokens') final List<PushyToken>? pushyTokens})
-      : _pushyTokens = pushyTokens;
+      : _pushyTokens = pushyTokens,
+        super._();
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserImplFromJson(json);
@@ -306,8 +294,7 @@ class _$UserImpl implements _User {
   final String id;
   @override
   final String name;
-  @override
-  final bool available;
+// required bool available,
   @override
   @JsonKey(name: 'user_type')
   final UserType userType;
@@ -345,7 +332,7 @@ class _$UserImpl implements _User {
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, available: $available, userType: $userType, admin: $admin, firstResponderStatus: $firstResponderStatus, availableAtNight: $availableAtNight, transportationMethod: $transportationMethod, cpf: $cpf, phone: $phone, veteran: $veteran, obs: $obs, active: $active, pushyTokens: $pushyTokens)';
+    return 'User(id: $id, name: $name, userType: $userType, admin: $admin, firstResponderStatus: $firstResponderStatus, availableAtNight: $availableAtNight, transportationMethod: $transportationMethod, cpf: $cpf, phone: $phone, veteran: $veteran, obs: $obs, active: $active, pushyTokens: $pushyTokens)';
   }
 
   @override
@@ -355,8 +342,6 @@ class _$UserImpl implements _User {
             other is _$UserImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.available, available) ||
-                other.available == available) &&
             (identical(other.userType, userType) ||
                 other.userType == userType) &&
             (identical(other.admin, admin) || other.admin == admin) &&
@@ -381,7 +366,6 @@ class _$UserImpl implements _User {
       runtimeType,
       id,
       name,
-      available,
       userType,
       admin,
       firstResponderStatus,
@@ -410,11 +394,10 @@ class _$UserImpl implements _User {
   }
 }
 
-abstract class _User implements User {
+abstract class _User extends User {
   const factory _User(
       {required final String id,
       required final String name,
-      required final bool available,
       @JsonKey(name: 'user_type') required final UserType userType,
       required final bool admin,
       @JsonKey(name: 'first_responder_status')
@@ -429,15 +412,14 @@ abstract class _User implements User {
       final bool? active,
       @JsonKey(name: 'pushy_tokens')
       final List<PushyToken>? pushyTokens}) = _$UserImpl;
+  const _User._() : super._();
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
   @override
   String get id;
   @override
-  String get name;
-  @override
-  bool get available;
+  String get name; // required bool available,
   @override
   @JsonKey(name: 'user_type')
   UserType get userType;

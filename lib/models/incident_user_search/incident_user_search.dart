@@ -22,6 +22,10 @@ class IncidentUserSearch with _$IncidentUserSearch {
     @JsonKey(name: 'incidents') required Incident incidents,
     @JsonKey(name: 'requested_at') DateTime? requestedAt,
     @JsonKey(name: 'on_incident_status') OnIncidentStatus? onIncidentStatus,
+    @JsonKey(name: 'going_at') DateTime? goingAt,
+    @JsonKey(name: 'arrived_at') DateTime? arrivedAt,
+    @JsonKey(name: 'expired_at') DateTime? expiredAt,
+    @JsonKey(name: 'finished_at') DateTime? finishedAt,
     @JsonKey(name: 'accepted_at') DateTime? acceptedAt,
     @JsonKey(name: 'rejected_at') DateTime? rejectedAt,
     @JsonKey(name: 'aborted_at') DateTime? abortedAt,
@@ -30,6 +34,8 @@ class IncidentUserSearch with _$IncidentUserSearch {
     @JsonKey(name: 'accepted_with_no_assignment_at')
     DateTime? acceptedWithNoAssignmentAt,
   }) = _IncidentUserSearch;
+
+  bool get isParticipant => status == SearchUserStatus.ACCEPTED;
 
   factory IncidentUserSearch.fromJson(Map<String, dynamic> json) =>
       _$IncidentUserSearchFromJson(json);

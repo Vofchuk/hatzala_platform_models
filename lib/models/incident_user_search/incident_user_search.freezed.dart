@@ -40,6 +40,14 @@ mixin _$IncidentUserSearch {
   DateTime? get requestedAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'on_incident_status')
   OnIncidentStatus? get onIncidentStatus => throw _privateConstructorUsedError;
+  @JsonKey(name: 'going_at')
+  DateTime? get goingAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'arrived_at')
+  DateTime? get arrivedAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'expired_at')
+  DateTime? get expiredAt => throw _privateConstructorUsedError;
+  @JsonKey(name: 'finished_at')
+  DateTime? get finishedAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'accepted_at')
   DateTime? get acceptedAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'rejected_at')
@@ -81,6 +89,10 @@ abstract class $IncidentUserSearchCopyWith<$Res> {
       @JsonKey(name: 'incidents') Incident incidents,
       @JsonKey(name: 'requested_at') DateTime? requestedAt,
       @JsonKey(name: 'on_incident_status') OnIncidentStatus? onIncidentStatus,
+      @JsonKey(name: 'going_at') DateTime? goingAt,
+      @JsonKey(name: 'arrived_at') DateTime? arrivedAt,
+      @JsonKey(name: 'expired_at') DateTime? expiredAt,
+      @JsonKey(name: 'finished_at') DateTime? finishedAt,
       @JsonKey(name: 'accepted_at') DateTime? acceptedAt,
       @JsonKey(name: 'rejected_at') DateTime? rejectedAt,
       @JsonKey(name: 'aborted_at') DateTime? abortedAt,
@@ -117,6 +129,10 @@ class _$IncidentUserSearchCopyWithImpl<$Res, $Val extends IncidentUserSearch>
     Object? incidents = null,
     Object? requestedAt = freezed,
     Object? onIncidentStatus = freezed,
+    Object? goingAt = freezed,
+    Object? arrivedAt = freezed,
+    Object? expiredAt = freezed,
+    Object? finishedAt = freezed,
     Object? acceptedAt = freezed,
     Object? rejectedAt = freezed,
     Object? abortedAt = freezed,
@@ -165,6 +181,22 @@ class _$IncidentUserSearchCopyWithImpl<$Res, $Val extends IncidentUserSearch>
           ? _value.onIncidentStatus
           : onIncidentStatus // ignore: cast_nullable_to_non_nullable
               as OnIncidentStatus?,
+      goingAt: freezed == goingAt
+          ? _value.goingAt
+          : goingAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      arrivedAt: freezed == arrivedAt
+          ? _value.arrivedAt
+          : arrivedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      expiredAt: freezed == expiredAt
+          ? _value.expiredAt
+          : expiredAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      finishedAt: freezed == finishedAt
+          ? _value.finishedAt
+          : finishedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       acceptedAt: freezed == acceptedAt
           ? _value.acceptedAt
           : acceptedAt // ignore: cast_nullable_to_non_nullable
@@ -222,6 +254,10 @@ abstract class _$$IncidentUserSearchImplCopyWith<$Res>
       @JsonKey(name: 'incidents') Incident incidents,
       @JsonKey(name: 'requested_at') DateTime? requestedAt,
       @JsonKey(name: 'on_incident_status') OnIncidentStatus? onIncidentStatus,
+      @JsonKey(name: 'going_at') DateTime? goingAt,
+      @JsonKey(name: 'arrived_at') DateTime? arrivedAt,
+      @JsonKey(name: 'expired_at') DateTime? expiredAt,
+      @JsonKey(name: 'finished_at') DateTime? finishedAt,
       @JsonKey(name: 'accepted_at') DateTime? acceptedAt,
       @JsonKey(name: 'rejected_at') DateTime? rejectedAt,
       @JsonKey(name: 'aborted_at') DateTime? abortedAt,
@@ -257,6 +293,10 @@ class __$$IncidentUserSearchImplCopyWithImpl<$Res>
     Object? incidents = null,
     Object? requestedAt = freezed,
     Object? onIncidentStatus = freezed,
+    Object? goingAt = freezed,
+    Object? arrivedAt = freezed,
+    Object? expiredAt = freezed,
+    Object? finishedAt = freezed,
     Object? acceptedAt = freezed,
     Object? rejectedAt = freezed,
     Object? abortedAt = freezed,
@@ -305,6 +345,22 @@ class __$$IncidentUserSearchImplCopyWithImpl<$Res>
           ? _value.onIncidentStatus
           : onIncidentStatus // ignore: cast_nullable_to_non_nullable
               as OnIncidentStatus?,
+      goingAt: freezed == goingAt
+          ? _value.goingAt
+          : goingAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      arrivedAt: freezed == arrivedAt
+          ? _value.arrivedAt
+          : arrivedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      expiredAt: freezed == expiredAt
+          ? _value.expiredAt
+          : expiredAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      finishedAt: freezed == finishedAt
+          ? _value.finishedAt
+          : finishedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       acceptedAt: freezed == acceptedAt
           ? _value.acceptedAt
           : acceptedAt // ignore: cast_nullable_to_non_nullable
@@ -347,6 +403,10 @@ class _$IncidentUserSearchImpl extends _IncidentUserSearch {
       @JsonKey(name: 'incidents') required this.incidents,
       @JsonKey(name: 'requested_at') this.requestedAt,
       @JsonKey(name: 'on_incident_status') this.onIncidentStatus,
+      @JsonKey(name: 'going_at') this.goingAt,
+      @JsonKey(name: 'arrived_at') this.arrivedAt,
+      @JsonKey(name: 'expired_at') this.expiredAt,
+      @JsonKey(name: 'finished_at') this.finishedAt,
       @JsonKey(name: 'accepted_at') this.acceptedAt,
       @JsonKey(name: 'rejected_at') this.rejectedAt,
       @JsonKey(name: 'aborted_at') this.abortedAt,
@@ -390,6 +450,18 @@ class _$IncidentUserSearchImpl extends _IncidentUserSearch {
   @JsonKey(name: 'on_incident_status')
   final OnIncidentStatus? onIncidentStatus;
   @override
+  @JsonKey(name: 'going_at')
+  final DateTime? goingAt;
+  @override
+  @JsonKey(name: 'arrived_at')
+  final DateTime? arrivedAt;
+  @override
+  @JsonKey(name: 'expired_at')
+  final DateTime? expiredAt;
+  @override
+  @JsonKey(name: 'finished_at')
+  final DateTime? finishedAt;
+  @override
   @JsonKey(name: 'accepted_at')
   final DateTime? acceptedAt;
   @override
@@ -410,7 +482,7 @@ class _$IncidentUserSearchImpl extends _IncidentUserSearch {
 
   @override
   String toString() {
-    return 'IncidentUserSearch(incidentId: $incidentId, userId: $userId, distanceMeters: $distanceMeters, createdAt: $createdAt, lat: $lat, lng: $lng, status: $status, incidents: $incidents, requestedAt: $requestedAt, onIncidentStatus: $onIncidentStatus, acceptedAt: $acceptedAt, rejectedAt: $rejectedAt, abortedAt: $abortedAt, travelMode: $travelMode, eta: $eta, acceptedWithNoAssignmentAt: $acceptedWithNoAssignmentAt)';
+    return 'IncidentUserSearch(incidentId: $incidentId, userId: $userId, distanceMeters: $distanceMeters, createdAt: $createdAt, lat: $lat, lng: $lng, status: $status, incidents: $incidents, requestedAt: $requestedAt, onIncidentStatus: $onIncidentStatus, goingAt: $goingAt, arrivedAt: $arrivedAt, expiredAt: $expiredAt, finishedAt: $finishedAt, acceptedAt: $acceptedAt, rejectedAt: $rejectedAt, abortedAt: $abortedAt, travelMode: $travelMode, eta: $eta, acceptedWithNoAssignmentAt: $acceptedWithNoAssignmentAt)';
   }
 
   @override
@@ -434,6 +506,13 @@ class _$IncidentUserSearchImpl extends _IncidentUserSearch {
                 other.requestedAt == requestedAt) &&
             (identical(other.onIncidentStatus, onIncidentStatus) ||
                 other.onIncidentStatus == onIncidentStatus) &&
+            (identical(other.goingAt, goingAt) || other.goingAt == goingAt) &&
+            (identical(other.arrivedAt, arrivedAt) ||
+                other.arrivedAt == arrivedAt) &&
+            (identical(other.expiredAt, expiredAt) ||
+                other.expiredAt == expiredAt) &&
+            (identical(other.finishedAt, finishedAt) ||
+                other.finishedAt == finishedAt) &&
             (identical(other.acceptedAt, acceptedAt) ||
                 other.acceptedAt == acceptedAt) &&
             (identical(other.rejectedAt, rejectedAt) ||
@@ -451,24 +530,29 @@ class _$IncidentUserSearchImpl extends _IncidentUserSearch {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      incidentId,
-      userId,
-      distanceMeters,
-      createdAt,
-      lat,
-      lng,
-      status,
-      incidents,
-      requestedAt,
-      onIncidentStatus,
-      acceptedAt,
-      rejectedAt,
-      abortedAt,
-      travelMode,
-      eta,
-      acceptedWithNoAssignmentAt);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        incidentId,
+        userId,
+        distanceMeters,
+        createdAt,
+        lat,
+        lng,
+        status,
+        incidents,
+        requestedAt,
+        onIncidentStatus,
+        goingAt,
+        arrivedAt,
+        expiredAt,
+        finishedAt,
+        acceptedAt,
+        rejectedAt,
+        abortedAt,
+        travelMode,
+        eta,
+        acceptedWithNoAssignmentAt
+      ]);
 
   /// Create a copy of IncidentUserSearch
   /// with the given fields replaced by the non-null parameter values.
@@ -500,6 +584,10 @@ abstract class _IncidentUserSearch extends IncidentUserSearch {
       @JsonKey(name: 'requested_at') final DateTime? requestedAt,
       @JsonKey(name: 'on_incident_status')
       final OnIncidentStatus? onIncidentStatus,
+      @JsonKey(name: 'going_at') final DateTime? goingAt,
+      @JsonKey(name: 'arrived_at') final DateTime? arrivedAt,
+      @JsonKey(name: 'expired_at') final DateTime? expiredAt,
+      @JsonKey(name: 'finished_at') final DateTime? finishedAt,
       @JsonKey(name: 'accepted_at') final DateTime? acceptedAt,
       @JsonKey(name: 'rejected_at') final DateTime? rejectedAt,
       @JsonKey(name: 'aborted_at') final DateTime? abortedAt,
@@ -542,6 +630,18 @@ abstract class _IncidentUserSearch extends IncidentUserSearch {
   @override
   @JsonKey(name: 'on_incident_status')
   OnIncidentStatus? get onIncidentStatus;
+  @override
+  @JsonKey(name: 'going_at')
+  DateTime? get goingAt;
+  @override
+  @JsonKey(name: 'arrived_at')
+  DateTime? get arrivedAt;
+  @override
+  @JsonKey(name: 'expired_at')
+  DateTime? get expiredAt;
+  @override
+  @JsonKey(name: 'finished_at')
+  DateTime? get finishedAt;
   @override
   @JsonKey(name: 'accepted_at')
   DateTime? get acceptedAt;

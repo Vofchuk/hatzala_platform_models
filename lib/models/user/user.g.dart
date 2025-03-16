@@ -9,7 +9,6 @@ part of 'user.dart';
 _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       id: json['id'] as String,
       name: json['name'] as String,
-      available: json['available'] as bool,
       userType: $enumDecode(_$UserTypeEnumMap, json['user_type']),
       admin: json['admin'] as bool,
       firstResponderStatus: $enumDecode(
@@ -30,7 +29,6 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'available': instance.available,
       'user_type': _$UserTypeEnumMap[instance.userType]!,
       'admin': instance.admin,
       'first_responder_status':

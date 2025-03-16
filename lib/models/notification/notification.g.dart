@@ -26,4 +26,5 @@ Map<String, dynamic> _$$HatzalaNotificationImplToJson(
 
 const _$NotificationTypeEnumMap = {
   NotificationType.NEW_INCIDENT_USER_REQUESTED: 'NEW_INCIDENT_USER_REQUESTED',
+  NotificationType.VEHICLE_DISPATCHED: 'VEHICLE_DISPATCHED',
 };

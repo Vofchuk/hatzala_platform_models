@@ -9,35 +9,17 @@ part of 'vehicle_location.dart';
 _$VehicleLocationImpl _$$VehicleLocationImplFromJson(
         Map<String, dynamic> json) =>
     _$VehicleLocationImpl(
-      vehicleId: (json['vehicle_id'] as num).toInt(),
-      vehicleName: json['vehicle_name'] as String,
-      licensePlate: json['license_plate'] as String,
-      baseName: json['base_name'] as String,
-      status: $enumDecode(_$VehicleStatusEnumMap, json['status']),
-      incidentId: (json['incident_id'] as num?)?.toInt(),
+      updatedAt: DateTime.parse(json['updated_at'] as String),
       lat: (json['lat'] as num).toDouble(),
       lng: (json['lng'] as num).toDouble(),
-      location: json['location'] as String,
-      vehicleTypeName: json['vehicle_type_name'] as String,
+      id: json['id'] as num,
     );
 
 Map<String, dynamic> _$$VehicleLocationImplToJson(
         _$VehicleLocationImpl instance) =>
     <String, dynamic>{
-      'vehicle_id': instance.vehicleId,
-      'vehicle_name': instance.vehicleName,
-      'license_plate': instance.licensePlate,
-      'base_name': instance.baseName,
-      'status': _$VehicleStatusEnumMap[instance.status]!,
-      'incident_id': instance.incidentId,
+      'updated_at': instance.updatedAt.toIso8601String(),
       'lat': instance.lat,
       'lng': instance.lng,
-      'location': instance.location,
-      'vehicle_type_name': instance.vehicleTypeName,
+      'id': instance.id,
     };
-
-const _$VehicleStatusEnumMap = {
-  VehicleStatus.AVAILABLE: 'AVAILABLE',
-  VehicleStatus.UNAVAILABLE: 'UNAVAILABLE',
-  VehicleStatus.OCCUPIED: 'OCCUPIED',
-};
