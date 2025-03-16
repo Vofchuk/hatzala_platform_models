@@ -2,6 +2,7 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hatzala_platform_models/models/enums/incident_status.dart';
+import 'package:hatzala_platform_models/models/patient/patient.dart';
 
 import '../complain_type/complain_type.dart';
 
@@ -44,6 +45,7 @@ class Incident with _$Incident {
     @Default(IncidentStatus.ACTIVE)
     IncidentStatus status,
     @JsonKey(name: 'street_view_image') String? streetViewImage,
+    List<Patient>? patients,
   }) = _Incident;
   const Incident._();
 

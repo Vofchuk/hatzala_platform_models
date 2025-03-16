@@ -42,6 +42,9 @@ _$IncidentImpl _$$IncidentImplFromJson(Map<String, dynamic> json) =>
       status: $enumDecodeNullable(_$IncidentStatusEnumMap, json['status']) ??
           IncidentStatus.ACTIVE,
       streetViewImage: json['street_view_image'] as String?,
+      patients: (json['patients'] as List<dynamic>?)
+          ?.map((e) => Patient.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$IncidentImplToJson(_$IncidentImpl instance) =>
@@ -74,6 +77,7 @@ Map<String, dynamic> _$$IncidentImplToJson(_$IncidentImpl instance) =>
       'complain_types': instance.complainType,
       'status': _$IncidentStatusEnumMap[instance.status]!,
       'street_view_image': instance.streetViewImage,
+      'patients': instance.patients,
     };
 
 const _$IncidentStatusEnumMap = {
