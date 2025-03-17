@@ -13,11 +13,11 @@ class Patient with _$Patient {
     @JsonKey(name: 'created_at') required DateTime createdAt,
     @JsonKey(name: 'incident_id') required int incidentId,
     String? name,
-    String? age,
+    num? age,
     String? sex,
     String? document,
     DateTime? birthday,
-    List<VitalSigns>? vitalSigns,
+    @JsonKey(name: 'vital_signs') List<VitalSigns>? vitalSigns,
   }) = _Patient;
 
   const Patient._();

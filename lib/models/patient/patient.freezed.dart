@@ -26,10 +26,11 @@ mixin _$Patient {
   @JsonKey(name: 'incident_id')
   int get incidentId => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
-  String? get age => throw _privateConstructorUsedError;
+  num? get age => throw _privateConstructorUsedError;
   String? get sex => throw _privateConstructorUsedError;
   String? get document => throw _privateConstructorUsedError;
   DateTime? get birthday => throw _privateConstructorUsedError;
+  @JsonKey(name: 'vital_signs')
   List<VitalSigns>? get vitalSigns => throw _privateConstructorUsedError;
 
   /// Serializes this Patient to a JSON map.
@@ -51,11 +52,11 @@ abstract class $PatientCopyWith<$Res> {
       @JsonKey(name: 'created_at') DateTime createdAt,
       @JsonKey(name: 'incident_id') int incidentId,
       String? name,
-      String? age,
+      num? age,
       String? sex,
       String? document,
       DateTime? birthday,
-      List<VitalSigns>? vitalSigns});
+      @JsonKey(name: 'vital_signs') List<VitalSigns>? vitalSigns});
 }
 
 /// @nodoc
@@ -103,7 +104,7 @@ class _$PatientCopyWithImpl<$Res, $Val extends Patient>
       age: freezed == age
           ? _value.age
           : age // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as num?,
       sex: freezed == sex
           ? _value.sex
           : sex // ignore: cast_nullable_to_non_nullable
@@ -136,11 +137,11 @@ abstract class _$$PatientImplCopyWith<$Res> implements $PatientCopyWith<$Res> {
       @JsonKey(name: 'created_at') DateTime createdAt,
       @JsonKey(name: 'incident_id') int incidentId,
       String? name,
-      String? age,
+      num? age,
       String? sex,
       String? document,
       DateTime? birthday,
-      List<VitalSigns>? vitalSigns});
+      @JsonKey(name: 'vital_signs') List<VitalSigns>? vitalSigns});
 }
 
 /// @nodoc
@@ -186,7 +187,7 @@ class __$$PatientImplCopyWithImpl<$Res>
       age: freezed == age
           ? _value.age
           : age // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as num?,
       sex: freezed == sex
           ? _value.sex
           : sex // ignore: cast_nullable_to_non_nullable
@@ -219,7 +220,7 @@ class _$PatientImpl extends _Patient {
       this.sex,
       this.document,
       this.birthday,
-      final List<VitalSigns>? vitalSigns})
+      @JsonKey(name: 'vital_signs') final List<VitalSigns>? vitalSigns})
       : _vitalSigns = vitalSigns,
         super._();
 
@@ -237,7 +238,7 @@ class _$PatientImpl extends _Patient {
   @override
   final String? name;
   @override
-  final String? age;
+  final num? age;
   @override
   final String? sex;
   @override
@@ -246,6 +247,7 @@ class _$PatientImpl extends _Patient {
   final DateTime? birthday;
   final List<VitalSigns>? _vitalSigns;
   @override
+  @JsonKey(name: 'vital_signs')
   List<VitalSigns>? get vitalSigns {
     final value = _vitalSigns;
     if (value == null) return null;
@@ -312,15 +314,16 @@ class _$PatientImpl extends _Patient {
 
 abstract class _Patient extends Patient {
   const factory _Patient(
-      {required final int id,
-      @JsonKey(name: 'created_at') required final DateTime createdAt,
-      @JsonKey(name: 'incident_id') required final int incidentId,
-      final String? name,
-      final String? age,
-      final String? sex,
-      final String? document,
-      final DateTime? birthday,
-      final List<VitalSigns>? vitalSigns}) = _$PatientImpl;
+          {required final int id,
+          @JsonKey(name: 'created_at') required final DateTime createdAt,
+          @JsonKey(name: 'incident_id') required final int incidentId,
+          final String? name,
+          final num? age,
+          final String? sex,
+          final String? document,
+          final DateTime? birthday,
+          @JsonKey(name: 'vital_signs') final List<VitalSigns>? vitalSigns}) =
+      _$PatientImpl;
   const _Patient._() : super._();
 
   factory _Patient.fromJson(Map<String, dynamic> json) = _$PatientImpl.fromJson;
@@ -336,7 +339,7 @@ abstract class _Patient extends Patient {
   @override
   String? get name;
   @override
-  String? get age;
+  num? get age;
   @override
   String? get sex;
   @override
@@ -344,6 +347,7 @@ abstract class _Patient extends Patient {
   @override
   DateTime? get birthday;
   @override
+  @JsonKey(name: 'vital_signs')
   List<VitalSigns>? get vitalSigns;
 
   /// Create a copy of Patient

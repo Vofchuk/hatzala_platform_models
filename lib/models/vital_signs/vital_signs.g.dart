@@ -18,7 +18,7 @@ _$VitalSignsImpl _$$VitalSignsImplFromJson(Map<String, dynamic> json) =>
       fc: json['fc'] as num?,
       fr: json['fr'] as num?,
       glasgow: json['glasgow'] as num?,
-      temperature: json['temperature'] as String?,
+      temperature: json['temperature'] as num?,
       consciousnessLevel:
           ConsciousnessLevel.fromJson(json['consciousness_level'] as String?),
       sweating: Sweating.fromJson(json['sweating'] as String?),

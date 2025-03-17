@@ -18,7 +18,7 @@ class VitalSigns with _$VitalSigns {
     num? fc,
     num? fr,
     num? glasgow,
-    String? temperature,
+    num? temperature,
     @JsonKey(
       name: 'consciousness_level',
       toJson: ConsciousnessLevel.toJson,

@@ -12,13 +12,13 @@ _$PatientImpl _$$PatientImplFromJson(Map<String, dynamic> json) =>
       createdAt: DateTime.parse(json['created_at'] as String),
       incidentId: (json['incident_id'] as num).toInt(),
       name: json['name'] as String?,
-      age: json['age'] as String?,
+      age: json['age'] as num?,
       sex: json['sex'] as String?,
       document: json['document'] as String?,
       birthday: json['birthday'] == null
           ? null
           : DateTime.parse(json['birthday'] as String),
-      vitalSigns: (json['vitalSigns'] as List<dynamic>?)
+      vitalSigns: (json['vital_signs'] as List<dynamic>?)
           ?.map((e) => VitalSigns.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
@@ -33,5 +33,5 @@ Map<String, dynamic> _$$PatientImplToJson(_$PatientImpl instance) =>
       'sex': instance.sex,
       'document': instance.document,
       'birthday': instance.birthday?.toIso8601String(),
-      'vitalSigns': instance.vitalSigns,
+      'vital_signs': instance.vitalSigns,
     };

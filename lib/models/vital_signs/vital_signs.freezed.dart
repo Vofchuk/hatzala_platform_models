@@ -31,7 +31,7 @@ mixin _$VitalSigns {
   num? get fc => throw _privateConstructorUsedError;
   num? get fr => throw _privateConstructorUsedError;
   num? get glasgow => throw _privateConstructorUsedError;
-  String? get temperature => throw _privateConstructorUsedError;
+  num? get temperature => throw _privateConstructorUsedError;
   @JsonKey(
       name: 'consciousness_level',
       toJson: ConsciousnessLevel.toJson,
@@ -88,7 +88,7 @@ abstract class $VitalSignsCopyWith<$Res> {
       num? fc,
       num? fr,
       num? glasgow,
-      String? temperature,
+      num? temperature,
       @JsonKey(
           name: 'consciousness_level',
           toJson: ConsciousnessLevel.toJson,
@@ -196,7 +196,7 @@ class _$VitalSignsCopyWithImpl<$Res, $Val extends VitalSigns>
       temperature: freezed == temperature
           ? _value.temperature
           : temperature // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as num?,
       consciousnessLevel: freezed == consciousnessLevel
           ? _value.consciousnessLevel
           : consciousnessLevel // ignore: cast_nullable_to_non_nullable
@@ -264,7 +264,7 @@ abstract class _$$VitalSignsImplCopyWith<$Res>
       num? fc,
       num? fr,
       num? glasgow,
-      String? temperature,
+      num? temperature,
       @JsonKey(
           name: 'consciousness_level',
           toJson: ConsciousnessLevel.toJson,
@@ -370,7 +370,7 @@ class __$$VitalSignsImplCopyWithImpl<$Res>
       temperature: freezed == temperature
           ? _value.temperature
           : temperature // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as num?,
       consciousnessLevel: freezed == consciousnessLevel
           ? _value.consciousnessLevel
           : consciousnessLevel // ignore: cast_nullable_to_non_nullable
@@ -484,7 +484,7 @@ class _$VitalSignsImpl extends _VitalSigns {
   @override
   final num? glasgow;
   @override
-  final String? temperature;
+  final num? temperature;
   @override
   @JsonKey(
       name: 'consciousness_level',
@@ -626,7 +626,7 @@ abstract class _VitalSigns extends VitalSigns {
           final num? fc,
           final num? fr,
           final num? glasgow,
-          final String? temperature,
+          final num? temperature,
           @JsonKey(
               name: 'consciousness_level',
               toJson: ConsciousnessLevel.toJson,
@@ -678,7 +678,7 @@ abstract class _VitalSigns extends VitalSigns {
   @override
   num? get glasgow;
   @override
-  String? get temperature;
+  num? get temperature;
   @override
   @JsonKey(
       name: 'consciousness_level',
