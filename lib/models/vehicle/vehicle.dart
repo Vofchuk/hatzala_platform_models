@@ -17,6 +17,7 @@ class Vehicle with _$Vehicle {
     @JsonKey(name: 'vehicle_type_id') required int vehicleTypeId,
     @JsonKey(name: 'pushy_token') required PushyToken? pushyToken,
     required bool available,
+    @JsonKey(name: 'zello_id', includeIfNull: false) String? zelloId,
   }) = _Vehicle;
 
   const Vehicle._();

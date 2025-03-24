@@ -49,8 +49,8 @@ mixin _$VitalSigns {
   SkinColor? get skinColor => throw _privateConstructorUsedError;
   @JsonKey(toJson: Bleeding.toJson, fromJson: Bleeding.fromJson)
   Bleeding? get bleeding => throw _privateConstructorUsedError;
-  @JsonKey(toJson: Priority.toJson, fromJson: Priority.fromJson)
-  Priority? get priority => throw _privateConstructorUsedError;
+  @JsonKey(toJson: IncidentPriority.toJson, fromJson: IncidentPriority.fromJson)
+  IncidentPriority? get priority => throw _privateConstructorUsedError;
   String? get notes => throw _privateConstructorUsedError;
   @JsonKey(name: 'created_at')
   String get createdAt => throw _privateConstructorUsedError;
@@ -60,6 +60,8 @@ mixin _$VitalSigns {
   String get userId => throw _privateConstructorUsedError;
   @JsonKey(name: 'patient_id')
   int get patientId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'users')
+  User? get user => throw _privateConstructorUsedError;
 
   /// Serializes this VitalSigns to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -105,13 +107,17 @@ abstract class $VitalSignsCopyWith<$Res> {
       SkinColor? skinColor,
       @JsonKey(toJson: Bleeding.toJson, fromJson: Bleeding.fromJson)
       Bleeding? bleeding,
-      @JsonKey(toJson: Priority.toJson, fromJson: Priority.fromJson)
-      Priority? priority,
+      @JsonKey(
+          toJson: IncidentPriority.toJson, fromJson: IncidentPriority.fromJson)
+      IncidentPriority? priority,
       String? notes,
       @JsonKey(name: 'created_at') String createdAt,
       @JsonKey(name: 'updated_at') String updatedAt,
       @JsonKey(name: 'user_id') String userId,
-      @JsonKey(name: 'patient_id') int patientId});
+      @JsonKey(name: 'patient_id') int patientId,
+      @JsonKey(name: 'users') User? user});
+
+  $UserCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -151,6 +157,7 @@ class _$VitalSignsCopyWithImpl<$Res, $Val extends VitalSigns>
     Object? updatedAt = null,
     Object? userId = null,
     Object? patientId = null,
+    Object? user = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -220,7 +227,7 @@ class _$VitalSignsCopyWithImpl<$Res, $Val extends VitalSigns>
       priority: freezed == priority
           ? _value.priority
           : priority // ignore: cast_nullable_to_non_nullable
-              as Priority?,
+              as IncidentPriority?,
       notes: freezed == notes
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
@@ -241,7 +248,25 @@ class _$VitalSignsCopyWithImpl<$Res, $Val extends VitalSigns>
           ? _value.patientId
           : patientId // ignore: cast_nullable_to_non_nullable
               as int,
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User?,
     ) as $Val);
+  }
+
+  /// Create a copy of VitalSigns
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get user {
+    if (_value.user == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.user!, (value) {
+      return _then(_value.copyWith(user: value) as $Val);
+    });
   }
 }
 
@@ -281,13 +306,18 @@ abstract class _$$VitalSignsImplCopyWith<$Res>
       SkinColor? skinColor,
       @JsonKey(toJson: Bleeding.toJson, fromJson: Bleeding.fromJson)
       Bleeding? bleeding,
-      @JsonKey(toJson: Priority.toJson, fromJson: Priority.fromJson)
-      Priority? priority,
+      @JsonKey(
+          toJson: IncidentPriority.toJson, fromJson: IncidentPriority.fromJson)
+      IncidentPriority? priority,
       String? notes,
       @JsonKey(name: 'created_at') String createdAt,
       @JsonKey(name: 'updated_at') String updatedAt,
       @JsonKey(name: 'user_id') String userId,
-      @JsonKey(name: 'patient_id') int patientId});
+      @JsonKey(name: 'patient_id') int patientId,
+      @JsonKey(name: 'users') User? user});
+
+  @override
+  $UserCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -325,6 +355,7 @@ class __$$VitalSignsImplCopyWithImpl<$Res>
     Object? updatedAt = null,
     Object? userId = null,
     Object? patientId = null,
+    Object? user = freezed,
   }) {
     return _then(_$VitalSignsImpl(
       id: null == id
@@ -394,7 +425,7 @@ class __$$VitalSignsImplCopyWithImpl<$Res>
       priority: freezed == priority
           ? _value.priority
           : priority // ignore: cast_nullable_to_non_nullable
-              as Priority?,
+              as IncidentPriority?,
       notes: freezed == notes
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
@@ -415,6 +446,10 @@ class __$$VitalSignsImplCopyWithImpl<$Res>
           ? _value.patientId
           : patientId // ignore: cast_nullable_to_non_nullable
               as int,
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User?,
     ));
   }
 }
@@ -450,13 +485,15 @@ class _$VitalSignsImpl extends _VitalSigns {
       this.skinColor,
       @JsonKey(toJson: Bleeding.toJson, fromJson: Bleeding.fromJson)
       this.bleeding,
-      @JsonKey(toJson: Priority.toJson, fromJson: Priority.fromJson)
+      @JsonKey(
+          toJson: IncidentPriority.toJson, fromJson: IncidentPriority.fromJson)
       this.priority,
       this.notes,
       @JsonKey(name: 'created_at') required this.createdAt,
       @JsonKey(name: 'updated_at') required this.updatedAt,
       @JsonKey(name: 'user_id') required this.userId,
-      @JsonKey(name: 'patient_id') required this.patientId})
+      @JsonKey(name: 'patient_id') required this.patientId,
+      @JsonKey(name: 'users') this.user})
       : super._();
 
   factory _$VitalSignsImpl.fromJson(Map<String, dynamic> json) =>
@@ -507,8 +544,8 @@ class _$VitalSignsImpl extends _VitalSigns {
   @JsonKey(toJson: Bleeding.toJson, fromJson: Bleeding.fromJson)
   final Bleeding? bleeding;
   @override
-  @JsonKey(toJson: Priority.toJson, fromJson: Priority.fromJson)
-  final Priority? priority;
+  @JsonKey(toJson: IncidentPriority.toJson, fromJson: IncidentPriority.fromJson)
+  final IncidentPriority? priority;
   @override
   final String? notes;
   @override
@@ -523,10 +560,13 @@ class _$VitalSignsImpl extends _VitalSigns {
   @override
   @JsonKey(name: 'patient_id')
   final int patientId;
+  @override
+  @JsonKey(name: 'users')
+  final User? user;
 
   @override
   String toString() {
-    return 'VitalSigns(id: $id, recordedAt: $recordedAt, medication: $medication, allergy: $allergy, pa: $pa, hgt: $hgt, pulse: $pulse, fc: $fc, fr: $fr, glasgow: $glasgow, temperature: $temperature, consciousnessLevel: $consciousnessLevel, sweating: $sweating, breathing: $breathing, skinColor: $skinColor, bleeding: $bleeding, priority: $priority, notes: $notes, createdAt: $createdAt, updatedAt: $updatedAt, userId: $userId, patientId: $patientId)';
+    return 'VitalSigns(id: $id, recordedAt: $recordedAt, medication: $medication, allergy: $allergy, pa: $pa, hgt: $hgt, pulse: $pulse, fc: $fc, fr: $fr, glasgow: $glasgow, temperature: $temperature, consciousnessLevel: $consciousnessLevel, sweating: $sweating, breathing: $breathing, skinColor: $skinColor, bleeding: $bleeding, priority: $priority, notes: $notes, createdAt: $createdAt, updatedAt: $updatedAt, userId: $userId, patientId: $patientId, user: $user)';
   }
 
   @override
@@ -567,7 +607,8 @@ class _$VitalSignsImpl extends _VitalSigns {
                 other.updatedAt == updatedAt) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.patientId, patientId) ||
-                other.patientId == patientId));
+                other.patientId == patientId) &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -595,7 +636,8 @@ class _$VitalSignsImpl extends _VitalSigns {
         createdAt,
         updatedAt,
         userId,
-        patientId
+        patientId,
+        user
       ]);
 
   /// Create a copy of VitalSigns
@@ -616,41 +658,42 @@ class _$VitalSignsImpl extends _VitalSigns {
 
 abstract class _VitalSigns extends VitalSigns {
   const factory _VitalSigns(
-          {required final int id,
-          @JsonKey(name: 'recorded_at') required final DateTime recordedAt,
-          final String? medication,
-          final String? allergy,
-          final String? pa,
-          final num? hgt,
-          final num? pulse,
-          final num? fc,
-          final num? fr,
-          final num? glasgow,
-          final num? temperature,
-          @JsonKey(
-              name: 'consciousness_level',
-              toJson: ConsciousnessLevel.toJson,
-              fromJson: ConsciousnessLevel.fromJson)
-          final ConsciousnessLevel? consciousnessLevel,
-          @JsonKey(toJson: Sweating.toJson, fromJson: Sweating.fromJson)
-          final Sweating? sweating,
-          @JsonKey(toJson: Breathing.toJson, fromJson: Breathing.fromJson)
-          final Breathing? breathing,
-          @JsonKey(
-              name: 'skin_color',
-              toJson: SkinColor.toJson,
-              fromJson: SkinColor.fromJson)
-          final SkinColor? skinColor,
-          @JsonKey(toJson: Bleeding.toJson, fromJson: Bleeding.fromJson)
-          final Bleeding? bleeding,
-          @JsonKey(toJson: Priority.toJson, fromJson: Priority.fromJson)
-          final Priority? priority,
-          final String? notes,
-          @JsonKey(name: 'created_at') required final String createdAt,
-          @JsonKey(name: 'updated_at') required final String updatedAt,
-          @JsonKey(name: 'user_id') required final String userId,
-          @JsonKey(name: 'patient_id') required final int patientId}) =
-      _$VitalSignsImpl;
+      {required final int id,
+      @JsonKey(name: 'recorded_at') required final DateTime recordedAt,
+      final String? medication,
+      final String? allergy,
+      final String? pa,
+      final num? hgt,
+      final num? pulse,
+      final num? fc,
+      final num? fr,
+      final num? glasgow,
+      final num? temperature,
+      @JsonKey(
+          name: 'consciousness_level',
+          toJson: ConsciousnessLevel.toJson,
+          fromJson: ConsciousnessLevel.fromJson)
+      final ConsciousnessLevel? consciousnessLevel,
+      @JsonKey(toJson: Sweating.toJson, fromJson: Sweating.fromJson)
+      final Sweating? sweating,
+      @JsonKey(toJson: Breathing.toJson, fromJson: Breathing.fromJson)
+      final Breathing? breathing,
+      @JsonKey(
+          name: 'skin_color',
+          toJson: SkinColor.toJson,
+          fromJson: SkinColor.fromJson)
+      final SkinColor? skinColor,
+      @JsonKey(toJson: Bleeding.toJson, fromJson: Bleeding.fromJson)
+      final Bleeding? bleeding,
+      @JsonKey(
+          toJson: IncidentPriority.toJson, fromJson: IncidentPriority.fromJson)
+      final IncidentPriority? priority,
+      final String? notes,
+      @JsonKey(name: 'created_at') required final String createdAt,
+      @JsonKey(name: 'updated_at') required final String updatedAt,
+      @JsonKey(name: 'user_id') required final String userId,
+      @JsonKey(name: 'patient_id') required final int patientId,
+      @JsonKey(name: 'users') final User? user}) = _$VitalSignsImpl;
   const _VitalSigns._() : super._();
 
   factory _VitalSigns.fromJson(Map<String, dynamic> json) =
@@ -701,8 +744,8 @@ abstract class _VitalSigns extends VitalSigns {
   @JsonKey(toJson: Bleeding.toJson, fromJson: Bleeding.fromJson)
   Bleeding? get bleeding;
   @override
-  @JsonKey(toJson: Priority.toJson, fromJson: Priority.fromJson)
-  Priority? get priority;
+  @JsonKey(toJson: IncidentPriority.toJson, fromJson: IncidentPriority.fromJson)
+  IncidentPriority? get priority;
   @override
   String? get notes;
   @override
@@ -717,6 +760,9 @@ abstract class _VitalSigns extends VitalSigns {
   @override
   @JsonKey(name: 'patient_id')
   int get patientId;
+  @override
+  @JsonKey(name: 'users')
+  User? get user;
 
   /// Create a copy of VitalSigns
   /// with the given fields replaced by the non-null parameter values.

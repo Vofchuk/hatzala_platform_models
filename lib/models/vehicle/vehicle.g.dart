@@ -18,6 +18,7 @@ _$VehicleImpl _$$VehicleImplFromJson(Map<String, dynamic> json) =>
           ? null
           : PushyToken.fromJson(json['pushy_token'] as Map<String, dynamic>),
       available: json['available'] as bool,
+      zelloId: json['zello_id'] as String?,
     );
 
 Map<String, dynamic> _$$VehicleImplToJson(_$VehicleImpl instance) =>
@@ -30,4 +31,5 @@ Map<String, dynamic> _$$VehicleImplToJson(_$VehicleImpl instance) =>
       'vehicle_type_id': instance.vehicleTypeId,
       'pushy_token': instance.pushyToken,
       'available': instance.available,
+      if (instance.zelloId case final value?) 'zello_id': value,
     };

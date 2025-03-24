@@ -49,6 +49,7 @@ _$IncidentUserSearchImpl _$$IncidentUserSearchImplFromJson(
       acceptedWithNoAssignmentAt: json['accepted_with_no_assignment_at'] == null
           ? null
           : DateTime.parse(json['accepted_with_no_assignment_at'] as String),
+      obs: json['obs'] as String?,
     );
 
 Map<String, dynamic> _$$IncidentUserSearchImplToJson(
@@ -76,6 +77,7 @@ Map<String, dynamic> _$$IncidentUserSearchImplToJson(
       'eta': instance.eta,
       'accepted_with_no_assignment_at':
           instance.acceptedWithNoAssignmentAt?.toIso8601String(),
+      'obs': instance.obs,
     };
 
 const _$SearchUserStatusEnumMap = {

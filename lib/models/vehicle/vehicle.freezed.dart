@@ -33,6 +33,8 @@ mixin _$Vehicle {
   @JsonKey(name: 'pushy_token')
   PushyToken? get pushyToken => throw _privateConstructorUsedError;
   bool get available => throw _privateConstructorUsedError;
+  @JsonKey(name: 'zello_id', includeIfNull: false)
+  String? get zelloId => throw _privateConstructorUsedError;
 
   /// Serializes this Vehicle to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -56,7 +58,8 @@ abstract class $VehicleCopyWith<$Res> {
       @JsonKey(name: 'base_id') int baseId,
       @JsonKey(name: 'vehicle_type_id') int vehicleTypeId,
       @JsonKey(name: 'pushy_token') PushyToken? pushyToken,
-      bool available});
+      bool available,
+      @JsonKey(name: 'zello_id', includeIfNull: false) String? zelloId});
 
   $PushyTokenCopyWith<$Res>? get pushyToken;
 }
@@ -84,6 +87,7 @@ class _$VehicleCopyWithImpl<$Res, $Val extends Vehicle>
     Object? vehicleTypeId = null,
     Object? pushyToken = freezed,
     Object? available = null,
+    Object? zelloId = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -118,6 +122,10 @@ class _$VehicleCopyWithImpl<$Res, $Val extends Vehicle>
           ? _value.available
           : available // ignore: cast_nullable_to_non_nullable
               as bool,
+      zelloId: freezed == zelloId
+          ? _value.zelloId
+          : zelloId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -151,7 +159,8 @@ abstract class _$$VehicleImplCopyWith<$Res> implements $VehicleCopyWith<$Res> {
       @JsonKey(name: 'base_id') int baseId,
       @JsonKey(name: 'vehicle_type_id') int vehicleTypeId,
       @JsonKey(name: 'pushy_token') PushyToken? pushyToken,
-      bool available});
+      bool available,
+      @JsonKey(name: 'zello_id', includeIfNull: false) String? zelloId});
 
   @override
   $PushyTokenCopyWith<$Res>? get pushyToken;
@@ -178,6 +187,7 @@ class __$$VehicleImplCopyWithImpl<$Res>
     Object? vehicleTypeId = null,
     Object? pushyToken = freezed,
     Object? available = null,
+    Object? zelloId = freezed,
   }) {
     return _then(_$VehicleImpl(
       id: null == id
@@ -212,6 +222,10 @@ class __$$VehicleImplCopyWithImpl<$Res>
           ? _value.available
           : available // ignore: cast_nullable_to_non_nullable
               as bool,
+      zelloId: freezed == zelloId
+          ? _value.zelloId
+          : zelloId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -227,7 +241,8 @@ class _$VehicleImpl extends _Vehicle {
       @JsonKey(name: 'base_id') required this.baseId,
       @JsonKey(name: 'vehicle_type_id') required this.vehicleTypeId,
       @JsonKey(name: 'pushy_token') required this.pushyToken,
-      required this.available})
+      required this.available,
+      @JsonKey(name: 'zello_id', includeIfNull: false) this.zelloId})
       : super._();
 
   factory _$VehicleImpl.fromJson(Map<String, dynamic> json) =>
@@ -254,10 +269,13 @@ class _$VehicleImpl extends _Vehicle {
   final PushyToken? pushyToken;
   @override
   final bool available;
+  @override
+  @JsonKey(name: 'zello_id', includeIfNull: false)
+  final String? zelloId;
 
   @override
   String toString() {
-    return 'Vehicle(id: $id, createdAt: $createdAt, name: $name, licensePlate: $licensePlate, baseId: $baseId, vehicleTypeId: $vehicleTypeId, pushyToken: $pushyToken, available: $available)';
+    return 'Vehicle(id: $id, createdAt: $createdAt, name: $name, licensePlate: $licensePlate, baseId: $baseId, vehicleTypeId: $vehicleTypeId, pushyToken: $pushyToken, available: $available, zelloId: $zelloId)';
   }
 
   @override
@@ -277,13 +295,14 @@ class _$VehicleImpl extends _Vehicle {
             (identical(other.pushyToken, pushyToken) ||
                 other.pushyToken == pushyToken) &&
             (identical(other.available, available) ||
-                other.available == available));
+                other.available == available) &&
+            (identical(other.zelloId, zelloId) || other.zelloId == zelloId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, createdAt, name,
-      licensePlate, baseId, vehicleTypeId, pushyToken, available);
+      licensePlate, baseId, vehicleTypeId, pushyToken, available, zelloId);
 
   /// Create a copy of Vehicle
   /// with the given fields replaced by the non-null parameter values.
@@ -310,7 +329,9 @@ abstract class _Vehicle extends Vehicle {
       @JsonKey(name: 'base_id') required final int baseId,
       @JsonKey(name: 'vehicle_type_id') required final int vehicleTypeId,
       @JsonKey(name: 'pushy_token') required final PushyToken? pushyToken,
-      required final bool available}) = _$VehicleImpl;
+      required final bool available,
+      @JsonKey(name: 'zello_id', includeIfNull: false)
+      final String? zelloId}) = _$VehicleImpl;
   const _Vehicle._() : super._();
 
   factory _Vehicle.fromJson(Map<String, dynamic> json) = _$VehicleImpl.fromJson;
@@ -336,6 +357,9 @@ abstract class _Vehicle extends Vehicle {
   PushyToken? get pushyToken;
   @override
   bool get available;
+  @override
+  @JsonKey(name: 'zello_id', includeIfNull: false)
+  String? get zelloId;
 
   /// Create a copy of Vehicle
   /// with the given fields replaced by the non-null parameter values.

@@ -59,6 +59,8 @@ mixin _$UserSearch {
       throw _privateConstructorUsedError;
   @JsonKey(name: 'eta')
   num? get eta => throw _privateConstructorUsedError;
+  @JsonKey(name: 'obs')
+  String? get obs => throw _privateConstructorUsedError;
   Users? get users => throw _privateConstructorUsedError;
 
   /// Serializes this UserSearch to a JSON map.
@@ -98,6 +100,7 @@ abstract class $UserSearchCopyWith<$Res> {
       @JsonKey(name: 'accepted_with_no_assignment_at')
       DateTime? acceptedWithNoAssignmentAt,
       @JsonKey(name: 'eta') num? eta,
+      @JsonKey(name: 'obs') String? obs,
       Users? users});
 
   $UsersCopyWith<$Res>? get users;
@@ -137,6 +140,7 @@ class _$UserSearchCopyWithImpl<$Res, $Val extends UserSearch>
     Object? travelMode = freezed,
     Object? acceptedWithNoAssignmentAt = freezed,
     Object? eta = freezed,
+    Object? obs = freezed,
     Object? users = freezed,
   }) {
     return _then(_value.copyWith(
@@ -216,6 +220,10 @@ class _$UserSearchCopyWithImpl<$Res, $Val extends UserSearch>
           ? _value.eta
           : eta // ignore: cast_nullable_to_non_nullable
               as num?,
+      obs: freezed == obs
+          ? _value.obs
+          : obs // ignore: cast_nullable_to_non_nullable
+              as String?,
       users: freezed == users
           ? _value.users
           : users // ignore: cast_nullable_to_non_nullable
@@ -267,6 +275,7 @@ abstract class _$$UserSearchImplCopyWith<$Res>
       @JsonKey(name: 'accepted_with_no_assignment_at')
       DateTime? acceptedWithNoAssignmentAt,
       @JsonKey(name: 'eta') num? eta,
+      @JsonKey(name: 'obs') String? obs,
       Users? users});
 
   @override
@@ -305,6 +314,7 @@ class __$$UserSearchImplCopyWithImpl<$Res>
     Object? travelMode = freezed,
     Object? acceptedWithNoAssignmentAt = freezed,
     Object? eta = freezed,
+    Object? obs = freezed,
     Object? users = freezed,
   }) {
     return _then(_$UserSearchImpl(
@@ -384,6 +394,10 @@ class __$$UserSearchImplCopyWithImpl<$Res>
           ? _value.eta
           : eta // ignore: cast_nullable_to_non_nullable
               as num?,
+      obs: freezed == obs
+          ? _value.obs
+          : obs // ignore: cast_nullable_to_non_nullable
+              as String?,
       users: freezed == users
           ? _value.users
           : users // ignore: cast_nullable_to_non_nullable
@@ -416,6 +430,7 @@ class _$UserSearchImpl extends _UserSearch {
       @JsonKey(name: 'accepted_with_no_assignment_at')
       this.acceptedWithNoAssignmentAt,
       @JsonKey(name: 'eta') this.eta,
+      @JsonKey(name: 'obs') this.obs,
       this.users})
       : super._();
 
@@ -480,11 +495,14 @@ class _$UserSearchImpl extends _UserSearch {
   @JsonKey(name: 'eta')
   final num? eta;
   @override
+  @JsonKey(name: 'obs')
+  final String? obs;
+  @override
   final Users? users;
 
   @override
   String toString() {
-    return 'UserSearch(incidentId: $incidentId, userId: $userId, distanceMeters: $distanceMeters, createdAt: $createdAt, lat: $lat, lng: $lng, status: $status, onIncidentStatus: $onIncidentStatus, requestedAt: $requestedAt, acceptedAt: $acceptedAt, rejectedAt: $rejectedAt, expiredAt: $expiredAt, abortedAt: $abortedAt, goingAt: $goingAt, arrivedAt: $arrivedAt, finishedAt: $finishedAt, travelMode: $travelMode, acceptedWithNoAssignmentAt: $acceptedWithNoAssignmentAt, eta: $eta, users: $users)';
+    return 'UserSearch(incidentId: $incidentId, userId: $userId, distanceMeters: $distanceMeters, createdAt: $createdAt, lat: $lat, lng: $lng, status: $status, onIncidentStatus: $onIncidentStatus, requestedAt: $requestedAt, acceptedAt: $acceptedAt, rejectedAt: $rejectedAt, expiredAt: $expiredAt, abortedAt: $abortedAt, goingAt: $goingAt, arrivedAt: $arrivedAt, finishedAt: $finishedAt, travelMode: $travelMode, acceptedWithNoAssignmentAt: $acceptedWithNoAssignmentAt, eta: $eta, obs: $obs, users: $users)';
   }
 
   @override
@@ -526,6 +544,7 @@ class _$UserSearchImpl extends _UserSearch {
                 other.acceptedWithNoAssignmentAt ==
                     acceptedWithNoAssignmentAt) &&
             (identical(other.eta, eta) || other.eta == eta) &&
+            (identical(other.obs, obs) || other.obs == obs) &&
             (identical(other.users, users) || other.users == users));
   }
 
@@ -552,6 +571,7 @@ class _$UserSearchImpl extends _UserSearch {
         travelMode,
         acceptedWithNoAssignmentAt,
         eta,
+        obs,
         users
       ]);
 
@@ -595,6 +615,7 @@ abstract class _UserSearch extends UserSearch {
       @JsonKey(name: 'accepted_with_no_assignment_at')
       final DateTime? acceptedWithNoAssignmentAt,
       @JsonKey(name: 'eta') final num? eta,
+      @JsonKey(name: 'obs') final String? obs,
       final Users? users}) = _$UserSearchImpl;
   const _UserSearch._() : super._();
 
@@ -658,6 +679,9 @@ abstract class _UserSearch extends UserSearch {
   @override
   @JsonKey(name: 'eta')
   num? get eta;
+  @override
+  @JsonKey(name: 'obs')
+  String? get obs;
   @override
   Users? get users;
 
@@ -922,7 +946,12 @@ UserEquipment _$UserEquipmentFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserEquipment {
-  Equipments get equipments => throw _privateConstructorUsedError;
+  @JsonKey(name: 'active')
+  bool? get active => throw _privateConstructorUsedError;
+  @JsonKey(name: 'user_id')
+  String? get userId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'equipments')
+  Equipment get equipment => throw _privateConstructorUsedError;
 
   /// Serializes this UserEquipment to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -940,9 +969,12 @@ abstract class $UserEquipmentCopyWith<$Res> {
           UserEquipment value, $Res Function(UserEquipment) then) =
       _$UserEquipmentCopyWithImpl<$Res, UserEquipment>;
   @useResult
-  $Res call({Equipments equipments});
+  $Res call(
+      {@JsonKey(name: 'active') bool? active,
+      @JsonKey(name: 'user_id') String? userId,
+      @JsonKey(name: 'equipments') Equipment equipment});
 
-  $EquipmentsCopyWith<$Res> get equipments;
+  $EquipmentCopyWith<$Res> get equipment;
 }
 
 /// @nodoc
@@ -960,13 +992,23 @@ class _$UserEquipmentCopyWithImpl<$Res, $Val extends UserEquipment>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? equipments = null,
+    Object? active = freezed,
+    Object? userId = freezed,
+    Object? equipment = null,
   }) {
     return _then(_value.copyWith(
-      equipments: null == equipments
-          ? _value.equipments
-          : equipments // ignore: cast_nullable_to_non_nullable
-              as Equipments,
+      active: freezed == active
+          ? _value.active
+          : active // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      userId: freezed == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      equipment: null == equipment
+          ? _value.equipment
+          : equipment // ignore: cast_nullable_to_non_nullable
+              as Equipment,
     ) as $Val);
   }
 
@@ -974,9 +1016,9 @@ class _$UserEquipmentCopyWithImpl<$Res, $Val extends UserEquipment>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $EquipmentsCopyWith<$Res> get equipments {
-    return $EquipmentsCopyWith<$Res>(_value.equipments, (value) {
-      return _then(_value.copyWith(equipments: value) as $Val);
+  $EquipmentCopyWith<$Res> get equipment {
+    return $EquipmentCopyWith<$Res>(_value.equipment, (value) {
+      return _then(_value.copyWith(equipment: value) as $Val);
     });
   }
 }
@@ -989,10 +1031,13 @@ abstract class _$$UserEquipmentImplCopyWith<$Res>
       __$$UserEquipmentImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Equipments equipments});
+  $Res call(
+      {@JsonKey(name: 'active') bool? active,
+      @JsonKey(name: 'user_id') String? userId,
+      @JsonKey(name: 'equipments') Equipment equipment});
 
   @override
-  $EquipmentsCopyWith<$Res> get equipments;
+  $EquipmentCopyWith<$Res> get equipment;
 }
 
 /// @nodoc
@@ -1008,13 +1053,23 @@ class __$$UserEquipmentImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? equipments = null,
+    Object? active = freezed,
+    Object? userId = freezed,
+    Object? equipment = null,
   }) {
     return _then(_$UserEquipmentImpl(
-      equipments: null == equipments
-          ? _value.equipments
-          : equipments // ignore: cast_nullable_to_non_nullable
-              as Equipments,
+      active: freezed == active
+          ? _value.active
+          : active // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      userId: freezed == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      equipment: null == equipment
+          ? _value.equipment
+          : equipment // ignore: cast_nullable_to_non_nullable
+              as Equipment,
     ));
   }
 }
@@ -1022,17 +1077,27 @@ class __$$UserEquipmentImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$UserEquipmentImpl implements _UserEquipment {
-  const _$UserEquipmentImpl({required this.equipments});
+  const _$UserEquipmentImpl(
+      {@JsonKey(name: 'active') this.active,
+      @JsonKey(name: 'user_id') this.userId,
+      @JsonKey(name: 'equipments') required this.equipment});
 
   factory _$UserEquipmentImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserEquipmentImplFromJson(json);
 
   @override
-  final Equipments equipments;
+  @JsonKey(name: 'active')
+  final bool? active;
+  @override
+  @JsonKey(name: 'user_id')
+  final String? userId;
+  @override
+  @JsonKey(name: 'equipments')
+  final Equipment equipment;
 
   @override
   String toString() {
-    return 'UserEquipment(equipments: $equipments)';
+    return 'UserEquipment(active: $active, userId: $userId, equipment: $equipment)';
   }
 
   @override
@@ -1040,13 +1105,15 @@ class _$UserEquipmentImpl implements _UserEquipment {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserEquipmentImpl &&
-            (identical(other.equipments, equipments) ||
-                other.equipments == equipments));
+            (identical(other.active, active) || other.active == active) &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.equipment, equipment) ||
+                other.equipment == equipment));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, equipments);
+  int get hashCode => Object.hash(runtimeType, active, userId, equipment);
 
   /// Create a copy of UserEquipment
   /// with the given fields replaced by the non-null parameter values.
@@ -1065,185 +1132,29 @@ class _$UserEquipmentImpl implements _UserEquipment {
 }
 
 abstract class _UserEquipment implements UserEquipment {
-  const factory _UserEquipment({required final Equipments equipments}) =
+  const factory _UserEquipment(
+          {@JsonKey(name: 'active') final bool? active,
+          @JsonKey(name: 'user_id') final String? userId,
+          @JsonKey(name: 'equipments') required final Equipment equipment}) =
       _$UserEquipmentImpl;
 
   factory _UserEquipment.fromJson(Map<String, dynamic> json) =
       _$UserEquipmentImpl.fromJson;
 
   @override
-  Equipments get equipments;
+  @JsonKey(name: 'active')
+  bool? get active;
+  @override
+  @JsonKey(name: 'user_id')
+  String? get userId;
+  @override
+  @JsonKey(name: 'equipments')
+  Equipment get equipment;
 
   /// Create a copy of UserEquipment
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UserEquipmentImplCopyWith<_$UserEquipmentImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Equipments _$EquipmentsFromJson(Map<String, dynamic> json) {
-  return _Equipments.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Equipments {
-  int get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-
-  /// Serializes this Equipments to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Equipments
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $EquipmentsCopyWith<Equipments> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $EquipmentsCopyWith<$Res> {
-  factory $EquipmentsCopyWith(
-          Equipments value, $Res Function(Equipments) then) =
-      _$EquipmentsCopyWithImpl<$Res, Equipments>;
-  @useResult
-  $Res call({int id, String name});
-}
-
-/// @nodoc
-class _$EquipmentsCopyWithImpl<$Res, $Val extends Equipments>
-    implements $EquipmentsCopyWith<$Res> {
-  _$EquipmentsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Equipments
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$EquipmentsImplCopyWith<$Res>
-    implements $EquipmentsCopyWith<$Res> {
-  factory _$$EquipmentsImplCopyWith(
-          _$EquipmentsImpl value, $Res Function(_$EquipmentsImpl) then) =
-      __$$EquipmentsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({int id, String name});
-}
-
-/// @nodoc
-class __$$EquipmentsImplCopyWithImpl<$Res>
-    extends _$EquipmentsCopyWithImpl<$Res, _$EquipmentsImpl>
-    implements _$$EquipmentsImplCopyWith<$Res> {
-  __$$EquipmentsImplCopyWithImpl(
-      _$EquipmentsImpl _value, $Res Function(_$EquipmentsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of Equipments
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-  }) {
-    return _then(_$EquipmentsImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$EquipmentsImpl implements _Equipments {
-  const _$EquipmentsImpl({required this.id, required this.name});
-
-  factory _$EquipmentsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EquipmentsImplFromJson(json);
-
-  @override
-  final int id;
-  @override
-  final String name;
-
-  @override
-  String toString() {
-    return 'Equipments(id: $id, name: $name)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$EquipmentsImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, name);
-
-  /// Create a copy of Equipments
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$EquipmentsImplCopyWith<_$EquipmentsImpl> get copyWith =>
-      __$$EquipmentsImplCopyWithImpl<_$EquipmentsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EquipmentsImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Equipments implements Equipments {
-  const factory _Equipments(
-      {required final int id, required final String name}) = _$EquipmentsImpl;
-
-  factory _Equipments.fromJson(Map<String, dynamic> json) =
-      _$EquipmentsImpl.fromJson;
-
-  @override
-  int get id;
-  @override
-  String get name;
-
-  /// Create a copy of Equipments
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$EquipmentsImplCopyWith<_$EquipmentsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

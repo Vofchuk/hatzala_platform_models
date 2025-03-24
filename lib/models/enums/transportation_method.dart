@@ -1,6 +1,10 @@
 enum TransportationMethod {
-  WALK,
-  BICYCLE,
-  TWO_WHEELER,
-  DRIVE,
+  WALK('A pé'),
+  BICYCLE('Bicicleta'),
+  TWO_WHEELER('Moto'),
+  DRIVE('Carro');
+
+  final String portuguese;
+
+  const TransportationMethod(this.portuguese);
 }

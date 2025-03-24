@@ -31,15 +31,15 @@ class Incident with _$Incident {
     String? reference,
     double? lat,
     double? lng,
-    @JsonKey(name: 'patient_location') String? patientLocation,
+    // @JsonKey(name: 'patient_location') String? patientLocation,
     @JsonKey(name: 'caller_phone') String? callerPhone,
     @JsonKey(name: 'caller_name') String? callerName,
     @JsonKey(name: 'is_caller_patient') bool? isCallerPatient,
     @JsonKey(name: 'complementary_phone') String? complementaryPhone,
     @JsonKey(name: 'caller_observation') String? callerObservation,
-    @JsonKey(name: 'multiple_victims') bool? multipleVictims,
-    @JsonKey(name: 'patient_unknown') bool? patientUnknown,
-    @JsonKey(name: 'patient_name') String? patientName,
+    // @JsonKey(name: 'multiple_victims') bool? multipleVictims,
+    // @JsonKey(name: 'patient_unknown') bool? patientUnknown,
+    // @JsonKey(name: 'patient_name') String? patientName,
     @JsonKey(name: 'complain_types') ComplainType? complainType,
     @JsonKey(name: 'status', defaultValue: IncidentStatus.ACTIVE)
     @Default(IncidentStatus.ACTIVE)
@@ -48,6 +48,8 @@ class Incident with _$Incident {
     List<Patient>? patients,
   }) = _Incident;
   const Incident._();
+
+  String get zelloName => '${complainType?.name ?? ""} ${incidentId}';
 
   factory Incident.fromJson(Map<String, dynamic> json) =>
       _$IncidentFromJson(json);

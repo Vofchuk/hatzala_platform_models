@@ -1,6 +1,7 @@
 // ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:hatzala_platform_models/models/user/user.dart';
 
 part 'vital_signs.freezed.dart';
 part 'vital_signs.g.dart';
@@ -47,15 +48,16 @@ class VitalSigns with _$VitalSigns {
     )
     Bleeding? bleeding,
     @JsonKey(
-      toJson: Priority.toJson,
-      fromJson: Priority.fromJson,
+      toJson: IncidentPriority.toJson,
+      fromJson: IncidentPriority.fromJson,
     )
-    Priority? priority,
+    IncidentPriority? priority,
     String? notes,
     @JsonKey(name: 'created_at') required String createdAt,
     @JsonKey(name: 'updated_at') required String updatedAt,
     @JsonKey(name: 'user_id') required String userId,
     @JsonKey(name: 'patient_id') required int patientId,
+    @JsonKey(name: 'users') User? user,
   }) = _VitalSigns;
 
   const VitalSigns._();
@@ -85,20 +87,20 @@ enum SkinColor {
   }
 }
 
-enum Priority {
+enum IncidentPriority {
   EMERGENCY('EMERGÊNCIA'),
   MODERATE_URGENCY('URGÊNCIA DE PRIORIDADE MODERADA'),
   LOW_URGENCY('URGÊNCIA DE PRIORIDADE BAIXA');
 
   final String portuguese;
-  const Priority(this.portuguese);
+  const IncidentPriority(this.portuguese);
 
-  static String? toJson(Priority? priority) => priority?.portuguese;
-  static Priority? fromJson(String? value) => fromPortuguese(value);
+  static String? toJson(IncidentPriority? priority) => priority?.portuguese;
+  static IncidentPriority? fromJson(String? value) => fromPortuguese(value);
 
-  static Priority? fromPortuguese(String? value) {
+  static IncidentPriority? fromPortuguese(String? value) {
     if (value == null) return null;
-    return Priority.values.firstWhere(
+    return IncidentPriority.values.firstWhere(
       (priority) => priority.portuguese == value,
       orElse: () => throw ArgumentError('Invalid priority: $value'),
     );

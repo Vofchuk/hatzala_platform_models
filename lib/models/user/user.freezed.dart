@@ -25,21 +25,37 @@ mixin _$User {
       throw _privateConstructorUsedError; // required bool available,
   @JsonKey(name: 'user_type')
   UserType get userType => throw _privateConstructorUsedError;
-  bool get admin => throw _privateConstructorUsedError;
-  @JsonKey(name: 'first_responder_status')
-  FirstResponderStatus get firstResponderStatus =>
+  @JsonKey(includeIfNull: false)
+  bool? get admin => throw _privateConstructorUsedError;
+  @JsonKey(name: 'first_responder_status', includeIfNull: false)
+  FirstResponderStatus? get firstResponderStatus =>
       throw _privateConstructorUsedError;
-  @JsonKey(name: 'available_at_night')
-  bool get availableAtNight => throw _privateConstructorUsedError;
-  @JsonKey(name: 'transportation_method')
-  String get transportationMethod => throw _privateConstructorUsedError;
+  @JsonKey(name: 'available_at_night', includeIfNull: false)
+  bool? get availableAtNight => throw _privateConstructorUsedError;
+  @JsonKey(name: 'transportation_method', includeIfNull: false)
+  TransportationMethod? get transportationMethod =>
+      throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
   String? get cpf => throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
   String? get phone => throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
   bool? get veteran => throw _privateConstructorUsedError;
-  dynamic get obs => throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
+  String? get obs => throw _privateConstructorUsedError;
+  @JsonKey(includeIfNull: false)
   bool? get active => throw _privateConstructorUsedError;
-  @JsonKey(name: 'pushy_tokens')
+  @JsonKey(name: 'pushy_tokens', includeIfNull: false)
   List<PushyToken>? get pushyTokens => throw _privateConstructorUsedError;
+  @JsonKey(name: 'zello_id', includeIfNull: false)
+  String? get zelloId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'user_equipments', includeIfNull: false)
+  List<UserEquipment>? get userEquipment => throw _privateConstructorUsedError;
+  @JsonKey(name: 'available_transportation_methods', includeIfNull: false)
+  List<TransportationMethod>? get availableTransportationMethods =>
+      throw _privateConstructorUsedError;
+  @JsonKey(name: 'notify_ai_call', includeIfNull: false, defaultValue: true)
+  bool get notifyAiCall => throw _privateConstructorUsedError;
 
   /// Serializes this User to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -59,17 +75,27 @@ abstract class $UserCopyWith<$Res> {
       {String id,
       String name,
       @JsonKey(name: 'user_type') UserType userType,
-      bool admin,
-      @JsonKey(name: 'first_responder_status')
-      FirstResponderStatus firstResponderStatus,
-      @JsonKey(name: 'available_at_night') bool availableAtNight,
-      @JsonKey(name: 'transportation_method') String transportationMethod,
-      String? cpf,
-      String? phone,
-      bool? veteran,
-      dynamic obs,
-      bool? active,
-      @JsonKey(name: 'pushy_tokens') List<PushyToken>? pushyTokens});
+      @JsonKey(includeIfNull: false) bool? admin,
+      @JsonKey(name: 'first_responder_status', includeIfNull: false)
+      FirstResponderStatus? firstResponderStatus,
+      @JsonKey(name: 'available_at_night', includeIfNull: false)
+      bool? availableAtNight,
+      @JsonKey(name: 'transportation_method', includeIfNull: false)
+      TransportationMethod? transportationMethod,
+      @JsonKey(includeIfNull: false) String? cpf,
+      @JsonKey(includeIfNull: false) String? phone,
+      @JsonKey(includeIfNull: false) bool? veteran,
+      @JsonKey(includeIfNull: false) String? obs,
+      @JsonKey(includeIfNull: false) bool? active,
+      @JsonKey(name: 'pushy_tokens', includeIfNull: false)
+      List<PushyToken>? pushyTokens,
+      @JsonKey(name: 'zello_id', includeIfNull: false) String? zelloId,
+      @JsonKey(name: 'user_equipments', includeIfNull: false)
+      List<UserEquipment>? userEquipment,
+      @JsonKey(name: 'available_transportation_methods', includeIfNull: false)
+      List<TransportationMethod>? availableTransportationMethods,
+      @JsonKey(name: 'notify_ai_call', includeIfNull: false, defaultValue: true)
+      bool notifyAiCall});
 }
 
 /// @nodoc
@@ -90,16 +116,20 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? id = null,
     Object? name = null,
     Object? userType = null,
-    Object? admin = null,
-    Object? firstResponderStatus = null,
-    Object? availableAtNight = null,
-    Object? transportationMethod = null,
+    Object? admin = freezed,
+    Object? firstResponderStatus = freezed,
+    Object? availableAtNight = freezed,
+    Object? transportationMethod = freezed,
     Object? cpf = freezed,
     Object? phone = freezed,
     Object? veteran = freezed,
     Object? obs = freezed,
     Object? active = freezed,
     Object? pushyTokens = freezed,
+    Object? zelloId = freezed,
+    Object? userEquipment = freezed,
+    Object? availableTransportationMethods = freezed,
+    Object? notifyAiCall = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -114,22 +144,22 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.userType
           : userType // ignore: cast_nullable_to_non_nullable
               as UserType,
-      admin: null == admin
+      admin: freezed == admin
           ? _value.admin
           : admin // ignore: cast_nullable_to_non_nullable
-              as bool,
-      firstResponderStatus: null == firstResponderStatus
+              as bool?,
+      firstResponderStatus: freezed == firstResponderStatus
           ? _value.firstResponderStatus
           : firstResponderStatus // ignore: cast_nullable_to_non_nullable
-              as FirstResponderStatus,
-      availableAtNight: null == availableAtNight
+              as FirstResponderStatus?,
+      availableAtNight: freezed == availableAtNight
           ? _value.availableAtNight
           : availableAtNight // ignore: cast_nullable_to_non_nullable
-              as bool,
-      transportationMethod: null == transportationMethod
+              as bool?,
+      transportationMethod: freezed == transportationMethod
           ? _value.transportationMethod
           : transportationMethod // ignore: cast_nullable_to_non_nullable
-              as String,
+              as TransportationMethod?,
       cpf: freezed == cpf
           ? _value.cpf
           : cpf // ignore: cast_nullable_to_non_nullable
@@ -145,7 +175,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
       obs: freezed == obs
           ? _value.obs
           : obs // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
       active: freezed == active
           ? _value.active
           : active // ignore: cast_nullable_to_non_nullable
@@ -154,6 +184,22 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.pushyTokens
           : pushyTokens // ignore: cast_nullable_to_non_nullable
               as List<PushyToken>?,
+      zelloId: freezed == zelloId
+          ? _value.zelloId
+          : zelloId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userEquipment: freezed == userEquipment
+          ? _value.userEquipment
+          : userEquipment // ignore: cast_nullable_to_non_nullable
+              as List<UserEquipment>?,
+      availableTransportationMethods: freezed == availableTransportationMethods
+          ? _value.availableTransportationMethods
+          : availableTransportationMethods // ignore: cast_nullable_to_non_nullable
+              as List<TransportationMethod>?,
+      notifyAiCall: null == notifyAiCall
+          ? _value.notifyAiCall
+          : notifyAiCall // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -169,17 +215,27 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       {String id,
       String name,
       @JsonKey(name: 'user_type') UserType userType,
-      bool admin,
-      @JsonKey(name: 'first_responder_status')
-      FirstResponderStatus firstResponderStatus,
-      @JsonKey(name: 'available_at_night') bool availableAtNight,
-      @JsonKey(name: 'transportation_method') String transportationMethod,
-      String? cpf,
-      String? phone,
-      bool? veteran,
-      dynamic obs,
-      bool? active,
-      @JsonKey(name: 'pushy_tokens') List<PushyToken>? pushyTokens});
+      @JsonKey(includeIfNull: false) bool? admin,
+      @JsonKey(name: 'first_responder_status', includeIfNull: false)
+      FirstResponderStatus? firstResponderStatus,
+      @JsonKey(name: 'available_at_night', includeIfNull: false)
+      bool? availableAtNight,
+      @JsonKey(name: 'transportation_method', includeIfNull: false)
+      TransportationMethod? transportationMethod,
+      @JsonKey(includeIfNull: false) String? cpf,
+      @JsonKey(includeIfNull: false) String? phone,
+      @JsonKey(includeIfNull: false) bool? veteran,
+      @JsonKey(includeIfNull: false) String? obs,
+      @JsonKey(includeIfNull: false) bool? active,
+      @JsonKey(name: 'pushy_tokens', includeIfNull: false)
+      List<PushyToken>? pushyTokens,
+      @JsonKey(name: 'zello_id', includeIfNull: false) String? zelloId,
+      @JsonKey(name: 'user_equipments', includeIfNull: false)
+      List<UserEquipment>? userEquipment,
+      @JsonKey(name: 'available_transportation_methods', includeIfNull: false)
+      List<TransportationMethod>? availableTransportationMethods,
+      @JsonKey(name: 'notify_ai_call', includeIfNull: false, defaultValue: true)
+      bool notifyAiCall});
 }
 
 /// @nodoc
@@ -197,16 +253,20 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? userType = null,
-    Object? admin = null,
-    Object? firstResponderStatus = null,
-    Object? availableAtNight = null,
-    Object? transportationMethod = null,
+    Object? admin = freezed,
+    Object? firstResponderStatus = freezed,
+    Object? availableAtNight = freezed,
+    Object? transportationMethod = freezed,
     Object? cpf = freezed,
     Object? phone = freezed,
     Object? veteran = freezed,
     Object? obs = freezed,
     Object? active = freezed,
     Object? pushyTokens = freezed,
+    Object? zelloId = freezed,
+    Object? userEquipment = freezed,
+    Object? availableTransportationMethods = freezed,
+    Object? notifyAiCall = null,
   }) {
     return _then(_$UserImpl(
       id: null == id
@@ -221,22 +281,22 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.userType
           : userType // ignore: cast_nullable_to_non_nullable
               as UserType,
-      admin: null == admin
+      admin: freezed == admin
           ? _value.admin
           : admin // ignore: cast_nullable_to_non_nullable
-              as bool,
-      firstResponderStatus: null == firstResponderStatus
+              as bool?,
+      firstResponderStatus: freezed == firstResponderStatus
           ? _value.firstResponderStatus
           : firstResponderStatus // ignore: cast_nullable_to_non_nullable
-              as FirstResponderStatus,
-      availableAtNight: null == availableAtNight
+              as FirstResponderStatus?,
+      availableAtNight: freezed == availableAtNight
           ? _value.availableAtNight
           : availableAtNight // ignore: cast_nullable_to_non_nullable
-              as bool,
-      transportationMethod: null == transportationMethod
+              as bool?,
+      transportationMethod: freezed == transportationMethod
           ? _value.transportationMethod
           : transportationMethod // ignore: cast_nullable_to_non_nullable
-              as String,
+              as TransportationMethod?,
       cpf: freezed == cpf
           ? _value.cpf
           : cpf // ignore: cast_nullable_to_non_nullable
@@ -252,7 +312,7 @@ class __$$UserImplCopyWithImpl<$Res>
       obs: freezed == obs
           ? _value.obs
           : obs // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
       active: freezed == active
           ? _value.active
           : active // ignore: cast_nullable_to_non_nullable
@@ -261,6 +321,22 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value._pushyTokens
           : pushyTokens // ignore: cast_nullable_to_non_nullable
               as List<PushyToken>?,
+      zelloId: freezed == zelloId
+          ? _value.zelloId
+          : zelloId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userEquipment: freezed == userEquipment
+          ? _value._userEquipment
+          : userEquipment // ignore: cast_nullable_to_non_nullable
+              as List<UserEquipment>?,
+      availableTransportationMethods: freezed == availableTransportationMethods
+          ? _value._availableTransportationMethods
+          : availableTransportationMethods // ignore: cast_nullable_to_non_nullable
+              as List<TransportationMethod>?,
+      notifyAiCall: null == notifyAiCall
+          ? _value.notifyAiCall
+          : notifyAiCall // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -272,19 +348,30 @@ class _$UserImpl extends _User {
       {required this.id,
       required this.name,
       @JsonKey(name: 'user_type') required this.userType,
-      required this.admin,
-      @JsonKey(name: 'first_responder_status')
-      required this.firstResponderStatus,
-      @JsonKey(name: 'available_at_night') required this.availableAtNight,
-      @JsonKey(name: 'transportation_method')
-      required this.transportationMethod,
-      this.cpf,
-      this.phone,
-      this.veteran,
-      this.obs,
-      this.active,
-      @JsonKey(name: 'pushy_tokens') final List<PushyToken>? pushyTokens})
+      @JsonKey(includeIfNull: false) this.admin = false,
+      @JsonKey(name: 'first_responder_status', includeIfNull: false)
+      this.firstResponderStatus,
+      @JsonKey(name: 'available_at_night', includeIfNull: false)
+      this.availableAtNight,
+      @JsonKey(name: 'transportation_method', includeIfNull: false)
+      this.transportationMethod,
+      @JsonKey(includeIfNull: false) this.cpf,
+      @JsonKey(includeIfNull: false) this.phone,
+      @JsonKey(includeIfNull: false) this.veteran,
+      @JsonKey(includeIfNull: false) this.obs,
+      @JsonKey(includeIfNull: false) this.active,
+      @JsonKey(name: 'pushy_tokens', includeIfNull: false)
+      final List<PushyToken>? pushyTokens,
+      @JsonKey(name: 'zello_id', includeIfNull: false) this.zelloId,
+      @JsonKey(name: 'user_equipments', includeIfNull: false)
+      final List<UserEquipment>? userEquipment,
+      @JsonKey(name: 'available_transportation_methods', includeIfNull: false)
+      final List<TransportationMethod>? availableTransportationMethods,
+      @JsonKey(name: 'notify_ai_call', includeIfNull: false, defaultValue: true)
+      this.notifyAiCall = true})
       : _pushyTokens = pushyTokens,
+        _userEquipment = userEquipment,
+        _availableTransportationMethods = availableTransportationMethods,
         super._();
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
@@ -299,29 +386,35 @@ class _$UserImpl extends _User {
   @JsonKey(name: 'user_type')
   final UserType userType;
   @override
-  final bool admin;
+  @JsonKey(includeIfNull: false)
+  final bool? admin;
   @override
-  @JsonKey(name: 'first_responder_status')
-  final FirstResponderStatus firstResponderStatus;
+  @JsonKey(name: 'first_responder_status', includeIfNull: false)
+  final FirstResponderStatus? firstResponderStatus;
   @override
-  @JsonKey(name: 'available_at_night')
-  final bool availableAtNight;
+  @JsonKey(name: 'available_at_night', includeIfNull: false)
+  final bool? availableAtNight;
   @override
-  @JsonKey(name: 'transportation_method')
-  final String transportationMethod;
+  @JsonKey(name: 'transportation_method', includeIfNull: false)
+  final TransportationMethod? transportationMethod;
   @override
+  @JsonKey(includeIfNull: false)
   final String? cpf;
   @override
+  @JsonKey(includeIfNull: false)
   final String? phone;
   @override
+  @JsonKey(includeIfNull: false)
   final bool? veteran;
   @override
-  final dynamic obs;
+  @JsonKey(includeIfNull: false)
+  final String? obs;
   @override
+  @JsonKey(includeIfNull: false)
   final bool? active;
   final List<PushyToken>? _pushyTokens;
   @override
-  @JsonKey(name: 'pushy_tokens')
+  @JsonKey(name: 'pushy_tokens', includeIfNull: false)
   List<PushyToken>? get pushyTokens {
     final value = _pushyTokens;
     if (value == null) return null;
@@ -331,8 +424,38 @@ class _$UserImpl extends _User {
   }
 
   @override
+  @JsonKey(name: 'zello_id', includeIfNull: false)
+  final String? zelloId;
+  final List<UserEquipment>? _userEquipment;
+  @override
+  @JsonKey(name: 'user_equipments', includeIfNull: false)
+  List<UserEquipment>? get userEquipment {
+    final value = _userEquipment;
+    if (value == null) return null;
+    if (_userEquipment is EqualUnmodifiableListView) return _userEquipment;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<TransportationMethod>? _availableTransportationMethods;
+  @override
+  @JsonKey(name: 'available_transportation_methods', includeIfNull: false)
+  List<TransportationMethod>? get availableTransportationMethods {
+    final value = _availableTransportationMethods;
+    if (value == null) return null;
+    if (_availableTransportationMethods is EqualUnmodifiableListView)
+      return _availableTransportationMethods;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  @JsonKey(name: 'notify_ai_call', includeIfNull: false, defaultValue: true)
+  final bool notifyAiCall;
+
+  @override
   String toString() {
-    return 'User(id: $id, name: $name, userType: $userType, admin: $admin, firstResponderStatus: $firstResponderStatus, availableAtNight: $availableAtNight, transportationMethod: $transportationMethod, cpf: $cpf, phone: $phone, veteran: $veteran, obs: $obs, active: $active, pushyTokens: $pushyTokens)';
+    return 'User(id: $id, name: $name, userType: $userType, admin: $admin, firstResponderStatus: $firstResponderStatus, availableAtNight: $availableAtNight, transportationMethod: $transportationMethod, cpf: $cpf, phone: $phone, veteran: $veteran, obs: $obs, active: $active, pushyTokens: $pushyTokens, zelloId: $zelloId, userEquipment: $userEquipment, availableTransportationMethods: $availableTransportationMethods, notifyAiCall: $notifyAiCall)';
   }
 
   @override
@@ -354,10 +477,18 @@ class _$UserImpl extends _User {
             (identical(other.cpf, cpf) || other.cpf == cpf) &&
             (identical(other.phone, phone) || other.phone == phone) &&
             (identical(other.veteran, veteran) || other.veteran == veteran) &&
-            const DeepCollectionEquality().equals(other.obs, obs) &&
+            (identical(other.obs, obs) || other.obs == obs) &&
             (identical(other.active, active) || other.active == active) &&
             const DeepCollectionEquality()
-                .equals(other._pushyTokens, _pushyTokens));
+                .equals(other._pushyTokens, _pushyTokens) &&
+            (identical(other.zelloId, zelloId) || other.zelloId == zelloId) &&
+            const DeepCollectionEquality()
+                .equals(other._userEquipment, _userEquipment) &&
+            const DeepCollectionEquality().equals(
+                other._availableTransportationMethods,
+                _availableTransportationMethods) &&
+            (identical(other.notifyAiCall, notifyAiCall) ||
+                other.notifyAiCall == notifyAiCall));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -374,9 +505,13 @@ class _$UserImpl extends _User {
       cpf,
       phone,
       veteran,
-      const DeepCollectionEquality().hash(obs),
+      obs,
       active,
-      const DeepCollectionEquality().hash(_pushyTokens));
+      const DeepCollectionEquality().hash(_pushyTokens),
+      zelloId,
+      const DeepCollectionEquality().hash(_userEquipment),
+      const DeepCollectionEquality().hash(_availableTransportationMethods),
+      notifyAiCall);
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
@@ -399,19 +534,27 @@ abstract class _User extends User {
       {required final String id,
       required final String name,
       @JsonKey(name: 'user_type') required final UserType userType,
-      required final bool admin,
-      @JsonKey(name: 'first_responder_status')
-      required final FirstResponderStatus firstResponderStatus,
-      @JsonKey(name: 'available_at_night') required final bool availableAtNight,
-      @JsonKey(name: 'transportation_method')
-      required final String transportationMethod,
-      final String? cpf,
-      final String? phone,
-      final bool? veteran,
-      final dynamic obs,
-      final bool? active,
-      @JsonKey(name: 'pushy_tokens')
-      final List<PushyToken>? pushyTokens}) = _$UserImpl;
+      @JsonKey(includeIfNull: false) final bool? admin,
+      @JsonKey(name: 'first_responder_status', includeIfNull: false)
+      final FirstResponderStatus? firstResponderStatus,
+      @JsonKey(name: 'available_at_night', includeIfNull: false)
+      final bool? availableAtNight,
+      @JsonKey(name: 'transportation_method', includeIfNull: false)
+      final TransportationMethod? transportationMethod,
+      @JsonKey(includeIfNull: false) final String? cpf,
+      @JsonKey(includeIfNull: false) final String? phone,
+      @JsonKey(includeIfNull: false) final bool? veteran,
+      @JsonKey(includeIfNull: false) final String? obs,
+      @JsonKey(includeIfNull: false) final bool? active,
+      @JsonKey(name: 'pushy_tokens', includeIfNull: false)
+      final List<PushyToken>? pushyTokens,
+      @JsonKey(name: 'zello_id', includeIfNull: false) final String? zelloId,
+      @JsonKey(name: 'user_equipments', includeIfNull: false)
+      final List<UserEquipment>? userEquipment,
+      @JsonKey(name: 'available_transportation_methods', includeIfNull: false)
+      final List<TransportationMethod>? availableTransportationMethods,
+      @JsonKey(name: 'notify_ai_call', includeIfNull: false, defaultValue: true)
+      final bool notifyAiCall}) = _$UserImpl;
   const _User._() : super._();
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
@@ -424,29 +567,47 @@ abstract class _User extends User {
   @JsonKey(name: 'user_type')
   UserType get userType;
   @override
-  bool get admin;
+  @JsonKey(includeIfNull: false)
+  bool? get admin;
   @override
-  @JsonKey(name: 'first_responder_status')
-  FirstResponderStatus get firstResponderStatus;
+  @JsonKey(name: 'first_responder_status', includeIfNull: false)
+  FirstResponderStatus? get firstResponderStatus;
   @override
-  @JsonKey(name: 'available_at_night')
-  bool get availableAtNight;
+  @JsonKey(name: 'available_at_night', includeIfNull: false)
+  bool? get availableAtNight;
   @override
-  @JsonKey(name: 'transportation_method')
-  String get transportationMethod;
+  @JsonKey(name: 'transportation_method', includeIfNull: false)
+  TransportationMethod? get transportationMethod;
   @override
+  @JsonKey(includeIfNull: false)
   String? get cpf;
   @override
+  @JsonKey(includeIfNull: false)
   String? get phone;
   @override
+  @JsonKey(includeIfNull: false)
   bool? get veteran;
   @override
-  dynamic get obs;
+  @JsonKey(includeIfNull: false)
+  String? get obs;
   @override
+  @JsonKey(includeIfNull: false)
   bool? get active;
   @override
-  @JsonKey(name: 'pushy_tokens')
+  @JsonKey(name: 'pushy_tokens', includeIfNull: false)
   List<PushyToken>? get pushyTokens;
+  @override
+  @JsonKey(name: 'zello_id', includeIfNull: false)
+  String? get zelloId;
+  @override
+  @JsonKey(name: 'user_equipments', includeIfNull: false)
+  List<UserEquipment>? get userEquipment;
+  @override
+  @JsonKey(name: 'available_transportation_methods', includeIfNull: false)
+  List<TransportationMethod>? get availableTransportationMethods;
+  @override
+  @JsonKey(name: 'notify_ai_call', includeIfNull: false, defaultValue: true)
+  bool get notifyAiCall;
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.

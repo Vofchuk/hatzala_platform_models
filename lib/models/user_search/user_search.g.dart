@@ -47,6 +47,7 @@ _$UserSearchImpl _$$UserSearchImplFromJson(Map<String, dynamic> json) =>
           ? null
           : DateTime.parse(json['accepted_with_no_assignment_at'] as String),
       eta: json['eta'] as num?,
+      obs: json['obs'] as String?,
       users: json['users'] == null
           ? null
           : Users.fromJson(json['users'] as Map<String, dynamic>),
@@ -75,6 +76,7 @@ Map<String, dynamic> _$$UserSearchImplToJson(_$UserSearchImpl instance) =>
       'accepted_with_no_assignment_at':
           instance.acceptedWithNoAssignmentAt?.toIso8601String(),
       'eta': instance.eta,
+      'obs': instance.obs,
       'users': instance.users,
     };
 
@@ -123,23 +125,14 @@ Map<String, dynamic> _$$UsersImplToJson(_$UsersImpl instance) =>
 
 _$UserEquipmentImpl _$$UserEquipmentImplFromJson(Map<String, dynamic> json) =>
     _$UserEquipmentImpl(
-      equipments:
-          Equipments.fromJson(json['equipments'] as Map<String, dynamic>),
+      active: json['active'] as bool?,
+      userId: json['user_id'] as String?,
+      equipment: Equipment.fromJson(json['equipments'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$UserEquipmentImplToJson(_$UserEquipmentImpl instance) =>
     <String, dynamic>{
-      'equipments': instance.equipments,
-    };
-
-_$EquipmentsImpl _$$EquipmentsImplFromJson(Map<String, dynamic> json) =>
-    _$EquipmentsImpl(
-      id: (json['id'] as num).toInt(),
-      name: json['name'] as String,
-    );
-
-Map<String, dynamic> _$$EquipmentsImplToJson(_$EquipmentsImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
+      'active': instance.active,
+      'user_id': instance.userId,
+      'equipments': instance.equipment,
     };

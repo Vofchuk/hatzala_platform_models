@@ -33,6 +33,7 @@ class IncidentUserSearch with _$IncidentUserSearch {
     @JsonKey(name: 'eta') num? eta,
     @JsonKey(name: 'accepted_with_no_assignment_at')
     DateTime? acceptedWithNoAssignmentAt,
+    String? obs,
   }) = _IncidentUserSearch;
 
   bool get isParticipant => status == SearchUserStatus.ACCEPTED;

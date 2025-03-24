@@ -1,8 +1,11 @@
+export 'package:hatzala_platform_models/models/ai_call/ai_call.dart';
+export 'package:hatzala_platform_models/models/ai_notification/ai_notification.dart';
 export 'package:hatzala_platform_models/models/complain_type/complain_type.dart';
 export 'package:hatzala_platform_models/models/enums/index.dart';
 export 'package:hatzala_platform_models/models/enums/on_incident_status.dart';
 export 'package:hatzala_platform_models/models/equipment/equipment.dart';
 export 'package:hatzala_platform_models/models/incident/incident.dart';
+export 'package:hatzala_platform_models/models/incident_evolution/incident_evolution.dart';
 export 'package:hatzala_platform_models/models/incident_protocol_equipment/incident_protocol_equipment.dart';
 export 'package:hatzala_platform_models/models/incident_protocol_vehicles/incident_protocol_vehicles.dart';
 export 'package:hatzala_platform_models/models/incident_user_location/incident_user_location.dart';
@@ -12,6 +15,7 @@ export 'package:hatzala_platform_models/models/locations/locations.dart';
 export 'package:hatzala_platform_models/models/monthly_users_report/monthly_user_report.dart';
 export 'package:hatzala_platform_models/models/notification/notification.dart';
 export 'package:hatzala_platform_models/models/pagination/paginated_response.dart';
+export 'package:hatzala_platform_models/models/patient/patient.dart';
 export 'package:hatzala_platform_models/models/protocol/protocol.dart';
 export 'package:hatzala_platform_models/models/pushy_tokens/pushy_tokens.dart';
 export 'package:hatzala_platform_models/models/user/user.dart';
@@ -24,3 +28,4 @@ export 'package:hatzala_platform_models/models/vehicle_geo_location/vehicle_geo_
 export 'package:hatzala_platform_models/models/vehicle_location/vehicle_location.dart';
 export 'package:hatzala_platform_models/models/vehicle_location_data/vehicle_location_data.dart';
 export 'package:hatzala_platform_models/models/vehicle_type/vehicle_type.dart';
+export 'package:hatzala_platform_models/models/vital_signs/vital_signs.dart';

@@ -30,6 +30,7 @@ class UserSearch with _$UserSearch {
     @JsonKey(name: 'accepted_with_no_assignment_at')
     DateTime? acceptedWithNoAssignmentAt,
     @JsonKey(name: 'eta') num? eta,
+    @JsonKey(name: 'obs') String? obs,
     Users? users,
   }) = _UserSearch;
 
@@ -80,20 +81,11 @@ class Users with _$Users {
 @freezed
 class UserEquipment with _$UserEquipment {
   const factory UserEquipment({
-    required Equipments equipments,
+    @JsonKey(name: 'active') bool? active,
+    @JsonKey(name: 'user_id') String? userId,
+    @JsonKey(name: 'equipments') required Equipment equipment,
   }) = _UserEquipment;
 
   factory UserEquipment.fromJson(Map<String, dynamic> json) =>
       _$UserEquipmentFromJson(json);
-}
-
-@freezed
-class Equipments with _$Equipments {
-  const factory Equipments({
-    required int id,
-    required String name,
-  }) = _Equipments;
-
-  factory Equipments.fromJson(Map<String, dynamic> json) =>
-      _$EquipmentsFromJson(json);
 }

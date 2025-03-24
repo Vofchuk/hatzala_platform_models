@@ -41,9 +41,8 @@ mixin _$Incident {
   String? get neighborhood => throw _privateConstructorUsedError;
   String? get reference => throw _privateConstructorUsedError;
   double? get lat => throw _privateConstructorUsedError;
-  double? get lng => throw _privateConstructorUsedError;
-  @JsonKey(name: 'patient_location')
-  String? get patientLocation => throw _privateConstructorUsedError;
+  double? get lng =>
+      throw _privateConstructorUsedError; // @JsonKey(name: 'patient_location') String? patientLocation,
   @JsonKey(name: 'caller_phone')
   String? get callerPhone => throw _privateConstructorUsedError;
   @JsonKey(name: 'caller_name')
@@ -53,13 +52,10 @@ mixin _$Incident {
   @JsonKey(name: 'complementary_phone')
   String? get complementaryPhone => throw _privateConstructorUsedError;
   @JsonKey(name: 'caller_observation')
-  String? get callerObservation => throw _privateConstructorUsedError;
-  @JsonKey(name: 'multiple_victims')
-  bool? get multipleVictims => throw _privateConstructorUsedError;
-  @JsonKey(name: 'patient_unknown')
-  bool? get patientUnknown => throw _privateConstructorUsedError;
-  @JsonKey(name: 'patient_name')
-  String? get patientName => throw _privateConstructorUsedError;
+  String? get callerObservation =>
+      throw _privateConstructorUsedError; // @JsonKey(name: 'multiple_victims') bool? multipleVictims,
+// @JsonKey(name: 'patient_unknown') bool? patientUnknown,
+// @JsonKey(name: 'patient_name') String? patientName,
   @JsonKey(name: 'complain_types')
   ComplainType? get complainType => throw _privateConstructorUsedError;
   @JsonKey(name: 'status', defaultValue: IncidentStatus.ACTIVE)
@@ -100,15 +96,11 @@ abstract class $IncidentCopyWith<$Res> {
       String? reference,
       double? lat,
       double? lng,
-      @JsonKey(name: 'patient_location') String? patientLocation,
       @JsonKey(name: 'caller_phone') String? callerPhone,
       @JsonKey(name: 'caller_name') String? callerName,
       @JsonKey(name: 'is_caller_patient') bool? isCallerPatient,
       @JsonKey(name: 'complementary_phone') String? complementaryPhone,
       @JsonKey(name: 'caller_observation') String? callerObservation,
-      @JsonKey(name: 'multiple_victims') bool? multipleVictims,
-      @JsonKey(name: 'patient_unknown') bool? patientUnknown,
-      @JsonKey(name: 'patient_name') String? patientName,
       @JsonKey(name: 'complain_types') ComplainType? complainType,
       @JsonKey(name: 'status', defaultValue: IncidentStatus.ACTIVE)
       IncidentStatus status,
@@ -149,15 +141,11 @@ class _$IncidentCopyWithImpl<$Res, $Val extends Incident>
     Object? reference = freezed,
     Object? lat = freezed,
     Object? lng = freezed,
-    Object? patientLocation = freezed,
     Object? callerPhone = freezed,
     Object? callerName = freezed,
     Object? isCallerPatient = freezed,
     Object? complementaryPhone = freezed,
     Object? callerObservation = freezed,
-    Object? multipleVictims = freezed,
-    Object? patientUnknown = freezed,
-    Object? patientName = freezed,
     Object? complainType = freezed,
     Object? status = null,
     Object? streetViewImage = freezed,
@@ -228,10 +216,6 @@ class _$IncidentCopyWithImpl<$Res, $Val extends Incident>
           ? _value.lng
           : lng // ignore: cast_nullable_to_non_nullable
               as double?,
-      patientLocation: freezed == patientLocation
-          ? _value.patientLocation
-          : patientLocation // ignore: cast_nullable_to_non_nullable
-              as String?,
       callerPhone: freezed == callerPhone
           ? _value.callerPhone
           : callerPhone // ignore: cast_nullable_to_non_nullable
@@ -251,18 +235,6 @@ class _$IncidentCopyWithImpl<$Res, $Val extends Incident>
       callerObservation: freezed == callerObservation
           ? _value.callerObservation
           : callerObservation // ignore: cast_nullable_to_non_nullable
-              as String?,
-      multipleVictims: freezed == multipleVictims
-          ? _value.multipleVictims
-          : multipleVictims // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      patientUnknown: freezed == patientUnknown
-          ? _value.patientUnknown
-          : patientUnknown // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      patientName: freezed == patientName
-          ? _value.patientName
-          : patientName // ignore: cast_nullable_to_non_nullable
               as String?,
       complainType: freezed == complainType
           ? _value.complainType
@@ -323,15 +295,11 @@ abstract class _$$IncidentImplCopyWith<$Res>
       String? reference,
       double? lat,
       double? lng,
-      @JsonKey(name: 'patient_location') String? patientLocation,
       @JsonKey(name: 'caller_phone') String? callerPhone,
       @JsonKey(name: 'caller_name') String? callerName,
       @JsonKey(name: 'is_caller_patient') bool? isCallerPatient,
       @JsonKey(name: 'complementary_phone') String? complementaryPhone,
       @JsonKey(name: 'caller_observation') String? callerObservation,
-      @JsonKey(name: 'multiple_victims') bool? multipleVictims,
-      @JsonKey(name: 'patient_unknown') bool? patientUnknown,
-      @JsonKey(name: 'patient_name') String? patientName,
       @JsonKey(name: 'complain_types') ComplainType? complainType,
       @JsonKey(name: 'status', defaultValue: IncidentStatus.ACTIVE)
       IncidentStatus status,
@@ -371,15 +339,11 @@ class __$$IncidentImplCopyWithImpl<$Res>
     Object? reference = freezed,
     Object? lat = freezed,
     Object? lng = freezed,
-    Object? patientLocation = freezed,
     Object? callerPhone = freezed,
     Object? callerName = freezed,
     Object? isCallerPatient = freezed,
     Object? complementaryPhone = freezed,
     Object? callerObservation = freezed,
-    Object? multipleVictims = freezed,
-    Object? patientUnknown = freezed,
-    Object? patientName = freezed,
     Object? complainType = freezed,
     Object? status = null,
     Object? streetViewImage = freezed,
@@ -450,10 +414,6 @@ class __$$IncidentImplCopyWithImpl<$Res>
           ? _value.lng
           : lng // ignore: cast_nullable_to_non_nullable
               as double?,
-      patientLocation: freezed == patientLocation
-          ? _value.patientLocation
-          : patientLocation // ignore: cast_nullable_to_non_nullable
-              as String?,
       callerPhone: freezed == callerPhone
           ? _value.callerPhone
           : callerPhone // ignore: cast_nullable_to_non_nullable
@@ -473,18 +433,6 @@ class __$$IncidentImplCopyWithImpl<$Res>
       callerObservation: freezed == callerObservation
           ? _value.callerObservation
           : callerObservation // ignore: cast_nullable_to_non_nullable
-              as String?,
-      multipleVictims: freezed == multipleVictims
-          ? _value.multipleVictims
-          : multipleVictims // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      patientUnknown: freezed == patientUnknown
-          ? _value.patientUnknown
-          : patientUnknown // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      patientName: freezed == patientName
-          ? _value.patientName
-          : patientName // ignore: cast_nullable_to_non_nullable
               as String?,
       complainType: freezed == complainType
           ? _value.complainType
@@ -526,15 +474,11 @@ class _$IncidentImpl extends _Incident {
       this.reference,
       this.lat,
       this.lng,
-      @JsonKey(name: 'patient_location') this.patientLocation,
       @JsonKey(name: 'caller_phone') this.callerPhone,
       @JsonKey(name: 'caller_name') this.callerName,
       @JsonKey(name: 'is_caller_patient') this.isCallerPatient,
       @JsonKey(name: 'complementary_phone') this.complementaryPhone,
       @JsonKey(name: 'caller_observation') this.callerObservation,
-      @JsonKey(name: 'multiple_victims') this.multipleVictims,
-      @JsonKey(name: 'patient_unknown') this.patientUnknown,
-      @JsonKey(name: 'patient_name') this.patientName,
       @JsonKey(name: 'complain_types') this.complainType,
       @JsonKey(name: 'status', defaultValue: IncidentStatus.ACTIVE)
       this.status = IncidentStatus.ACTIVE,
@@ -584,9 +528,7 @@ class _$IncidentImpl extends _Incident {
   final double? lat;
   @override
   final double? lng;
-  @override
-  @JsonKey(name: 'patient_location')
-  final String? patientLocation;
+// @JsonKey(name: 'patient_location') String? patientLocation,
   @override
   @JsonKey(name: 'caller_phone')
   final String? callerPhone;
@@ -602,15 +544,9 @@ class _$IncidentImpl extends _Incident {
   @override
   @JsonKey(name: 'caller_observation')
   final String? callerObservation;
-  @override
-  @JsonKey(name: 'multiple_victims')
-  final bool? multipleVictims;
-  @override
-  @JsonKey(name: 'patient_unknown')
-  final bool? patientUnknown;
-  @override
-  @JsonKey(name: 'patient_name')
-  final String? patientName;
+// @JsonKey(name: 'multiple_victims') bool? multipleVictims,
+// @JsonKey(name: 'patient_unknown') bool? patientUnknown,
+// @JsonKey(name: 'patient_name') String? patientName,
   @override
   @JsonKey(name: 'complain_types')
   final ComplainType? complainType;
@@ -632,7 +568,7 @@ class _$IncidentImpl extends _Incident {
 
   @override
   String toString() {
-    return 'Incident(incidentId: $incidentId, occurrenceDate: $occurrenceDate, complaintId: $complaintId, observations: $observations, attendanceLocation: $attendanceLocation, callOrigin: $callOrigin, zipCode: $zipCode, state: $state, city: $city, address: $address, number: $number, complement: $complement, neighborhood: $neighborhood, reference: $reference, lat: $lat, lng: $lng, patientLocation: $patientLocation, callerPhone: $callerPhone, callerName: $callerName, isCallerPatient: $isCallerPatient, complementaryPhone: $complementaryPhone, callerObservation: $callerObservation, multipleVictims: $multipleVictims, patientUnknown: $patientUnknown, patientName: $patientName, complainType: $complainType, status: $status, streetViewImage: $streetViewImage, patients: $patients)';
+    return 'Incident(incidentId: $incidentId, occurrenceDate: $occurrenceDate, complaintId: $complaintId, observations: $observations, attendanceLocation: $attendanceLocation, callOrigin: $callOrigin, zipCode: $zipCode, state: $state, city: $city, address: $address, number: $number, complement: $complement, neighborhood: $neighborhood, reference: $reference, lat: $lat, lng: $lng, callerPhone: $callerPhone, callerName: $callerName, isCallerPatient: $isCallerPatient, complementaryPhone: $complementaryPhone, callerObservation: $callerObservation, complainType: $complainType, status: $status, streetViewImage: $streetViewImage, patients: $patients)';
   }
 
   @override
@@ -665,8 +601,6 @@ class _$IncidentImpl extends _Incident {
                 other.reference == reference) &&
             (identical(other.lat, lat) || other.lat == lat) &&
             (identical(other.lng, lng) || other.lng == lng) &&
-            (identical(other.patientLocation, patientLocation) ||
-                other.patientLocation == patientLocation) &&
             (identical(other.callerPhone, callerPhone) ||
                 other.callerPhone == callerPhone) &&
             (identical(other.callerName, callerName) ||
@@ -677,12 +611,6 @@ class _$IncidentImpl extends _Incident {
                 other.complementaryPhone == complementaryPhone) &&
             (identical(other.callerObservation, callerObservation) ||
                 other.callerObservation == callerObservation) &&
-            (identical(other.multipleVictims, multipleVictims) ||
-                other.multipleVictims == multipleVictims) &&
-            (identical(other.patientUnknown, patientUnknown) ||
-                other.patientUnknown == patientUnknown) &&
-            (identical(other.patientName, patientName) ||
-                other.patientName == patientName) &&
             (identical(other.complainType, complainType) ||
                 other.complainType == complainType) &&
             (identical(other.status, status) || other.status == status) &&
@@ -711,15 +639,11 @@ class _$IncidentImpl extends _Incident {
         reference,
         lat,
         lng,
-        patientLocation,
         callerPhone,
         callerName,
         isCallerPatient,
         complementaryPhone,
         callerObservation,
-        multipleVictims,
-        patientUnknown,
-        patientName,
         complainType,
         status,
         streetViewImage,
@@ -760,15 +684,11 @@ abstract class _Incident extends Incident {
       final String? reference,
       final double? lat,
       final double? lng,
-      @JsonKey(name: 'patient_location') final String? patientLocation,
       @JsonKey(name: 'caller_phone') final String? callerPhone,
       @JsonKey(name: 'caller_name') final String? callerName,
       @JsonKey(name: 'is_caller_patient') final bool? isCallerPatient,
       @JsonKey(name: 'complementary_phone') final String? complementaryPhone,
       @JsonKey(name: 'caller_observation') final String? callerObservation,
-      @JsonKey(name: 'multiple_victims') final bool? multipleVictims,
-      @JsonKey(name: 'patient_unknown') final bool? patientUnknown,
-      @JsonKey(name: 'patient_name') final String? patientName,
       @JsonKey(name: 'complain_types') final ComplainType? complainType,
       @JsonKey(name: 'status', defaultValue: IncidentStatus.ACTIVE)
       final IncidentStatus status,
@@ -816,10 +736,8 @@ abstract class _Incident extends Incident {
   @override
   double? get lat;
   @override
-  double? get lng;
-  @override
-  @JsonKey(name: 'patient_location')
-  String? get patientLocation;
+  double?
+      get lng; // @JsonKey(name: 'patient_location') String? patientLocation,
   @override
   @JsonKey(name: 'caller_phone')
   String? get callerPhone;
@@ -834,16 +752,10 @@ abstract class _Incident extends Incident {
   String? get complementaryPhone;
   @override
   @JsonKey(name: 'caller_observation')
-  String? get callerObservation;
-  @override
-  @JsonKey(name: 'multiple_victims')
-  bool? get multipleVictims;
-  @override
-  @JsonKey(name: 'patient_unknown')
-  bool? get patientUnknown;
-  @override
-  @JsonKey(name: 'patient_name')
-  String? get patientName;
+  String?
+      get callerObservation; // @JsonKey(name: 'multiple_victims') bool? multipleVictims,
+// @JsonKey(name: 'patient_unknown') bool? patientUnknown,
+// @JsonKey(name: 'patient_name') String? patientName,
   @override
   @JsonKey(name: 'complain_types')
   ComplainType? get complainType;

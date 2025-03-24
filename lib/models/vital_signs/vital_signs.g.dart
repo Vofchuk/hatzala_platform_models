@@ -25,12 +25,15 @@ _$VitalSignsImpl _$$VitalSignsImplFromJson(Map<String, dynamic> json) =>
       breathing: Breathing.fromJson(json['breathing'] as String?),
       skinColor: SkinColor.fromJson(json['skin_color'] as String?),
       bleeding: Bleeding.fromJson(json['bleeding'] as String?),
-      priority: Priority.fromJson(json['priority'] as String?),
+      priority: IncidentPriority.fromJson(json['priority'] as String?),
       notes: json['notes'] as String?,
       createdAt: json['created_at'] as String,
       updatedAt: json['updated_at'] as String,
       userId: json['user_id'] as String,
       patientId: (json['patient_id'] as num).toInt(),
+      user: json['users'] == null
+          ? null
+          : User.fromJson(json['users'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$VitalSignsImplToJson(_$VitalSignsImpl instance) =>
@@ -52,10 +55,11 @@ Map<String, dynamic> _$$VitalSignsImplToJson(_$VitalSignsImpl instance) =>
       'breathing': Breathing.toJson(instance.breathing),
       'skin_color': SkinColor.toJson(instance.skinColor),
       'bleeding': Bleeding.toJson(instance.bleeding),
-      'priority': Priority.toJson(instance.priority),
+      'priority': IncidentPriority.toJson(instance.priority),
       'notes': instance.notes,
       'created_at': instance.createdAt,
       'updated_at': instance.updatedAt,
       'user_id': instance.userId,
       'patient_id': instance.patientId,
+      'users': instance.user,
     };
