@@ -10,7 +10,7 @@ _$AiNotificationImpl _$$AiNotificationImplFromJson(Map<String, dynamic> json) =>
     _$AiNotificationImpl(
       id: json['id'] as String,
       createdAt: DateTime.parse(json['created_at'] as String),
-      callId: json['call_id'] as String,
+      callId: _callIdFromJson(json['call_id']),
       notificationType:
           $enumDecode(_$AiNotificationTypeEnumMap, json['notification_type']),
       messageTitle: json['message_title'] as String,
@@ -30,8 +30,8 @@ Map<String, dynamic> _$$AiNotificationImplToJson(
     };
 
 const _$AiNotificationTypeEnumMap = {
-  AiNotificationType.completed: 'completed',
-  AiNotificationType.inProgress: 'inProgress',
-  AiNotificationType.expired: 'expired',
-  AiNotificationType.acceptedWithNoAssignment: 'acceptedWithNoAssignment',
+  AiNotificationType.queixa_update: 'queixa_update',
+  AiNotificationType.street_update: 'street_update',
+  AiNotificationType.test: 'test',
+  AiNotificationType.new_call: 'new_call',
 };

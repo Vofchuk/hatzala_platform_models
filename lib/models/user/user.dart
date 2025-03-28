@@ -45,5 +45,7 @@ class User with _$User {
       userType == UserType.NURSE ||
       userType == UserType.MEDIC;
 
+  bool get canAcessDispatch => userType == UserType.DISPACHER || admin == true;
+
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 }

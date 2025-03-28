@@ -12,6 +12,7 @@ export 'package:hatzala_platform_models/models/incident_user_location/incident_u
 export 'package:hatzala_platform_models/models/incident_user_search/incident_user_search.dart';
 export 'package:hatzala_platform_models/models/incident_vehicle/incident_vehicle.dart';
 export 'package:hatzala_platform_models/models/locations/locations.dart';
+export 'package:hatzala_platform_models/models/mini_login/mini_login.dart';
 export 'package:hatzala_platform_models/models/monthly_users_report/monthly_user_report.dart';
 export 'package:hatzala_platform_models/models/notification/notification.dart';
 export 'package:hatzala_platform_models/models/pagination/paginated_response.dart';

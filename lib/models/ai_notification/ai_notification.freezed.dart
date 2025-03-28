@@ -23,7 +23,7 @@ mixin _$AiNotification {
   String get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'created_at')
   DateTime get createdAt => throw _privateConstructorUsedError;
-  @JsonKey(name: 'call_id')
+  @JsonKey(name: 'call_id', fromJson: _callIdFromJson)
   String get callId => throw _privateConstructorUsedError;
   @JsonKey(name: 'notification_type')
   AiNotificationType get notificationType => throw _privateConstructorUsedError;
@@ -51,7 +51,7 @@ abstract class $AiNotificationCopyWith<$Res> {
   $Res call(
       {String id,
       @JsonKey(name: 'created_at') DateTime createdAt,
-      @JsonKey(name: 'call_id') String callId,
+      @JsonKey(name: 'call_id', fromJson: _callIdFromJson) String callId,
       @JsonKey(name: 'notification_type') AiNotificationType notificationType,
       @JsonKey(name: 'message_title') String messageTitle,
       @JsonKey(name: 'message_body') String messageBody});
@@ -119,7 +119,7 @@ abstract class _$$AiNotificationImplCopyWith<$Res>
   $Res call(
       {String id,
       @JsonKey(name: 'created_at') DateTime createdAt,
-      @JsonKey(name: 'call_id') String callId,
+      @JsonKey(name: 'call_id', fromJson: _callIdFromJson) String callId,
       @JsonKey(name: 'notification_type') AiNotificationType notificationType,
       @JsonKey(name: 'message_title') String messageTitle,
       @JsonKey(name: 'message_body') String messageBody});
@@ -180,7 +180,7 @@ class _$AiNotificationImpl implements _AiNotification {
   const _$AiNotificationImpl(
       {required this.id,
       @JsonKey(name: 'created_at') required this.createdAt,
-      @JsonKey(name: 'call_id') required this.callId,
+      @JsonKey(name: 'call_id', fromJson: _callIdFromJson) required this.callId,
       @JsonKey(name: 'notification_type') required this.notificationType,
       @JsonKey(name: 'message_title') required this.messageTitle,
       @JsonKey(name: 'message_body') required this.messageBody});
@@ -194,7 +194,7 @@ class _$AiNotificationImpl implements _AiNotification {
   @JsonKey(name: 'created_at')
   final DateTime createdAt;
   @override
-  @JsonKey(name: 'call_id')
+  @JsonKey(name: 'call_id', fromJson: _callIdFromJson)
   final String callId;
   @override
   @JsonKey(name: 'notification_type')
@@ -254,7 +254,8 @@ abstract class _AiNotification implements AiNotification {
   const factory _AiNotification(
           {required final String id,
           @JsonKey(name: 'created_at') required final DateTime createdAt,
-          @JsonKey(name: 'call_id') required final String callId,
+          @JsonKey(name: 'call_id', fromJson: _callIdFromJson)
+          required final String callId,
           @JsonKey(name: 'notification_type')
           required final AiNotificationType notificationType,
           @JsonKey(name: 'message_title') required final String messageTitle,
@@ -270,7 +271,7 @@ abstract class _AiNotification implements AiNotification {
   @JsonKey(name: 'created_at')
   DateTime get createdAt;
   @override
-  @JsonKey(name: 'call_id')
+  @JsonKey(name: 'call_id', fromJson: _callIdFromJson)
   String get callId;
   @override
   @JsonKey(name: 'notification_type')
