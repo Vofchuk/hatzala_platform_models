@@ -1,6 +1,7 @@
 export 'package:hatzala_platform_models/models/ai_call/ai_call.dart';
 export 'package:hatzala_platform_models/models/ai_notification/ai_notification.dart';
 export 'package:hatzala_platform_models/models/complain_type/complain_type.dart';
+export 'package:hatzala_platform_models/models/config/config.dart';
 export 'package:hatzala_platform_models/models/enums/index.dart';
 export 'package:hatzala_platform_models/models/enums/on_incident_status.dart';
 export 'package:hatzala_platform_models/models/equipment/equipment.dart';
