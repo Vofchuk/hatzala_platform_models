@@ -54,8 +54,10 @@ mixin _$User {
   @JsonKey(name: 'available_transportation_methods', includeIfNull: false)
   List<TransportationMethod>? get availableTransportationMethods =>
       throw _privateConstructorUsedError;
-  @JsonKey(name: 'notify_ai_call', includeIfNull: false, defaultValue: true)
+  @JsonKey(name: 'notify_ai_call', includeIfNull: false)
   bool get notifyAiCall => throw _privateConstructorUsedError;
+  @JsonKey(name: 'enabled', includeIfNull: false)
+  bool get enabled => throw _privateConstructorUsedError;
 
   /// Serializes this User to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -94,8 +96,8 @@ abstract class $UserCopyWith<$Res> {
       List<UserEquipment>? userEquipment,
       @JsonKey(name: 'available_transportation_methods', includeIfNull: false)
       List<TransportationMethod>? availableTransportationMethods,
-      @JsonKey(name: 'notify_ai_call', includeIfNull: false, defaultValue: true)
-      bool notifyAiCall});
+      @JsonKey(name: 'notify_ai_call', includeIfNull: false) bool notifyAiCall,
+      @JsonKey(name: 'enabled', includeIfNull: false) bool enabled});
 }
 
 /// @nodoc
@@ -130,6 +132,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? userEquipment = freezed,
     Object? availableTransportationMethods = freezed,
     Object? notifyAiCall = null,
+    Object? enabled = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -200,6 +203,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.notifyAiCall
           : notifyAiCall // ignore: cast_nullable_to_non_nullable
               as bool,
+      enabled: null == enabled
+          ? _value.enabled
+          : enabled // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -234,8 +241,8 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       List<UserEquipment>? userEquipment,
       @JsonKey(name: 'available_transportation_methods', includeIfNull: false)
       List<TransportationMethod>? availableTransportationMethods,
-      @JsonKey(name: 'notify_ai_call', includeIfNull: false, defaultValue: true)
-      bool notifyAiCall});
+      @JsonKey(name: 'notify_ai_call', includeIfNull: false) bool notifyAiCall,
+      @JsonKey(name: 'enabled', includeIfNull: false) bool enabled});
 }
 
 /// @nodoc
@@ -267,6 +274,7 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? userEquipment = freezed,
     Object? availableTransportationMethods = freezed,
     Object? notifyAiCall = null,
+    Object? enabled = null,
   }) {
     return _then(_$UserImpl(
       id: null == id
@@ -337,6 +345,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.notifyAiCall
           : notifyAiCall // ignore: cast_nullable_to_non_nullable
               as bool,
+      enabled: null == enabled
+          ? _value.enabled
+          : enabled // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -367,8 +379,9 @@ class _$UserImpl extends _User {
       final List<UserEquipment>? userEquipment,
       @JsonKey(name: 'available_transportation_methods', includeIfNull: false)
       final List<TransportationMethod>? availableTransportationMethods,
-      @JsonKey(name: 'notify_ai_call', includeIfNull: false, defaultValue: true)
-      this.notifyAiCall = true})
+      @JsonKey(name: 'notify_ai_call', includeIfNull: false)
+      this.notifyAiCall = true,
+      @JsonKey(name: 'enabled', includeIfNull: false) this.enabled = false})
       : _pushyTokens = pushyTokens,
         _userEquipment = userEquipment,
         _availableTransportationMethods = availableTransportationMethods,
@@ -450,12 +463,15 @@ class _$UserImpl extends _User {
   }
 
   @override
-  @JsonKey(name: 'notify_ai_call', includeIfNull: false, defaultValue: true)
+  @JsonKey(name: 'notify_ai_call', includeIfNull: false)
   final bool notifyAiCall;
+  @override
+  @JsonKey(name: 'enabled', includeIfNull: false)
+  final bool enabled;
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, userType: $userType, admin: $admin, firstResponderStatus: $firstResponderStatus, availableAtNight: $availableAtNight, transportationMethod: $transportationMethod, cpf: $cpf, phone: $phone, veteran: $veteran, obs: $obs, active: $active, pushyTokens: $pushyTokens, zelloId: $zelloId, userEquipment: $userEquipment, availableTransportationMethods: $availableTransportationMethods, notifyAiCall: $notifyAiCall)';
+    return 'User(id: $id, name: $name, userType: $userType, admin: $admin, firstResponderStatus: $firstResponderStatus, availableAtNight: $availableAtNight, transportationMethod: $transportationMethod, cpf: $cpf, phone: $phone, veteran: $veteran, obs: $obs, active: $active, pushyTokens: $pushyTokens, zelloId: $zelloId, userEquipment: $userEquipment, availableTransportationMethods: $availableTransportationMethods, notifyAiCall: $notifyAiCall, enabled: $enabled)';
   }
 
   @override
@@ -488,7 +504,8 @@ class _$UserImpl extends _User {
                 other._availableTransportationMethods,
                 _availableTransportationMethods) &&
             (identical(other.notifyAiCall, notifyAiCall) ||
-                other.notifyAiCall == notifyAiCall));
+                other.notifyAiCall == notifyAiCall) &&
+            (identical(other.enabled, enabled) || other.enabled == enabled));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -511,7 +528,8 @@ class _$UserImpl extends _User {
       zelloId,
       const DeepCollectionEquality().hash(_userEquipment),
       const DeepCollectionEquality().hash(_availableTransportationMethods),
-      notifyAiCall);
+      notifyAiCall,
+      enabled);
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
@@ -553,8 +571,10 @@ abstract class _User extends User {
       final List<UserEquipment>? userEquipment,
       @JsonKey(name: 'available_transportation_methods', includeIfNull: false)
       final List<TransportationMethod>? availableTransportationMethods,
-      @JsonKey(name: 'notify_ai_call', includeIfNull: false, defaultValue: true)
-      final bool notifyAiCall}) = _$UserImpl;
+      @JsonKey(name: 'notify_ai_call', includeIfNull: false)
+      final bool notifyAiCall,
+      @JsonKey(name: 'enabled', includeIfNull: false)
+      final bool enabled}) = _$UserImpl;
   const _User._() : super._();
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
@@ -606,8 +626,11 @@ abstract class _User extends User {
   @JsonKey(name: 'available_transportation_methods', includeIfNull: false)
   List<TransportationMethod>? get availableTransportationMethods;
   @override
-  @JsonKey(name: 'notify_ai_call', includeIfNull: false, defaultValue: true)
+  @JsonKey(name: 'notify_ai_call', includeIfNull: false)
   bool get notifyAiCall;
+  @override
+  @JsonKey(name: 'enabled', includeIfNull: false)
+  bool get enabled;
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.

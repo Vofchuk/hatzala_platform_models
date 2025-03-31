@@ -33,6 +33,7 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
               ?.map((e) => $enumDecode(_$TransportationMethodEnumMap, e))
               .toList(),
       notifyAiCall: json['notify_ai_call'] as bool? ?? true,
+      enabled: json['enabled'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
@@ -63,6 +64,7 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
           case final value?)
         'available_transportation_methods': value,
       'notify_ai_call': instance.notifyAiCall,
+      'enabled': instance.enabled,
     };
 
 const _$UserTypeEnumMap = {

@@ -32,9 +32,12 @@ class User with _$User {
     List<UserEquipment>? userEquipment,
     @JsonKey(name: 'available_transportation_methods', includeIfNull: false)
     List<TransportationMethod>? availableTransportationMethods,
-    @JsonKey(name: 'notify_ai_call', includeIfNull: false, defaultValue: true)
+    @JsonKey(name: 'notify_ai_call', includeIfNull: false)
     @Default(true)
     bool notifyAiCall,
+    @JsonKey(name: 'enabled', includeIfNull: false)
+    @Default(false)
+    bool enabled,
   }) = _User;
 
   const User._();
@@ -45,7 +48,8 @@ class User with _$User {
       userType == UserType.NURSE ||
       userType == UserType.MEDIC;
 
-  bool get canAcessDispatch => userType == UserType.DISPACHER || admin == true;
+  bool get canAcessDispatch =>
+      (userType == UserType.DISPACHER || admin == true) && enabled == true;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 }
