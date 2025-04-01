@@ -20,10 +20,10 @@ VehiclesData _$VehiclesDataFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$VehiclesData {
-  double get lat => throw _privateConstructorUsedError;
-  double get lng => throw _privateConstructorUsedError;
+  double? get lat => throw _privateConstructorUsedError;
+  double? get lng => throw _privateConstructorUsedError;
   VehicleStatus get status => throw _privateConstructorUsedError;
-  String get location => throw _privateConstructorUsedError;
+  String? get location => throw _privateConstructorUsedError;
   @JsonKey(name: 'base_name')
   String get baseName => throw _privateConstructorUsedError;
   @JsonKey(name: 'vehicle_id')
@@ -54,10 +54,10 @@ abstract class $VehiclesDataCopyWith<$Res> {
       _$VehiclesDataCopyWithImpl<$Res, VehiclesData>;
   @useResult
   $Res call(
-      {double lat,
-      double lng,
+      {double? lat,
+      double? lng,
       VehicleStatus status,
-      String location,
+      String? location,
       @JsonKey(name: 'base_name') String baseName,
       @JsonKey(name: 'vehicle_id') int vehicleId,
       @JsonKey(name: 'incident_id') int? incidentId,
@@ -81,10 +81,10 @@ class _$VehiclesDataCopyWithImpl<$Res, $Val extends VehiclesData>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? lat = null,
-    Object? lng = null,
+    Object? lat = freezed,
+    Object? lng = freezed,
     Object? status = null,
-    Object? location = null,
+    Object? location = freezed,
     Object? baseName = null,
     Object? vehicleId = null,
     Object? incidentId = freezed,
@@ -93,22 +93,22 @@ class _$VehiclesDataCopyWithImpl<$Res, $Val extends VehiclesData>
     Object? vehicleTypeName = null,
   }) {
     return _then(_value.copyWith(
-      lat: null == lat
+      lat: freezed == lat
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
-              as double,
-      lng: null == lng
+              as double?,
+      lng: freezed == lng
           ? _value.lng
           : lng // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as VehicleStatus,
-      location: null == location
+      location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       baseName: null == baseName
           ? _value.baseName
           : baseName // ignore: cast_nullable_to_non_nullable
@@ -146,10 +146,10 @@ abstract class _$$VehiclesDataImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {double lat,
-      double lng,
+      {double? lat,
+      double? lng,
       VehicleStatus status,
-      String location,
+      String? location,
       @JsonKey(name: 'base_name') String baseName,
       @JsonKey(name: 'vehicle_id') int vehicleId,
       @JsonKey(name: 'incident_id') int? incidentId,
@@ -171,10 +171,10 @@ class __$$VehiclesDataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? lat = null,
-    Object? lng = null,
+    Object? lat = freezed,
+    Object? lng = freezed,
     Object? status = null,
-    Object? location = null,
+    Object? location = freezed,
     Object? baseName = null,
     Object? vehicleId = null,
     Object? incidentId = freezed,
@@ -183,22 +183,22 @@ class __$$VehiclesDataImplCopyWithImpl<$Res>
     Object? vehicleTypeName = null,
   }) {
     return _then(_$VehiclesDataImpl(
-      lat: null == lat
+      lat: freezed == lat
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
-              as double,
-      lng: null == lng
+              as double?,
+      lng: freezed == lng
           ? _value.lng
           : lng // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as VehicleStatus,
-      location: null == location
+      location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       baseName: null == baseName
           ? _value.baseName
           : baseName // ignore: cast_nullable_to_non_nullable
@@ -246,13 +246,13 @@ class _$VehiclesDataImpl implements _VehiclesData {
       _$$VehiclesDataImplFromJson(json);
 
   @override
-  final double lat;
+  final double? lat;
   @override
-  final double lng;
+  final double? lng;
   @override
   final VehicleStatus status;
   @override
-  final String location;
+  final String? location;
   @override
   @JsonKey(name: 'base_name')
   final String baseName;
@@ -334,10 +334,10 @@ class _$VehiclesDataImpl implements _VehiclesData {
 
 abstract class _VehiclesData implements VehiclesData {
   const factory _VehiclesData(
-      {required final double lat,
-      required final double lng,
+      {required final double? lat,
+      required final double? lng,
       required final VehicleStatus status,
-      required final String location,
+      required final String? location,
       @JsonKey(name: 'base_name') required final String baseName,
       @JsonKey(name: 'vehicle_id') required final int vehicleId,
       @JsonKey(name: 'incident_id') final int? incidentId,
@@ -350,13 +350,13 @@ abstract class _VehiclesData implements VehiclesData {
       _$VehiclesDataImpl.fromJson;
 
   @override
-  double get lat;
+  double? get lat;
   @override
-  double get lng;
+  double? get lng;
   @override
   VehicleStatus get status;
   @override
-  String get location;
+  String? get location;
   @override
   @JsonKey(name: 'base_name')
   String get baseName;

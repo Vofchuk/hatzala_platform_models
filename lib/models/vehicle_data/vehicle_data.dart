@@ -7,10 +7,10 @@ part 'vehicle_data.g.dart';
 @freezed
 class VehiclesData with _$VehiclesData {
   const factory VehiclesData({
-    required double lat,
-    required double lng,
+    required double? lat,
+    required double? lng,
     required VehicleStatus status,
-    required String location,
+    required String? location,
     @JsonKey(name: 'base_name') required String baseName,
     @JsonKey(name: 'vehicle_id') required int vehicleId,
     @JsonKey(name: 'incident_id') int? incidentId,

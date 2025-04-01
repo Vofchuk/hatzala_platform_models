@@ -8,10 +8,10 @@ part of 'vehicle_data.dart';
 
 _$VehiclesDataImpl _$$VehiclesDataImplFromJson(Map<String, dynamic> json) =>
     _$VehiclesDataImpl(
-      lat: (json['lat'] as num).toDouble(),
-      lng: (json['lng'] as num).toDouble(),
+      lat: (json['lat'] as num?)?.toDouble(),
+      lng: (json['lng'] as num?)?.toDouble(),
       status: $enumDecode(_$VehicleStatusEnumMap, json['status']),
-      location: json['location'] as String,
+      location: json['location'] as String?,
       baseName: json['base_name'] as String,
       vehicleId: (json['vehicle_id'] as num).toInt(),
       incidentId: (json['incident_id'] as num?)?.toInt(),
