@@ -20,7 +20,7 @@ class VehicleLocationData with _$VehicleLocationData {
     @JsonKey(name: 'incident_id') int? incidentId,
     double? lat,
     double? lng,
-    String? location,
+    required String? location,
     @JsonKey(name: 'vehicle_type_name') required String vehicleTypeName,
   }) = _VehicleLocationData;
 
