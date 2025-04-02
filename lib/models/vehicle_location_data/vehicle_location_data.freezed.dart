@@ -31,9 +31,9 @@ mixin _$VehicleLocationData {
   VehicleStatus get status => throw _privateConstructorUsedError;
   @JsonKey(name: 'incident_id')
   int? get incidentId => throw _privateConstructorUsedError;
-  double get lat => throw _privateConstructorUsedError;
-  double get lng => throw _privateConstructorUsedError;
-  String get location => throw _privateConstructorUsedError;
+  double? get lat => throw _privateConstructorUsedError;
+  double? get lng => throw _privateConstructorUsedError;
+  String? get location => throw _privateConstructorUsedError;
   @JsonKey(name: 'vehicle_type_name')
   String get vehicleTypeName => throw _privateConstructorUsedError;
 
@@ -60,9 +60,9 @@ abstract class $VehicleLocationDataCopyWith<$Res> {
       @JsonKey(name: 'base_name') String baseName,
       VehicleStatus status,
       @JsonKey(name: 'incident_id') int? incidentId,
-      double lat,
-      double lng,
-      String location,
+      double? lat,
+      double? lng,
+      String? location,
       @JsonKey(name: 'vehicle_type_name') String vehicleTypeName});
 }
 
@@ -87,9 +87,9 @@ class _$VehicleLocationDataCopyWithImpl<$Res, $Val extends VehicleLocationData>
     Object? baseName = null,
     Object? status = null,
     Object? incidentId = freezed,
-    Object? lat = null,
-    Object? lng = null,
-    Object? location = null,
+    Object? lat = freezed,
+    Object? lng = freezed,
+    Object? location = freezed,
     Object? vehicleTypeName = null,
   }) {
     return _then(_value.copyWith(
@@ -117,18 +117,18 @@ class _$VehicleLocationDataCopyWithImpl<$Res, $Val extends VehicleLocationData>
           ? _value.incidentId
           : incidentId // ignore: cast_nullable_to_non_nullable
               as int?,
-      lat: null == lat
+      lat: freezed == lat
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
-              as double,
-      lng: null == lng
+              as double?,
+      lng: freezed == lng
           ? _value.lng
           : lng // ignore: cast_nullable_to_non_nullable
-              as double,
-      location: null == location
+              as double?,
+      location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       vehicleTypeName: null == vehicleTypeName
           ? _value.vehicleTypeName
           : vehicleTypeName // ignore: cast_nullable_to_non_nullable
@@ -152,9 +152,9 @@ abstract class _$$VehicleLocationDataImplCopyWith<$Res>
       @JsonKey(name: 'base_name') String baseName,
       VehicleStatus status,
       @JsonKey(name: 'incident_id') int? incidentId,
-      double lat,
-      double lng,
-      String location,
+      double? lat,
+      double? lng,
+      String? location,
       @JsonKey(name: 'vehicle_type_name') String vehicleTypeName});
 }
 
@@ -177,9 +177,9 @@ class __$$VehicleLocationDataImplCopyWithImpl<$Res>
     Object? baseName = null,
     Object? status = null,
     Object? incidentId = freezed,
-    Object? lat = null,
-    Object? lng = null,
-    Object? location = null,
+    Object? lat = freezed,
+    Object? lng = freezed,
+    Object? location = freezed,
     Object? vehicleTypeName = null,
   }) {
     return _then(_$VehicleLocationDataImpl(
@@ -207,18 +207,18 @@ class __$$VehicleLocationDataImplCopyWithImpl<$Res>
           ? _value.incidentId
           : incidentId // ignore: cast_nullable_to_non_nullable
               as int?,
-      lat: null == lat
+      lat: freezed == lat
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
-              as double,
-      lng: null == lng
+              as double?,
+      lng: freezed == lng
           ? _value.lng
           : lng // ignore: cast_nullable_to_non_nullable
-              as double,
-      location: null == location
+              as double?,
+      location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       vehicleTypeName: null == vehicleTypeName
           ? _value.vehicleTypeName
           : vehicleTypeName // ignore: cast_nullable_to_non_nullable
@@ -263,11 +263,11 @@ class _$VehicleLocationDataImpl implements _VehicleLocationData {
   @JsonKey(name: 'incident_id')
   final int? incidentId;
   @override
-  final double lat;
+  final double? lat;
   @override
-  final double lng;
+  final double? lng;
   @override
-  final String location;
+  final String? location;
   @override
   @JsonKey(name: 'vehicle_type_name')
   final String vehicleTypeName;
@@ -341,9 +341,9 @@ abstract class _VehicleLocationData implements VehicleLocationData {
       @JsonKey(name: 'base_name') required final String baseName,
       required final VehicleStatus status,
       @JsonKey(name: 'incident_id') final int? incidentId,
-      required final double lat,
-      required final double lng,
-      required final String location,
+      required final double? lat,
+      required final double? lng,
+      required final String? location,
       @JsonKey(name: 'vehicle_type_name')
       required final String vehicleTypeName}) = _$VehicleLocationDataImpl;
 
@@ -368,11 +368,11 @@ abstract class _VehicleLocationData implements VehicleLocationData {
   @JsonKey(name: 'incident_id')
   int? get incidentId;
   @override
-  double get lat;
+  double? get lat;
   @override
-  double get lng;
+  double? get lng;
   @override
-  String get location;
+  String? get location;
   @override
   @JsonKey(name: 'vehicle_type_name')
   String get vehicleTypeName;

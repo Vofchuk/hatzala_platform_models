@@ -15,9 +15,9 @@ _$VehicleLocationDataImpl _$$VehicleLocationDataImplFromJson(
       baseName: json['base_name'] as String,
       status: $enumDecode(_$VehicleStatusEnumMap, json['status']),
       incidentId: (json['incident_id'] as num?)?.toInt(),
-      lat: (json['lat'] as num).toDouble(),
-      lng: (json['lng'] as num).toDouble(),
-      location: json['location'] as String,
+      lat: (json['lat'] as num?)?.toDouble(),
+      lng: (json['lng'] as num?)?.toDouble(),
+      location: json['location'] as String?,
       vehicleTypeName: json['vehicle_type_name'] as String,
     );
 

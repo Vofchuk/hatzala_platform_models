@@ -58,7 +58,7 @@ mixin _$Incident {
 // @JsonKey(name: 'patient_name') String? patientName,
   @JsonKey(name: 'complain_types')
   ComplainType? get complainType => throw _privateConstructorUsedError;
-  @JsonKey(name: 'status', defaultValue: IncidentStatus.ACTIVE)
+  @JsonKey(name: 'status')
   IncidentStatus get status => throw _privateConstructorUsedError;
   @JsonKey(name: 'street_view_image')
   String? get streetViewImage => throw _privateConstructorUsedError;
@@ -102,8 +102,7 @@ abstract class $IncidentCopyWith<$Res> {
       @JsonKey(name: 'complementary_phone') String? complementaryPhone,
       @JsonKey(name: 'caller_observation') String? callerObservation,
       @JsonKey(name: 'complain_types') ComplainType? complainType,
-      @JsonKey(name: 'status', defaultValue: IncidentStatus.ACTIVE)
-      IncidentStatus status,
+      @JsonKey(name: 'status') IncidentStatus status,
       @JsonKey(name: 'street_view_image') String? streetViewImage,
       List<Patient>? patients});
 
@@ -301,8 +300,7 @@ abstract class _$$IncidentImplCopyWith<$Res>
       @JsonKey(name: 'complementary_phone') String? complementaryPhone,
       @JsonKey(name: 'caller_observation') String? callerObservation,
       @JsonKey(name: 'complain_types') ComplainType? complainType,
-      @JsonKey(name: 'status', defaultValue: IncidentStatus.ACTIVE)
-      IncidentStatus status,
+      @JsonKey(name: 'status') IncidentStatus status,
       @JsonKey(name: 'street_view_image') String? streetViewImage,
       List<Patient>? patients});
 
@@ -480,8 +478,7 @@ class _$IncidentImpl extends _Incident {
       @JsonKey(name: 'complementary_phone') this.complementaryPhone,
       @JsonKey(name: 'caller_observation') this.callerObservation,
       @JsonKey(name: 'complain_types') this.complainType,
-      @JsonKey(name: 'status', defaultValue: IncidentStatus.ACTIVE)
-      this.status = IncidentStatus.ACTIVE,
+      @JsonKey(name: 'status') this.status = IncidentStatus.ACTIVE,
       @JsonKey(name: 'street_view_image') this.streetViewImage,
       final List<Patient>? patients})
       : _patients = patients,
@@ -551,7 +548,7 @@ class _$IncidentImpl extends _Incident {
   @JsonKey(name: 'complain_types')
   final ComplainType? complainType;
   @override
-  @JsonKey(name: 'status', defaultValue: IncidentStatus.ACTIVE)
+  @JsonKey(name: 'status')
   final IncidentStatus status;
   @override
   @JsonKey(name: 'street_view_image')
@@ -690,8 +687,7 @@ abstract class _Incident extends Incident {
       @JsonKey(name: 'complementary_phone') final String? complementaryPhone,
       @JsonKey(name: 'caller_observation') final String? callerObservation,
       @JsonKey(name: 'complain_types') final ComplainType? complainType,
-      @JsonKey(name: 'status', defaultValue: IncidentStatus.ACTIVE)
-      final IncidentStatus status,
+      @JsonKey(name: 'status') final IncidentStatus status,
       @JsonKey(name: 'street_view_image') final String? streetViewImage,
       final List<Patient>? patients}) = _$IncidentImpl;
   const _Incident._() : super._();
@@ -760,7 +756,7 @@ abstract class _Incident extends Incident {
   @JsonKey(name: 'complain_types')
   ComplainType? get complainType;
   @override
-  @JsonKey(name: 'status', defaultValue: IncidentStatus.ACTIVE)
+  @JsonKey(name: 'status')
   IncidentStatus get status;
   @override
   @JsonKey(name: 'street_view_image')

@@ -41,7 +41,7 @@ class Incident with _$Incident {
     // @JsonKey(name: 'patient_unknown') bool? patientUnknown,
     // @JsonKey(name: 'patient_name') String? patientName,
     @JsonKey(name: 'complain_types') ComplainType? complainType,
-    @JsonKey(name: 'status', defaultValue: IncidentStatus.ACTIVE)
+    @JsonKey(name: 'status')
     @Default(IncidentStatus.ACTIVE)
     IncidentStatus status,
     @JsonKey(name: 'street_view_image') String? streetViewImage,
