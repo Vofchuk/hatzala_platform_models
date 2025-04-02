@@ -18,9 +18,9 @@ class VehicleLocationData with _$VehicleLocationData {
     @JsonKey(name: 'base_name') required String baseName,
     required VehicleStatus status,
     @JsonKey(name: 'incident_id') int? incidentId,
-    required double? lat,
-    required double? lng,
-    required String? location,
+    double? lat,
+    double? lng,
+    String? location,
     @JsonKey(name: 'vehicle_type_name') required String vehicleTypeName,
   }) = _VehicleLocationData;
 

@@ -237,9 +237,9 @@ class _$VehicleLocationDataImpl implements _VehicleLocationData {
       @JsonKey(name: 'base_name') required this.baseName,
       required this.status,
       @JsonKey(name: 'incident_id') this.incidentId,
-      required this.lat,
-      required this.lng,
-      required this.location,
+      this.lat,
+      this.lng,
+      this.location,
       @JsonKey(name: 'vehicle_type_name') required this.vehicleTypeName});
 
   factory _$VehicleLocationDataImpl.fromJson(Map<String, dynamic> json) =>
@@ -341,9 +341,9 @@ abstract class _VehicleLocationData implements VehicleLocationData {
       @JsonKey(name: 'base_name') required final String baseName,
       required final VehicleStatus status,
       @JsonKey(name: 'incident_id') final int? incidentId,
-      required final double? lat,
-      required final double? lng,
-      required final String? location,
+      final double? lat,
+      final double? lng,
+      final String? location,
       @JsonKey(name: 'vehicle_type_name')
       required final String vehicleTypeName}) = _$VehicleLocationDataImpl;
 
