@@ -9,6 +9,7 @@ export 'package:hatzala_platform_models/models/incident/incident.dart';
 export 'package:hatzala_platform_models/models/incident_evolution/incident_evolution.dart';
 export 'package:hatzala_platform_models/models/incident_protocol_equipment/incident_protocol_equipment.dart';
 export 'package:hatzala_platform_models/models/incident_protocol_vehicles/incident_protocol_vehicles.dart';
+export 'package:hatzala_platform_models/models/incident_responders/incident_responders.dart';
 export 'package:hatzala_platform_models/models/incident_user_location/incident_user_location.dart';
 export 'package:hatzala_platform_models/models/incident_user_search/incident_user_search.dart';
 export 'package:hatzala_platform_models/models/incident_vehicle/incident_vehicle.dart';
