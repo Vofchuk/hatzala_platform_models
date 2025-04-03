@@ -21,7 +21,7 @@ class IncidentUserSearch with _$IncidentUserSearch {
     @JsonKey(name: 'lat') required double lat,
     @JsonKey(name: 'lng') required double lng,
     @JsonKey(name: 'status') required SearchUserStatus status,
-    @JsonKey(name: 'incidents') required Incident incidents,
+    @JsonKey(name: 'incidents') Incident? incidents,
     @JsonKey(name: 'requested_at') DateTime? requestedAt,
     @JsonKey(name: 'on_incident_status') OnIncidentStatus? onIncidentStatus,
     @JsonKey(name: 'going_at') DateTime? goingAt,
@@ -61,8 +61,9 @@ class IncidentUserSearch with _$IncidentUserSearch {
       createdAt: DateTime.now(),
       lat: incident.lat ?? 0,
       lng: incident.lng ?? 0,
-      status: SearchUserStatus
-          .ADMIN_VIEW, // Special status to indicate this is an admin view
+      status:
+          SearchUserStatus
+              .ADMIN_VIEW, // Special status to indicate this is an admin view
       requestedAt: DateTime.now(),
       incidents: incident,
     );

@@ -35,7 +35,7 @@ mixin _$IncidentUserSearch {
   @JsonKey(name: 'status')
   SearchUserStatus get status => throw _privateConstructorUsedError;
   @JsonKey(name: 'incidents')
-  Incident get incidents => throw _privateConstructorUsedError;
+  Incident? get incidents => throw _privateConstructorUsedError;
   @JsonKey(name: 'requested_at')
   DateTime? get requestedAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'on_incident_status')
@@ -88,7 +88,7 @@ abstract class $IncidentUserSearchCopyWith<$Res> {
       @JsonKey(name: 'lat') double lat,
       @JsonKey(name: 'lng') double lng,
       @JsonKey(name: 'status') SearchUserStatus status,
-      @JsonKey(name: 'incidents') Incident incidents,
+      @JsonKey(name: 'incidents') Incident? incidents,
       @JsonKey(name: 'requested_at') DateTime? requestedAt,
       @JsonKey(name: 'on_incident_status') OnIncidentStatus? onIncidentStatus,
       @JsonKey(name: 'going_at') DateTime? goingAt,
@@ -105,7 +105,7 @@ abstract class $IncidentUserSearchCopyWith<$Res> {
       String? obs,
       User? users});
 
-  $IncidentCopyWith<$Res> get incidents;
+  $IncidentCopyWith<$Res>? get incidents;
   $UserCopyWith<$Res>? get users;
 }
 
@@ -131,7 +131,7 @@ class _$IncidentUserSearchCopyWithImpl<$Res, $Val extends IncidentUserSearch>
     Object? lat = null,
     Object? lng = null,
     Object? status = null,
-    Object? incidents = null,
+    Object? incidents = freezed,
     Object? requestedAt = freezed,
     Object? onIncidentStatus = freezed,
     Object? goingAt = freezed,
@@ -176,10 +176,10 @@ class _$IncidentUserSearchCopyWithImpl<$Res, $Val extends IncidentUserSearch>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as SearchUserStatus,
-      incidents: null == incidents
+      incidents: freezed == incidents
           ? _value.incidents
           : incidents // ignore: cast_nullable_to_non_nullable
-              as Incident,
+              as Incident?,
       requestedAt: freezed == requestedAt
           ? _value.requestedAt
           : requestedAt // ignore: cast_nullable_to_non_nullable
@@ -243,8 +243,12 @@ class _$IncidentUserSearchCopyWithImpl<$Res, $Val extends IncidentUserSearch>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $IncidentCopyWith<$Res> get incidents {
-    return $IncidentCopyWith<$Res>(_value.incidents, (value) {
+  $IncidentCopyWith<$Res>? get incidents {
+    if (_value.incidents == null) {
+      return null;
+    }
+
+    return $IncidentCopyWith<$Res>(_value.incidents!, (value) {
       return _then(_value.copyWith(incidents: value) as $Val);
     });
   }
@@ -280,7 +284,7 @@ abstract class _$$IncidentUserSearchImplCopyWith<$Res>
       @JsonKey(name: 'lat') double lat,
       @JsonKey(name: 'lng') double lng,
       @JsonKey(name: 'status') SearchUserStatus status,
-      @JsonKey(name: 'incidents') Incident incidents,
+      @JsonKey(name: 'incidents') Incident? incidents,
       @JsonKey(name: 'requested_at') DateTime? requestedAt,
       @JsonKey(name: 'on_incident_status') OnIncidentStatus? onIncidentStatus,
       @JsonKey(name: 'going_at') DateTime? goingAt,
@@ -298,7 +302,7 @@ abstract class _$$IncidentUserSearchImplCopyWith<$Res>
       User? users});
 
   @override
-  $IncidentCopyWith<$Res> get incidents;
+  $IncidentCopyWith<$Res>? get incidents;
   @override
   $UserCopyWith<$Res>? get users;
 }
@@ -323,7 +327,7 @@ class __$$IncidentUserSearchImplCopyWithImpl<$Res>
     Object? lat = null,
     Object? lng = null,
     Object? status = null,
-    Object? incidents = null,
+    Object? incidents = freezed,
     Object? requestedAt = freezed,
     Object? onIncidentStatus = freezed,
     Object? goingAt = freezed,
@@ -368,10 +372,10 @@ class __$$IncidentUserSearchImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as SearchUserStatus,
-      incidents: null == incidents
+      incidents: freezed == incidents
           ? _value.incidents
           : incidents // ignore: cast_nullable_to_non_nullable
-              as Incident,
+              as Incident?,
       requestedAt: freezed == requestedAt
           ? _value.requestedAt
           : requestedAt // ignore: cast_nullable_to_non_nullable
@@ -443,7 +447,7 @@ class _$IncidentUserSearchImpl extends _IncidentUserSearch {
       @JsonKey(name: 'lat') required this.lat,
       @JsonKey(name: 'lng') required this.lng,
       @JsonKey(name: 'status') required this.status,
-      @JsonKey(name: 'incidents') required this.incidents,
+      @JsonKey(name: 'incidents') this.incidents,
       @JsonKey(name: 'requested_at') this.requestedAt,
       @JsonKey(name: 'on_incident_status') this.onIncidentStatus,
       @JsonKey(name: 'going_at') this.goingAt,
@@ -487,7 +491,7 @@ class _$IncidentUserSearchImpl extends _IncidentUserSearch {
   final SearchUserStatus status;
   @override
   @JsonKey(name: 'incidents')
-  final Incident incidents;
+  final Incident? incidents;
   @override
   @JsonKey(name: 'requested_at')
   final DateTime? requestedAt;
@@ -633,7 +637,7 @@ abstract class _IncidentUserSearch extends IncidentUserSearch {
       @JsonKey(name: 'lat') required final double lat,
       @JsonKey(name: 'lng') required final double lng,
       @JsonKey(name: 'status') required final SearchUserStatus status,
-      @JsonKey(name: 'incidents') required final Incident incidents,
+      @JsonKey(name: 'incidents') final Incident? incidents,
       @JsonKey(name: 'requested_at') final DateTime? requestedAt,
       @JsonKey(name: 'on_incident_status')
       final OnIncidentStatus? onIncidentStatus,
@@ -678,7 +682,7 @@ abstract class _IncidentUserSearch extends IncidentUserSearch {
   SearchUserStatus get status;
   @override
   @JsonKey(name: 'incidents')
-  Incident get incidents;
+  Incident? get incidents;
   @override
   @JsonKey(name: 'requested_at')
   DateTime? get requestedAt;

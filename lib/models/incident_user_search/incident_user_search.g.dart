@@ -16,7 +16,9 @@ _$IncidentUserSearchImpl _$$IncidentUserSearchImplFromJson(
       lat: (json['lat'] as num).toDouble(),
       lng: (json['lng'] as num).toDouble(),
       status: $enumDecode(_$SearchUserStatusEnumMap, json['status']),
-      incidents: Incident.fromJson(json['incidents'] as Map<String, dynamic>),
+      incidents: json['incidents'] == null
+          ? null
+          : Incident.fromJson(json['incidents'] as Map<String, dynamic>),
       requestedAt: json['requested_at'] == null
           ? null
           : DateTime.parse(json['requested_at'] as String),
