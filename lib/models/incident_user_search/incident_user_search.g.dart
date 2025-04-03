@@ -55,6 +55,10 @@ _$IncidentUserSearchImpl _$$IncidentUserSearchImplFromJson(
       users: json['users'] == null
           ? null
           : User.fromJson(json['users'] as Map<String, dynamic>),
+      userLocation: json['users_location'] == null
+          ? null
+          : UserLocation.fromJson(
+              json['users_location'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$IncidentUserSearchImplToJson(
@@ -84,6 +88,7 @@ Map<String, dynamic> _$$IncidentUserSearchImplToJson(
           instance.acceptedWithNoAssignmentAt?.toIso8601String(),
       'obs': instance.obs,
       'users': instance.users,
+      'users_location': instance.userLocation,
     };
 
 const _$SearchUserStatusEnumMap = {

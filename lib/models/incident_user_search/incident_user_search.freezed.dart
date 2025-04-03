@@ -63,6 +63,8 @@ mixin _$IncidentUserSearch {
       throw _privateConstructorUsedError;
   String? get obs => throw _privateConstructorUsedError;
   User? get users => throw _privateConstructorUsedError;
+  @JsonKey(name: 'users_location')
+  UserLocation? get userLocation => throw _privateConstructorUsedError;
 
   /// Serializes this IncidentUserSearch to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -103,10 +105,12 @@ abstract class $IncidentUserSearchCopyWith<$Res> {
       @JsonKey(name: 'accepted_with_no_assignment_at')
       DateTime? acceptedWithNoAssignmentAt,
       String? obs,
-      User? users});
+      User? users,
+      @JsonKey(name: 'users_location') UserLocation? userLocation});
 
   $IncidentCopyWith<$Res>? get incidents;
   $UserCopyWith<$Res>? get users;
+  $UserLocationCopyWith<$Res>? get userLocation;
 }
 
 /// @nodoc
@@ -146,6 +150,7 @@ class _$IncidentUserSearchCopyWithImpl<$Res, $Val extends IncidentUserSearch>
     Object? acceptedWithNoAssignmentAt = freezed,
     Object? obs = freezed,
     Object? users = freezed,
+    Object? userLocation = freezed,
   }) {
     return _then(_value.copyWith(
       incidentId: null == incidentId
@@ -236,6 +241,10 @@ class _$IncidentUserSearchCopyWithImpl<$Res, $Val extends IncidentUserSearch>
           ? _value.users
           : users // ignore: cast_nullable_to_non_nullable
               as User?,
+      userLocation: freezed == userLocation
+          ? _value.userLocation
+          : userLocation // ignore: cast_nullable_to_non_nullable
+              as UserLocation?,
     ) as $Val);
   }
 
@@ -264,6 +273,20 @@ class _$IncidentUserSearchCopyWithImpl<$Res, $Val extends IncidentUserSearch>
 
     return $UserCopyWith<$Res>(_value.users!, (value) {
       return _then(_value.copyWith(users: value) as $Val);
+    });
+  }
+
+  /// Create a copy of IncidentUserSearch
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserLocationCopyWith<$Res>? get userLocation {
+    if (_value.userLocation == null) {
+      return null;
+    }
+
+    return $UserLocationCopyWith<$Res>(_value.userLocation!, (value) {
+      return _then(_value.copyWith(userLocation: value) as $Val);
     });
   }
 }
@@ -299,12 +322,15 @@ abstract class _$$IncidentUserSearchImplCopyWith<$Res>
       @JsonKey(name: 'accepted_with_no_assignment_at')
       DateTime? acceptedWithNoAssignmentAt,
       String? obs,
-      User? users});
+      User? users,
+      @JsonKey(name: 'users_location') UserLocation? userLocation});
 
   @override
   $IncidentCopyWith<$Res>? get incidents;
   @override
   $UserCopyWith<$Res>? get users;
+  @override
+  $UserLocationCopyWith<$Res>? get userLocation;
 }
 
 /// @nodoc
@@ -342,6 +368,7 @@ class __$$IncidentUserSearchImplCopyWithImpl<$Res>
     Object? acceptedWithNoAssignmentAt = freezed,
     Object? obs = freezed,
     Object? users = freezed,
+    Object? userLocation = freezed,
   }) {
     return _then(_$IncidentUserSearchImpl(
       incidentId: null == incidentId
@@ -432,6 +459,10 @@ class __$$IncidentUserSearchImplCopyWithImpl<$Res>
           ? _value.users
           : users // ignore: cast_nullable_to_non_nullable
               as User?,
+      userLocation: freezed == userLocation
+          ? _value.userLocation
+          : userLocation // ignore: cast_nullable_to_non_nullable
+              as UserLocation?,
     ));
   }
 }
@@ -462,7 +493,8 @@ class _$IncidentUserSearchImpl extends _IncidentUserSearch {
       @JsonKey(name: 'accepted_with_no_assignment_at')
       this.acceptedWithNoAssignmentAt,
       this.obs,
-      this.users})
+      this.users,
+      @JsonKey(name: 'users_location') this.userLocation})
       : super._();
 
   factory _$IncidentUserSearchImpl.fromJson(Map<String, dynamic> json) =>
@@ -532,10 +564,13 @@ class _$IncidentUserSearchImpl extends _IncidentUserSearch {
   final String? obs;
   @override
   final User? users;
+  @override
+  @JsonKey(name: 'users_location')
+  final UserLocation? userLocation;
 
   @override
   String toString() {
-    return 'IncidentUserSearch(incidentId: $incidentId, userId: $userId, distanceMeters: $distanceMeters, createdAt: $createdAt, lat: $lat, lng: $lng, status: $status, incidents: $incidents, requestedAt: $requestedAt, onIncidentStatus: $onIncidentStatus, goingAt: $goingAt, arrivedAt: $arrivedAt, expiredAt: $expiredAt, finishedAt: $finishedAt, acceptedAt: $acceptedAt, rejectedAt: $rejectedAt, abortedAt: $abortedAt, travelMode: $travelMode, eta: $eta, acceptedWithNoAssignmentAt: $acceptedWithNoAssignmentAt, obs: $obs, users: $users)';
+    return 'IncidentUserSearch(incidentId: $incidentId, userId: $userId, distanceMeters: $distanceMeters, createdAt: $createdAt, lat: $lat, lng: $lng, status: $status, incidents: $incidents, requestedAt: $requestedAt, onIncidentStatus: $onIncidentStatus, goingAt: $goingAt, arrivedAt: $arrivedAt, expiredAt: $expiredAt, finishedAt: $finishedAt, acceptedAt: $acceptedAt, rejectedAt: $rejectedAt, abortedAt: $abortedAt, travelMode: $travelMode, eta: $eta, acceptedWithNoAssignmentAt: $acceptedWithNoAssignmentAt, obs: $obs, users: $users, userLocation: $userLocation)';
   }
 
   @override
@@ -580,7 +615,9 @@ class _$IncidentUserSearchImpl extends _IncidentUserSearch {
                 other.acceptedWithNoAssignmentAt ==
                     acceptedWithNoAssignmentAt) &&
             (identical(other.obs, obs) || other.obs == obs) &&
-            (identical(other.users, users) || other.users == users));
+            (identical(other.users, users) || other.users == users) &&
+            (identical(other.userLocation, userLocation) ||
+                other.userLocation == userLocation));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -608,7 +645,8 @@ class _$IncidentUserSearchImpl extends _IncidentUserSearch {
         eta,
         acceptedWithNoAssignmentAt,
         obs,
-        users
+        users,
+        userLocation
       ]);
 
   /// Create a copy of IncidentUserSearch
@@ -653,7 +691,9 @@ abstract class _IncidentUserSearch extends IncidentUserSearch {
       @JsonKey(name: 'accepted_with_no_assignment_at')
       final DateTime? acceptedWithNoAssignmentAt,
       final String? obs,
-      final User? users}) = _$IncidentUserSearchImpl;
+      final User? users,
+      @JsonKey(name: 'users_location')
+      final UserLocation? userLocation}) = _$IncidentUserSearchImpl;
   const _IncidentUserSearch._() : super._();
 
   factory _IncidentUserSearch.fromJson(Map<String, dynamic> json) =
@@ -723,6 +763,9 @@ abstract class _IncidentUserSearch extends IncidentUserSearch {
   String? get obs;
   @override
   User? get users;
+  @override
+  @JsonKey(name: 'users_location')
+  UserLocation? get userLocation;
 
   /// Create a copy of IncidentUserSearch
   /// with the given fields replaced by the non-null parameter values.
