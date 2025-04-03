@@ -50,7 +50,7 @@ mixin _$User {
   @JsonKey(name: 'zello_id', includeIfNull: false)
   String? get zelloId => throw _privateConstructorUsedError;
   @JsonKey(name: 'user_equipments', includeIfNull: false)
-  List<UserEquipment>? get userEquipment => throw _privateConstructorUsedError;
+  List<UserEquipment>? get userEquipments => throw _privateConstructorUsedError;
   @JsonKey(name: 'available_transportation_methods', includeIfNull: false)
   List<TransportationMethod>? get availableTransportationMethods =>
       throw _privateConstructorUsedError;
@@ -93,7 +93,7 @@ abstract class $UserCopyWith<$Res> {
       List<PushyToken>? pushyTokens,
       @JsonKey(name: 'zello_id', includeIfNull: false) String? zelloId,
       @JsonKey(name: 'user_equipments', includeIfNull: false)
-      List<UserEquipment>? userEquipment,
+      List<UserEquipment>? userEquipments,
       @JsonKey(name: 'available_transportation_methods', includeIfNull: false)
       List<TransportationMethod>? availableTransportationMethods,
       @JsonKey(name: 'notify_ai_call', includeIfNull: false) bool notifyAiCall,
@@ -129,7 +129,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? active = freezed,
     Object? pushyTokens = freezed,
     Object? zelloId = freezed,
-    Object? userEquipment = freezed,
+    Object? userEquipments = freezed,
     Object? availableTransportationMethods = freezed,
     Object? notifyAiCall = null,
     Object? enabled = null,
@@ -191,9 +191,9 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.zelloId
           : zelloId // ignore: cast_nullable_to_non_nullable
               as String?,
-      userEquipment: freezed == userEquipment
-          ? _value.userEquipment
-          : userEquipment // ignore: cast_nullable_to_non_nullable
+      userEquipments: freezed == userEquipments
+          ? _value.userEquipments
+          : userEquipments // ignore: cast_nullable_to_non_nullable
               as List<UserEquipment>?,
       availableTransportationMethods: freezed == availableTransportationMethods
           ? _value.availableTransportationMethods
@@ -238,7 +238,7 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       List<PushyToken>? pushyTokens,
       @JsonKey(name: 'zello_id', includeIfNull: false) String? zelloId,
       @JsonKey(name: 'user_equipments', includeIfNull: false)
-      List<UserEquipment>? userEquipment,
+      List<UserEquipment>? userEquipments,
       @JsonKey(name: 'available_transportation_methods', includeIfNull: false)
       List<TransportationMethod>? availableTransportationMethods,
       @JsonKey(name: 'notify_ai_call', includeIfNull: false) bool notifyAiCall,
@@ -271,7 +271,7 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? active = freezed,
     Object? pushyTokens = freezed,
     Object? zelloId = freezed,
-    Object? userEquipment = freezed,
+    Object? userEquipments = freezed,
     Object? availableTransportationMethods = freezed,
     Object? notifyAiCall = null,
     Object? enabled = null,
@@ -333,9 +333,9 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.zelloId
           : zelloId // ignore: cast_nullable_to_non_nullable
               as String?,
-      userEquipment: freezed == userEquipment
-          ? _value._userEquipment
-          : userEquipment // ignore: cast_nullable_to_non_nullable
+      userEquipments: freezed == userEquipments
+          ? _value._userEquipments
+          : userEquipments // ignore: cast_nullable_to_non_nullable
               as List<UserEquipment>?,
       availableTransportationMethods: freezed == availableTransportationMethods
           ? _value._availableTransportationMethods
@@ -376,14 +376,14 @@ class _$UserImpl extends _User {
       final List<PushyToken>? pushyTokens,
       @JsonKey(name: 'zello_id', includeIfNull: false) this.zelloId,
       @JsonKey(name: 'user_equipments', includeIfNull: false)
-      final List<UserEquipment>? userEquipment,
+      final List<UserEquipment>? userEquipments,
       @JsonKey(name: 'available_transportation_methods', includeIfNull: false)
       final List<TransportationMethod>? availableTransportationMethods,
       @JsonKey(name: 'notify_ai_call', includeIfNull: false)
       this.notifyAiCall = true,
       @JsonKey(name: 'enabled', includeIfNull: false) this.enabled = false})
       : _pushyTokens = pushyTokens,
-        _userEquipment = userEquipment,
+        _userEquipments = userEquipments,
         _availableTransportationMethods = availableTransportationMethods,
         super._();
 
@@ -439,13 +439,13 @@ class _$UserImpl extends _User {
   @override
   @JsonKey(name: 'zello_id', includeIfNull: false)
   final String? zelloId;
-  final List<UserEquipment>? _userEquipment;
+  final List<UserEquipment>? _userEquipments;
   @override
   @JsonKey(name: 'user_equipments', includeIfNull: false)
-  List<UserEquipment>? get userEquipment {
-    final value = _userEquipment;
+  List<UserEquipment>? get userEquipments {
+    final value = _userEquipments;
     if (value == null) return null;
-    if (_userEquipment is EqualUnmodifiableListView) return _userEquipment;
+    if (_userEquipments is EqualUnmodifiableListView) return _userEquipments;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -471,7 +471,7 @@ class _$UserImpl extends _User {
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, userType: $userType, admin: $admin, firstResponderStatus: $firstResponderStatus, availableAtNight: $availableAtNight, transportationMethod: $transportationMethod, cpf: $cpf, phone: $phone, veteran: $veteran, obs: $obs, active: $active, pushyTokens: $pushyTokens, zelloId: $zelloId, userEquipment: $userEquipment, availableTransportationMethods: $availableTransportationMethods, notifyAiCall: $notifyAiCall, enabled: $enabled)';
+    return 'User(id: $id, name: $name, userType: $userType, admin: $admin, firstResponderStatus: $firstResponderStatus, availableAtNight: $availableAtNight, transportationMethod: $transportationMethod, cpf: $cpf, phone: $phone, veteran: $veteran, obs: $obs, active: $active, pushyTokens: $pushyTokens, zelloId: $zelloId, userEquipments: $userEquipments, availableTransportationMethods: $availableTransportationMethods, notifyAiCall: $notifyAiCall, enabled: $enabled)';
   }
 
   @override
@@ -499,7 +499,7 @@ class _$UserImpl extends _User {
                 .equals(other._pushyTokens, _pushyTokens) &&
             (identical(other.zelloId, zelloId) || other.zelloId == zelloId) &&
             const DeepCollectionEquality()
-                .equals(other._userEquipment, _userEquipment) &&
+                .equals(other._userEquipments, _userEquipments) &&
             const DeepCollectionEquality().equals(
                 other._availableTransportationMethods,
                 _availableTransportationMethods) &&
@@ -526,7 +526,7 @@ class _$UserImpl extends _User {
       active,
       const DeepCollectionEquality().hash(_pushyTokens),
       zelloId,
-      const DeepCollectionEquality().hash(_userEquipment),
+      const DeepCollectionEquality().hash(_userEquipments),
       const DeepCollectionEquality().hash(_availableTransportationMethods),
       notifyAiCall,
       enabled);
@@ -568,7 +568,7 @@ abstract class _User extends User {
       final List<PushyToken>? pushyTokens,
       @JsonKey(name: 'zello_id', includeIfNull: false) final String? zelloId,
       @JsonKey(name: 'user_equipments', includeIfNull: false)
-      final List<UserEquipment>? userEquipment,
+      final List<UserEquipment>? userEquipments,
       @JsonKey(name: 'available_transportation_methods', includeIfNull: false)
       final List<TransportationMethod>? availableTransportationMethods,
       @JsonKey(name: 'notify_ai_call', includeIfNull: false)
@@ -621,7 +621,7 @@ abstract class _User extends User {
   String? get zelloId;
   @override
   @JsonKey(name: 'user_equipments', includeIfNull: false)
-  List<UserEquipment>? get userEquipment;
+  List<UserEquipment>? get userEquipments;
   @override
   @JsonKey(name: 'available_transportation_methods', includeIfNull: false)
   List<TransportationMethod>? get availableTransportationMethods;

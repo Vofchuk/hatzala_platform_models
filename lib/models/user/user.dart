@@ -31,7 +31,7 @@ class User with _$User {
     List<PushyToken>? pushyTokens,
     @JsonKey(name: 'zello_id', includeIfNull: false) String? zelloId,
     @JsonKey(name: 'user_equipments', includeIfNull: false)
-    List<UserEquipment>? userEquipment,
+    List<UserEquipment>? userEquipments,
     @JsonKey(name: 'available_transportation_methods', includeIfNull: false)
     List<TransportationMethod>? availableTransportationMethods,
     @JsonKey(name: 'notify_ai_call', includeIfNull: false)

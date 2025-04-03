@@ -25,7 +25,7 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
           ?.map((e) => PushyToken.fromJson(e as Map<String, dynamic>))
           .toList(),
       zelloId: json['zello_id'] as String?,
-      userEquipment: (json['user_equipments'] as List<dynamic>?)
+      userEquipments: (json['user_equipments'] as List<dynamic>?)
           ?.map((e) => UserEquipment.fromJson(e as Map<String, dynamic>))
           .toList(),
       availableTransportationMethods:
@@ -57,7 +57,7 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
       if (instance.active case final value?) 'active': value,
       if (instance.pushyTokens case final value?) 'pushy_tokens': value,
       if (instance.zelloId case final value?) 'zello_id': value,
-      if (instance.userEquipment case final value?) 'user_equipments': value,
+      if (instance.userEquipments case final value?) 'user_equipments': value,
       if (instance.availableTransportationMethods
               ?.map((e) => _$TransportationMethodEnumMap[e]!)
               .toList()
