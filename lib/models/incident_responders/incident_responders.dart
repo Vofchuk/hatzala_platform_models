@@ -9,7 +9,7 @@ class IncidentResponders with _$IncidentResponders {
   const factory IncidentResponders({
     required int incidentId,
     required List<IncidentVehicleSearch> vehicles,
-    required List<IncidentUserSearch> usres,
+    required List<IncidentUserSearch> users,
   }) = _IncidentResponders;
 
   factory IncidentResponders.fromJson(Map<String, dynamic> json) =>

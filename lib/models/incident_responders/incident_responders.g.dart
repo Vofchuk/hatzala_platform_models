@@ -13,7 +13,7 @@ _$IncidentRespondersImpl _$$IncidentRespondersImplFromJson(
       vehicles: (json['vehicles'] as List<dynamic>)
           .map((e) => IncidentVehicleSearch.fromJson(e as Map<String, dynamic>))
           .toList(),
-      usres: (json['usres'] as List<dynamic>)
+      users: (json['users'] as List<dynamic>)
           .map((e) => IncidentUserSearch.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
@@ -23,5 +23,5 @@ Map<String, dynamic> _$$IncidentRespondersImplToJson(
     <String, dynamic>{
       'incidentId': instance.incidentId,
       'vehicles': instance.vehicles,
-      'usres': instance.usres,
+      'users': instance.users,
     };

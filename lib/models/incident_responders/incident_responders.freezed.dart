@@ -23,7 +23,7 @@ mixin _$IncidentResponders {
   int get incidentId => throw _privateConstructorUsedError;
   List<IncidentVehicleSearch> get vehicles =>
       throw _privateConstructorUsedError;
-  List<IncidentUserSearch> get usres => throw _privateConstructorUsedError;
+  List<IncidentUserSearch> get users => throw _privateConstructorUsedError;
 
   /// Serializes this IncidentResponders to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -44,7 +44,7 @@ abstract class $IncidentRespondersCopyWith<$Res> {
   $Res call(
       {int incidentId,
       List<IncidentVehicleSearch> vehicles,
-      List<IncidentUserSearch> usres});
+      List<IncidentUserSearch> users});
 }
 
 /// @nodoc
@@ -64,7 +64,7 @@ class _$IncidentRespondersCopyWithImpl<$Res, $Val extends IncidentResponders>
   $Res call({
     Object? incidentId = null,
     Object? vehicles = null,
-    Object? usres = null,
+    Object? users = null,
   }) {
     return _then(_value.copyWith(
       incidentId: null == incidentId
@@ -75,9 +75,9 @@ class _$IncidentRespondersCopyWithImpl<$Res, $Val extends IncidentResponders>
           ? _value.vehicles
           : vehicles // ignore: cast_nullable_to_non_nullable
               as List<IncidentVehicleSearch>,
-      usres: null == usres
-          ? _value.usres
-          : usres // ignore: cast_nullable_to_non_nullable
+      users: null == users
+          ? _value.users
+          : users // ignore: cast_nullable_to_non_nullable
               as List<IncidentUserSearch>,
     ) as $Val);
   }
@@ -94,7 +94,7 @@ abstract class _$$IncidentRespondersImplCopyWith<$Res>
   $Res call(
       {int incidentId,
       List<IncidentVehicleSearch> vehicles,
-      List<IncidentUserSearch> usres});
+      List<IncidentUserSearch> users});
 }
 
 /// @nodoc
@@ -112,7 +112,7 @@ class __$$IncidentRespondersImplCopyWithImpl<$Res>
   $Res call({
     Object? incidentId = null,
     Object? vehicles = null,
-    Object? usres = null,
+    Object? users = null,
   }) {
     return _then(_$IncidentRespondersImpl(
       incidentId: null == incidentId
@@ -123,9 +123,9 @@ class __$$IncidentRespondersImplCopyWithImpl<$Res>
           ? _value._vehicles
           : vehicles // ignore: cast_nullable_to_non_nullable
               as List<IncidentVehicleSearch>,
-      usres: null == usres
-          ? _value._usres
-          : usres // ignore: cast_nullable_to_non_nullable
+      users: null == users
+          ? _value._users
+          : users // ignore: cast_nullable_to_non_nullable
               as List<IncidentUserSearch>,
     ));
   }
@@ -137,9 +137,9 @@ class _$IncidentRespondersImpl implements _IncidentResponders {
   const _$IncidentRespondersImpl(
       {required this.incidentId,
       required final List<IncidentVehicleSearch> vehicles,
-      required final List<IncidentUserSearch> usres})
+      required final List<IncidentUserSearch> users})
       : _vehicles = vehicles,
-        _usres = usres;
+        _users = users;
 
   factory _$IncidentRespondersImpl.fromJson(Map<String, dynamic> json) =>
       _$$IncidentRespondersImplFromJson(json);
@@ -154,17 +154,17 @@ class _$IncidentRespondersImpl implements _IncidentResponders {
     return EqualUnmodifiableListView(_vehicles);
   }
 
-  final List<IncidentUserSearch> _usres;
+  final List<IncidentUserSearch> _users;
   @override
-  List<IncidentUserSearch> get usres {
-    if (_usres is EqualUnmodifiableListView) return _usres;
+  List<IncidentUserSearch> get users {
+    if (_users is EqualUnmodifiableListView) return _users;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_usres);
+    return EqualUnmodifiableListView(_users);
   }
 
   @override
   String toString() {
-    return 'IncidentResponders(incidentId: $incidentId, vehicles: $vehicles, usres: $usres)';
+    return 'IncidentResponders(incidentId: $incidentId, vehicles: $vehicles, users: $users)';
   }
 
   @override
@@ -175,7 +175,7 @@ class _$IncidentRespondersImpl implements _IncidentResponders {
             (identical(other.incidentId, incidentId) ||
                 other.incidentId == incidentId) &&
             const DeepCollectionEquality().equals(other._vehicles, _vehicles) &&
-            const DeepCollectionEquality().equals(other._usres, _usres));
+            const DeepCollectionEquality().equals(other._users, _users));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -184,7 +184,7 @@ class _$IncidentRespondersImpl implements _IncidentResponders {
       runtimeType,
       incidentId,
       const DeepCollectionEquality().hash(_vehicles),
-      const DeepCollectionEquality().hash(_usres));
+      const DeepCollectionEquality().hash(_users));
 
   /// Create a copy of IncidentResponders
   /// with the given fields replaced by the non-null parameter values.
@@ -207,7 +207,7 @@ abstract class _IncidentResponders implements IncidentResponders {
   const factory _IncidentResponders(
           {required final int incidentId,
           required final List<IncidentVehicleSearch> vehicles,
-          required final List<IncidentUserSearch> usres}) =
+          required final List<IncidentUserSearch> users}) =
       _$IncidentRespondersImpl;
 
   factory _IncidentResponders.fromJson(Map<String, dynamic> json) =
@@ -218,7 +218,7 @@ abstract class _IncidentResponders implements IncidentResponders {
   @override
   List<IncidentVehicleSearch> get vehicles;
   @override
-  List<IncidentUserSearch> get usres;
+  List<IncidentUserSearch> get users;
 
   /// Create a copy of IncidentResponders
   /// with the given fields replaced by the non-null parameter values.
