@@ -52,7 +52,7 @@ _$IncidentUserSearchImpl _$$IncidentUserSearchImplFromJson(
       obs: json['obs'] as String?,
       users: json['users'] == null
           ? null
-          : Users.fromJson(json['users'] as Map<String, dynamic>),
+          : User.fromJson(json['users'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$IncidentUserSearchImplToJson(

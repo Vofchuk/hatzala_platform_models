@@ -22,6 +22,7 @@ export 'package:hatzala_platform_models/models/patient/patient.dart';
 export 'package:hatzala_platform_models/models/protocol/protocol.dart';
 export 'package:hatzala_platform_models/models/pushy_tokens/pushy_tokens.dart';
 export 'package:hatzala_platform_models/models/user/user.dart';
+export 'package:hatzala_platform_models/models/user_equipment/user_equipment.dart';
 export 'package:hatzala_platform_models/models/user_geo_location/user_geo_location.dart';
 export 'package:hatzala_platform_models/models/user_location/user_location.dart';
 export 'package:hatzala_platform_models/models/user_search/user_search.dart';

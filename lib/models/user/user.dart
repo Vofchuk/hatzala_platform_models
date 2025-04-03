@@ -12,7 +12,9 @@ class User with _$User {
     required String id,
     required String name,
     // required bool available,
-    @JsonKey(name: 'user_type') required UserType userType,
+    @JsonKey(name: 'user_type')
+    // @Default(UserType.FIRST_RESPONDER)
+    UserType? userType,
     @JsonKey(includeIfNull: false) @Default(false) bool? admin,
     @JsonKey(name: 'first_responder_status', includeIfNull: false)
     FirstResponderStatus? firstResponderStatus,

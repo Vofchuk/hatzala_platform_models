@@ -62,7 +62,7 @@ mixin _$IncidentUserSearch {
   DateTime? get acceptedWithNoAssignmentAt =>
       throw _privateConstructorUsedError;
   String? get obs => throw _privateConstructorUsedError;
-  Users? get users => throw _privateConstructorUsedError;
+  User? get users => throw _privateConstructorUsedError;
 
   /// Serializes this IncidentUserSearch to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -103,10 +103,10 @@ abstract class $IncidentUserSearchCopyWith<$Res> {
       @JsonKey(name: 'accepted_with_no_assignment_at')
       DateTime? acceptedWithNoAssignmentAt,
       String? obs,
-      Users? users});
+      User? users});
 
   $IncidentCopyWith<$Res> get incidents;
-  $UsersCopyWith<$Res>? get users;
+  $UserCopyWith<$Res>? get users;
 }
 
 /// @nodoc
@@ -235,7 +235,7 @@ class _$IncidentUserSearchCopyWithImpl<$Res, $Val extends IncidentUserSearch>
       users: freezed == users
           ? _value.users
           : users // ignore: cast_nullable_to_non_nullable
-              as Users?,
+              as User?,
     ) as $Val);
   }
 
@@ -253,12 +253,12 @@ class _$IncidentUserSearchCopyWithImpl<$Res, $Val extends IncidentUserSearch>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $UsersCopyWith<$Res>? get users {
+  $UserCopyWith<$Res>? get users {
     if (_value.users == null) {
       return null;
     }
 
-    return $UsersCopyWith<$Res>(_value.users!, (value) {
+    return $UserCopyWith<$Res>(_value.users!, (value) {
       return _then(_value.copyWith(users: value) as $Val);
     });
   }
@@ -295,12 +295,12 @@ abstract class _$$IncidentUserSearchImplCopyWith<$Res>
       @JsonKey(name: 'accepted_with_no_assignment_at')
       DateTime? acceptedWithNoAssignmentAt,
       String? obs,
-      Users? users});
+      User? users});
 
   @override
   $IncidentCopyWith<$Res> get incidents;
   @override
-  $UsersCopyWith<$Res>? get users;
+  $UserCopyWith<$Res>? get users;
 }
 
 /// @nodoc
@@ -427,7 +427,7 @@ class __$$IncidentUserSearchImplCopyWithImpl<$Res>
       users: freezed == users
           ? _value.users
           : users // ignore: cast_nullable_to_non_nullable
-              as Users?,
+              as User?,
     ));
   }
 }
@@ -527,7 +527,7 @@ class _$IncidentUserSearchImpl extends _IncidentUserSearch {
   @override
   final String? obs;
   @override
-  final Users? users;
+  final User? users;
 
   @override
   String toString() {
@@ -649,7 +649,7 @@ abstract class _IncidentUserSearch extends IncidentUserSearch {
       @JsonKey(name: 'accepted_with_no_assignment_at')
       final DateTime? acceptedWithNoAssignmentAt,
       final String? obs,
-      final Users? users}) = _$IncidentUserSearchImpl;
+      final User? users}) = _$IncidentUserSearchImpl;
   const _IncidentUserSearch._() : super._();
 
   factory _IncidentUserSearch.fromJson(Map<String, dynamic> json) =
@@ -718,7 +718,7 @@ abstract class _IncidentUserSearch extends IncidentUserSearch {
   @override
   String? get obs;
   @override
-  Users? get users;
+  User? get users;
 
   /// Create a copy of IncidentUserSearch
   /// with the given fields replaced by the non-null parameter values.

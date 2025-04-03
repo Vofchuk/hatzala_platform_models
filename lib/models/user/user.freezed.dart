@@ -24,7 +24,7 @@ mixin _$User {
   String get name =>
       throw _privateConstructorUsedError; // required bool available,
   @JsonKey(name: 'user_type')
-  UserType get userType => throw _privateConstructorUsedError;
+  UserType? get userType => throw _privateConstructorUsedError;
   @JsonKey(includeIfNull: false)
   bool? get admin => throw _privateConstructorUsedError;
   @JsonKey(name: 'first_responder_status', includeIfNull: false)
@@ -76,7 +76,7 @@ abstract class $UserCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      @JsonKey(name: 'user_type') UserType userType,
+      @JsonKey(name: 'user_type') UserType? userType,
       @JsonKey(includeIfNull: false) bool? admin,
       @JsonKey(name: 'first_responder_status', includeIfNull: false)
       FirstResponderStatus? firstResponderStatus,
@@ -117,7 +117,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? userType = null,
+    Object? userType = freezed,
     Object? admin = freezed,
     Object? firstResponderStatus = freezed,
     Object? availableAtNight = freezed,
@@ -143,10 +143,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      userType: null == userType
+      userType: freezed == userType
           ? _value.userType
           : userType // ignore: cast_nullable_to_non_nullable
-              as UserType,
+              as UserType?,
       admin: freezed == admin
           ? _value.admin
           : admin // ignore: cast_nullable_to_non_nullable
@@ -221,7 +221,7 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      @JsonKey(name: 'user_type') UserType userType,
+      @JsonKey(name: 'user_type') UserType? userType,
       @JsonKey(includeIfNull: false) bool? admin,
       @JsonKey(name: 'first_responder_status', includeIfNull: false)
       FirstResponderStatus? firstResponderStatus,
@@ -259,7 +259,7 @@ class __$$UserImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? userType = null,
+    Object? userType = freezed,
     Object? admin = freezed,
     Object? firstResponderStatus = freezed,
     Object? availableAtNight = freezed,
@@ -285,10 +285,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      userType: null == userType
+      userType: freezed == userType
           ? _value.userType
           : userType // ignore: cast_nullable_to_non_nullable
-              as UserType,
+              as UserType?,
       admin: freezed == admin
           ? _value.admin
           : admin // ignore: cast_nullable_to_non_nullable
@@ -359,7 +359,7 @@ class _$UserImpl extends _User {
   const _$UserImpl(
       {required this.id,
       required this.name,
-      @JsonKey(name: 'user_type') required this.userType,
+      @JsonKey(name: 'user_type') this.userType,
       @JsonKey(includeIfNull: false) this.admin = false,
       @JsonKey(name: 'first_responder_status', includeIfNull: false)
       this.firstResponderStatus,
@@ -397,7 +397,7 @@ class _$UserImpl extends _User {
 // required bool available,
   @override
   @JsonKey(name: 'user_type')
-  final UserType userType;
+  final UserType? userType;
   @override
   @JsonKey(includeIfNull: false)
   final bool? admin;
@@ -551,7 +551,7 @@ abstract class _User extends User {
   const factory _User(
       {required final String id,
       required final String name,
-      @JsonKey(name: 'user_type') required final UserType userType,
+      @JsonKey(name: 'user_type') final UserType? userType,
       @JsonKey(includeIfNull: false) final bool? admin,
       @JsonKey(name: 'first_responder_status', includeIfNull: false)
       final FirstResponderStatus? firstResponderStatus,
@@ -585,7 +585,7 @@ abstract class _User extends User {
   String get name; // required bool available,
   @override
   @JsonKey(name: 'user_type')
-  UserType get userType;
+  UserType? get userType;
   @override
   @JsonKey(includeIfNull: false)
   bool? get admin;
