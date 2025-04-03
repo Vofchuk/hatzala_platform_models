@@ -3,6 +3,7 @@ import 'package:hatzala_platform_models/models/enums/incident_search_user_status
 import 'package:hatzala_platform_models/models/enums/on_incident_status.dart';
 import 'package:hatzala_platform_models/models/enums/transportation_method.dart';
 import 'package:hatzala_platform_models/models/incident/incident.dart';
+import 'package:hatzala_platform_models/models/user_search/user_search.dart';
 
 part 'incident_user_search.freezed.dart';
 part 'incident_user_search.g.dart';
@@ -34,6 +35,7 @@ class IncidentUserSearch with _$IncidentUserSearch {
     @JsonKey(name: 'accepted_with_no_assignment_at')
     DateTime? acceptedWithNoAssignmentAt,
     String? obs,
+    Users? users,
   }) = _IncidentUserSearch;
 
   bool get isParticipant => status == SearchUserStatus.ACCEPTED;
