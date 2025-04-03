@@ -7,7 +7,7 @@ part 'incident_responders.g.dart';
 @freezed
 class IncidentResponders with _$IncidentResponders {
   const factory IncidentResponders({
-    required int incidentId,
+    required Incident incident,
     required List<IncidentVehicleSearch> vehicles,
     required List<IncidentUserSearch> users,
   }) = _IncidentResponders;
